@@ -1,0 +1,152 @@
+{
+  "main": {
+    "id": "861714d034f6868c",
+    "type": "split",
+    "children": [
+      {
+        "id": "5ff99dea9e28d3c0",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "AC Power.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d7562d65c10c71ad",
+    "type": "split",
+    "children": [
+      {
+        "id": "3b4501e2e693195d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "828709682bc6418a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "a4b434ef93385f61",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "phasors in ",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e4205af7b060ac24",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 390.5
+  },
+  "right": {
+    "id": "d0f01cd80b72091c",
+    "type": "split",
+    "children": [
+      {
+        "id": "4582e2199e48e09f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ab9d588cf9953c62",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "AC Power.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5820774357f06b9e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "AC Power.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3652183855644ea8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "6abe63ddd7bd1a28",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "AC Power.md"
+              }
+            }
+          },
+          {
+            "id": "acbafc5acc77fd35",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "5ff99dea9e28d3c0",
+  "lastOpenFiles": [
+    "Power Triangles.md",
+    "Proofs and Truth Value.md",
+    "Phasors in Active Circuit Analysis.md",
+    "AC Circuit Phasor Domain.md",
+    "AC Power.md",
+    "RC LC Circuit Review.md",
+    "DIscrete Structure Notations.md",
+    "Boolean Algebra.md",
+    "Set Operations.md",
+    "Set Relations.md"
+  ]
+}

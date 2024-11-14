@@ -1,0 +1,86 @@
+Continues [[Transmission Impairments]]
+Continued by [[Why Use a Decibel Scale]]
+Related to [[Sampling and The Nyquist-Shannon Theorem]]
+
+Analyzing maximum data rate of a channel
+- ## Terms:
+	- **Channel capacity**
+		- Maximum rate at which data can be communicated over a comm channel under given conditions
+	- **Data Rate**
+		- The rate at which data can be communicated **in bits per second**
+	- **Bandwidth:** In Hz, constrained by transmitter and medium
+	- **Noise:** Average level of noise over the comm path
+	- **Error rate**: Percentage of bits that are misinterpreted
+- ## Relationship Between Data Rate and Bandwidth
+	- Consider a waveform of pulses. Within any cycle of the wave, two bits can be encoded. ![[Pasted image 20240708223534.png]]
+	- This signal has an infinite number of harmonics, but limiting it to just the first three creates a reasonable enough approximation:
+	- ![[Pasted image 20240708223947.png]]
+	- The first three harmonics of a square wave of fundamental frequency F are F, 3F, and 5F. The bandwidth of such a signal would then be $5F-F=4F$
+	- Using this wave, $2F$ bits of data can be transmitted per second with a $4F$ bandwidth
+	- Thus, if you want to transmit data at some rate $R$, increasing the bandwidth of the communication system reaches a point of diminishing returns at $2R$
+	- However, A bit pattern can be recovered from the signal with less bandwidth than $2R$, as long as there isn't severe noise on the channel
+	- Another worthwhile observation is this:
+		- If we look at a spectrum as being centered around some center frequency, then the maximum bandwidth must be 2 times that center frequency, as you can't have negative frequencies.
+- ## Nyquist Bandwidth and Data Rate
+	- If the rate of signal transmission is $2B$, then a signal with frequencies no greater than $B$ is sufficient to carry the signal rate
+	- Given a bandwidth of $B$, the maximum signal rate is $2B$
+		- This is due to intersymbol interference.
+	- Thus, with single level digital signaling, that is with two voltage levels representing a 1 or a zero, the channel capacity $$C_{sin gle}=2B$$, where $C$ is in bits per second $B$ is the bandwidth in Hz
+	- With multiple signal levels, such as in QAM, the channel capacity can be determined as follows: $$C_{multiple}=2B\log_{2}M$$, where $M$ is the number of signal levels
+	- While this does increase the maximum data rate for a given bandwidth, this places an increased burden on the receiver. It must now differentiate between $M$ signal elements rather than just one of 2
+		- Noise and other impairments will limit the practical value of $M$
+- ## Shannon Capacity Formula
+	- Nyquist's theorem states that doubling the bandwidth doubles the theoretical data rate. However, a higher data rate is more susceptible to noise.
+		- The presence of noise can corrupt 1 or more bits. A higher data rate means more bits are affected by a given duration of noise
+	- Shannon developed a formula for channel capacity that takes this into account. First, we must find the:
+	- ### Signal to Noise Ratio, or SNR
+		- $$SNR_{dB}=10\log_{10} \frac{signal\  power}{noise\ power}=10\log (SNR)$$
+		- $$SNR=10^{(SNR_{dB}/10)}$$
+		- A high SNR value indicates a high quality signal with low noise
+	- ### Error-Free Capacity
+		- Shannon then develops a formula that can find the theoretical maximum channel capacity in bits per second $$C=B\log_{2}\left( 1+\frac{S}{N} \right)$$
+			- $B=\frac{C}{\log_{2}(1+SNR)}$
+			- $SNR=2^{C/B}-1$
+			- $SNR$ and $B$ characterize the transmission medium, and $C$ is the theoretical maximum data rate for such a medium.
+		- However this only takes into account thermal noise and gives no consideration to delay distortion, attenuation, or impulse noise
+		- Even in an ideal white noise environment, encoding issues such as coding length and complexity preclude current technology from reaching the Shannon capacity
+		- This is useful as a yardstick by which the performance of practical comm schemes may be measured
+			- If the actual information rate on a channel is less than the error-free capacity, then it is theoretically possible to use a suitable signal code to achieve error free transmission through the channel
+	- 
+- ## Spectral/Bandwidth Efficiency
+	- The number of bits per second that can be supported by each Hz of bandwidth. 
+	- The theoretical maximum spectral efficiency can be calculated using the error-free capacity as follows: $$\frac{C}{B}=\log_{2}\left( 1+\frac{S}{N} \right)$$
+	- ![[Pasted image 20240709151348.png]]
+		- On a log/log scale: Below an SNR of 1, the spectral efficiency is mostly linear. Afterward, it flattens out but continues to increase alongside SNR
+- ## Energy Per Bit to Noise Power Spectral Density Ratio $\Large \frac{E_{b}}{N_{0}}$ (Eb/N0)
+	- ### I declare that this shit is pronounced Ebno
+	- This parameter related to SNR that is more convenient for determining digital data and error rates is the standard quality measure for digital comm system performance
+	- ### Calculating $\large \frac{E_{b}}{N_{0}}$
+		- The energy required to send a single bit of data can be expressed in terms of $S$, the energy of the signal, and $R$, the data rate in bits per second.  $E_{b}=\frac{S}{R}$
+			- In units $\frac{W}{(b/s)}=\frac{Ws}{b}=\frac{J}{b}$. Since bits aren't relevant to this parameter we ignore them and say that $E_{b}$ is measured in $J$
+		- The Noise Power Spectral Density Ratio is the noise power per Hz of bandwidth: $N_{0}=kT$
+			- In units $\frac{W}{Hz}$ or $J$
+		- Thus, $$\frac{E_{b}}{N_{0}}=\frac{S/R}{N_{0}}=\frac{S}{kTR}$$
+		- This is considered a dimensionless parameter, as both $E_{b}$ and $N_{0}$ are measured in Joules.
+		- In decibels: $$\left( \frac{E_{b}}{N_{0}} \right)_{dB}=10(\log S-[\log K+\log T+\log R])$$
+			- The textbook defines this in a more algebraically verbose way, but replaces $10\log(S)$ with $S_{dBW}$ $$\left( \frac{E_{b}}{N_{0}} \right)_{dB}=S_{dBW}-10\log R-10\log K-10\log T$$
+	- ### Analyzing  $\large \frac{E_{b}}{N_{0}}$
+		- As this parameter is a similar one to SNR, it can be broadly thought of as the ratio of energy of the signal to the energy of the noise per Hz of bandwidth. The key difference is that $N_{0}$ , and thus Eb/N0 depends on bandwidth.
+			- When analyzing SNR, we can observe that increasing a signal's power or decreasing the power of the noise will result in a clearer signal and a higher data rate.
+			- But by using the $N_{0}$ parameter, which accounts for bandwidth, the parameter can now be thought of as **Signal Power * Bandwidth / Noise Power**
+			- This shows that a clearer signal can be achieved by increasing signal power, decreasing noise power, **Or Widening the Bandwidth**
+		- Similarly to SNR, increasing Eb/N0 decreases the bit error rate
+		- Given some value of Eb/N0 needed to achieve a desired error rate, the parameters in the preceding formula may be selected. 
+			- Note, as the bit rate $R$ increases, the signal power relative to noise must also increase to maintain the required Eb/N0
+		- ### Relating Eb/N0 to other quantities
+			- #### SNR
+				- $$\frac{E_{b}}{N_{0}}=\frac{S}{N_{0}R}=\frac{S}{N} \frac{B}{R}$$
+					- This formulation shows that Signal power and Noise power are related through the SNR parameter, and that Eb/N0 accounts for the also important relationship between Bandwidth and Data Rate. 
+					- Multiplying these two ratios in a single parameter shows how these 4 quantities are all important for 
+			- #### Spectral Efficiency
+				- By rearranging Shannon's error-free capacity formula we can find:$$\frac{S}{N}=2^{C/B}-1$$
+				- Remember that $C$ in this formula is data rate, and is the same as $R$
+				- Substituting this expression for $\frac{S}{N}$ back into the formula that relates SNR to Eb/N0 yields: $$\frac{E_{b}}{N_{0}}=\frac{B}{C}(2^{C/B}-1)$$
+				- This is a useful formula that relates achievable spectral efficiency C/B to Eb/N0
+
+For class #data-comm

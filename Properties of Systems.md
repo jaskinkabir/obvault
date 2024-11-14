@@ -1,0 +1,87 @@
+Continues [[System Representation and Interconnection]]
+- ## Linearity
+	- ### Homogeneity
+		- $F(\alpha x)=\alpha F(x)$
+			- $F(x)$ must scale linearly with $x$
+	- ### Superposition
+		- $F(x_{1}+x_{2})=F(x_{1})+F(x_{2})$
+			- The effect of $F$ on $x_{1}$ must be equal to its effect on $x_{2}$
+	- ### Checking For Linearity
+		- Calculate $F(\alpha x_{1}+\beta x_{2})$
+			- This must equal both:
+				- $F(\alpha x_{1})+F(\beta x_{2})$
+				- $\alpha F(x_{1})+\beta F(x_{2})$
+			- If it does, then $F$ is linear
+		- Typically, as long as $x$ is not raised to any power, the system is linear
+			- Or if no nonlinear function is being applied to $x$
+	- ### Examples:
+		- #### Differentiator
+			- ![[Pasted image 20230125165653.png]]
+		- #### Scaling
+			- ![[Pasted image 20230125170001.png]]
+		- #### Time Shift
+			- ![[Pasted image 20230125170019.png]]
+		- #### Squaring
+			- ![[Pasted image 20230125170125.png]]
+		- #### Sign
+			- ![[Pasted image 20230125170420.png]]
+		- #### Modulator
+			- ![[Pasted image 20230125170616.png]]
+- ## Memory
+	- A system is memoryless if output only depends on the present input
+		- If this property does not hold, the system has memory
+	- Examples:
+		- $y(t)=x^3$
+			- Memoryless and nonlinear
+		- $y(t)= \sin(2t)x(t)$
+			- Memoryless and linear
+		- $y(t)=x(t+1)$
+			- Linear with Memory
+		- $y(t)=\frac{1}{x(5)}$
+			- Linear with Memory
+				- Needs to make sure $x(5)\neq 0$
+- ## Causality
+	- The output $y(t)$ depends only on $x(\tau)$ where $\tau \leq t$
+		- The present output CANNOT depend on future input
+	- If a system is memoryless, it is causal
+- ## Time Invariance
+	- Giving a system a delayed input is equal to delaying the system's output
+	- The system depends only on some input function, which may or not depend on time
+		- $y(t)=10x(t)$
+			- TI system
+		- $y(t)=tx(t)$
+			- TV system
+	- ### Determining Time-Invariance
+		- If $y(t)=\sin(x(t))$
+		- Define $y_{0}=y(t-\tau)$
+			- $y_{0}=\sin(x(t-\tau))$
+		- Define $x_{1}(t)=x(t-\tau)$
+		- Find $y_{1}(t)=y(x_{1}(t))$
+			- $y_{1}(t)=\sin(x(t-\tau))$
+		- If $y_{1}=y_{0}$, the system is **Time Invariant**
+- ## BIBO Stability
+	- BIBO (Bounded input, bounded output) stable if 
+		- $|x(t)|\leq M_{x}<\infty$
+		- $|y(t)|\leq M_{y}<\infty$
+		- $M_{a}$ is some finite upper bound on the variable $|a|$ 
+	- ### Determining Stability
+		- $y(t)=2x^{2}(t+1)+x(t-2)$
+		- Assume $|x(t)|\leq M_{x}<\infty$
+		- Try to prove that there is some finite upper bound on $|y(t)|$
+			- $|2x^{2}(t-1) + x(t-2)|$
+			- $=|2x^{2}(t-1)| + |x(t-2)|$
+			- $=2|x^{2}(t-1)| + |x(t-2)|=$
+			- $|x^{}(t-1)|^{2} + |x(t-2)|=$
+			- $\leq M_{x}^{2}+M_{x}\doteq M_{y}$
+				- There is some finite $M_{y}$ such that $|y(t)|\leq M_{y}$
+				- $y(t)$ is stable
+- ## Invertibility
+	- $y=f(x) \iff x=f^{-1}(y)$
+		- If there is some function that perfectly maps each output to a unique input, then the function is invertible
+	- ### Determining Invertibility
+		- $y[n]=\sum_{k=0}^{n}\left( \frac{1}{2}\right)^{n-k}x[2k]$
+		- 
+$y'[n]=\sum_{k=0}^{n}\left(\frac{1}{2}\right)^{n-k}x'[2k]=$
+$\sum_{k=0}^{n}\left(\frac{1}{2}\right)^{n-k}cx[2k]=$
+$c\sum_{k=0}^{n}\left(\frac{1}{2}\right)^{n-k}x[2k]=c\cdot y[n]$
+For class #sigsys 

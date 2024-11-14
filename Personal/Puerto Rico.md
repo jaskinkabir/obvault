@@ -1,0 +1,53 @@
+- ## Staying In One Hotel is Viable
+	- Tiny Country![[Pasted image 20230706165158.png]]
+	- San Juan to Ponce is 1.5 hrs
+- ## El Yunque
+	- Forest with waterfalls
+	- Recreation.gov won't sell tickets?
+	- Zipline
+		- https://www.tripadvisor.com/AttractionProductReview-g147319-d12284565-Rainforest_Zipline_in_the_El_Yunque_Foothills_from_San_Juan-Puerto_Rico.html
+		- 112 pp
+	- Natural waterslides
+		- https://www.tripadvisor.com/AttractionProductReview-g147319-d15593291-El_Yunque_Natural_Waterslide_and_Rainforest_Hike_with_Transport-Puerto_Rico.html
+		- $67 pp
+- ## ## Castillo San Felipe del Morro
+	- Big 16th century fort
+		- 140ft above sea
+- ## Cueva del Indio
+	- One of world's longest underground rivers
+	- Ancient cave paintings
+- ##  Bioluminescent Mosquito Bay
+	- https://www.viator.com/tours/Fajardo/Bio-Bay-Kayak-Tour-in-Fajardo/d23854-24791P4
+- ## Hacienda Campo Rico
+	- Nature preserve
+		- Mangroves and forest
+	- UTV Tour
+		- https://www.eco-offroadpr.com/about-us
+		- $300 for a 4 seater
+- ## HOTELS NEAR AIRPORT
+	- ![[Pasted image 20230709170845.png]]
+	- ### Embassy
+		- 353 
+			- https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=SJUESES&arrivalDate=2023-08-01&departureDate=2023-08-08&room1NumAdults=4&inputModule=HOTEL_SEARCH&viewPackagesAndPromotionsRate=true&WT.mc_id=zLADA0US1ES2OLX3GGL4ADVMETA5LF6_SJUESES7_129231037_&adType=PD&gclid=Cj0KCQjwtamlBhD3ARIsAARoaEwqN_PLN2GiGvukXJ67EpOXjEwoB_k7jePVjT5TBVZBdvIP6QKYlb4aAqKdEALw_wcB&dsclid=54727994205286400&dclid=CPyO56zFgoADFQPnhwodU7ACUA&hmGUID=7d421202-82e0-4668-b350-2645a9d4b0e0
+	- ## Verdanza
+		- 273
+			- https://reservations.verdanzahotel.com/73244?adults=4&datein=08/01/2023&dateout=08/08/2023&languageid=1&rooms=1#/accommodation/room
+	- ### Hampton
+		- 263
+			- https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=SJUHHHX&arrivalDate=2023-08-01&departureDate=2023-08-08&room1NumAdults=2&inputModule=HOTEL_SEARCH&viewPackagesAndPromotionsRate=true&WT.mc_id=zLADA0US1HX2OLX3GGL4ADVMETA5LF6_SJUHHHX7_129231037_&adType=PD&gclid=Cj0KCQjwtamlBhD3ARIsAARoaEwzaETnEKgmRbPBQ7a1Dqnkzz_y0chS8qMrgg-gkFsVSYOMXvZ5Hq4aArcrEALw_wcB&dsclid=54728002005377024&dclid=CLmp9rrFgoADFQ1rhwodcE8NnQ&hmGUID=7d421202-82e0-4668-b350-2645a9d4b0e0
+	- ### Mariott
+		- Further away from main city area
+		- 333
+			- https://www.expedia.com/Hotel-Search?selected=910454&startDate=2023-08-01&endDate=2023-08-08&MDPCID=US.META.HPA.HOTEL-CORESEARCH-desktop.HOTEL&langid=1033&adults=4&children=&MDPDTL=HTL.910454.20230801.20230808.DDF.23.CID.2040586220.AUDID..RRID.bex_us_desktop&mctc=10&ct=hotel&exp_curr=USD&exp_dp=3322.23&exp_tx=994.23&exp_pg=google&langid=en&ad=4&tp=&utm_source=google&utm_medium=cpc&utm_term=910454&utm_content=mapresults&utm_campaign=HotelAds&rateplanid=389750205&gclid=Cj0KCQjwtamlBhD3ARIsAARoaEzHPP7FGCvTB9EPUmZJEHwuht-W1ZvX-aqhQEillMy_OrE_jxCBIeUaAsznEALw_wcB
+			- 
+- # OTHER HOTELS
+	- ## Embassy del mar
+		- On the front of a small beach
+		- 
+		- 288
+			- https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=DORPRES&arrivalDate=2023-08-01&departureDate=2023-08-08&room1NumAdults=4&inputModule=HOTEL_SEARCH&viewPackagesAndPromotionsRate=true&WT.mc_id=zLADA0US1ES2OLX3GGL4ADVMETA5LF6_DORPRES7_129231037_&adType=PD&gclid=Cj0KCQjwtamlBhD3ARIsAARoaEyc-QqKjNXtGrrtEV0NYSlPtpjxjTZt4QpiL7Rn6ijscmW7ht8ekPUaAkc9EALw_wcB&dsclid=54728083522723840&dclid=CIKIms_GgoADFSHlhgodS-gD6A&hmGUID=7d421202-82e0-4668-b350-2645a9d4b0e0
+			- 
+- ## TODO
+	- Hotel(s)
+	- Diving
+	- Timeline/Itinerary

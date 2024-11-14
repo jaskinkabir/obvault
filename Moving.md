@@ -1,0 +1,35 @@
+- Either Raleigh or Charlotte, I will move out of this house as soon as I have the money
+	- It is simply impossible for us to have a good relationship while you continue to deny the legitimacy of my relationship with RJ
+		- If I can't have her visit me in my 'home' then this is no home
+	-  She gave me the happiest 6 months of my life
+		- We truly understand and support each other
+	- Your claims that simply because she is not a cis woman, our relationship is doomed to fail
+		- Any explanation for this claim is completely bogus. You have nothing
+		- Keeping this family together is simply unimportant to me if this is the cost
+		- The idea that anyone else in my situation should choose to sacrifice their love 'for the family' is ridiculous and more so that they even would
+		- Not a single person I've spoken to has remotely taken your side
+	- Any comparisons to my previous relationships is bogus
+		- I've matured since then. I know when a relationship is bad for me
+	- I care about her, she cares about me
+	- You know nothing about our relationship, yet you refuse to even consider the possibility that it's a viable relationship long-term
+	- It's been almost a month since I moved away from her and nothing's changed
+		- Nothing **will** change
+	- Here at NCSU, I've been nothing but miserable
+	- I miss my friends, I miss RJ, but most importantly I miss my standings in the program
+- No matter what, this semester has been wasted
+	- I'm taking one single course that will actually progress my education, the rest are technicalities
+		- Still an uphill battle to get other courses transferred
+	- It's not even guaranteed that I will graduate at the end of next year at NCSU
+		- It is guaranteed at Charlotte
+	- I have relationships with professors at Charlotte, and it will be much easier to get involved in research
+	- Moving to NCSU for Master's is guaranteed
+	- Living in Charlotte is much cheaper
+		- The rent here is insane
+		- Parking
+	- Dangerous campus for biking, especially in the rain
+- Ultimately, if you do not budge, this relationship is over.
+	- I appreciate all the help thus far
+		- Financial help
+		- Cooking for her
+	- But this does not excuse the way you have treated me and RJ
+	- I cannot live here

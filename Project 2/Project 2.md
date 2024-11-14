@@ -1,0 +1,287 @@
+By: Jaskin Kabir
+Continues [[ANF Project 1 Report]]
+- # Problem 1: A PWM Motor Driver
+	- ## Part a: The Electrical Differential Equation
+		- From KVL, the following equation can be derived
+			- $$V_{a}=V_{R_{a}}+V_{L_{a}}+K\Omega$$
+		- After substituting $V_{L}=L\frac{di_{L}}{dt}$ and rearranging the equation, the following differential equation is found.
+			- $$\large R_{a}i_{a}(t)+L\frac{di_{a}}{dt}(t)=V_{a}(t)-K\Omega(t)$$
+	- ## Part b: The Transfer Function From Voltage to Speed
+		- The following process was used to find this transfer function
+			- The electrical differential equation shown in part a is in terms of both voltage and current, but to find the transfer function, defined as $H(\omega)=\frac{\Omega(\omega)}{V_{a}(\omega)}$, the differential equation must be written only in terms of the input voltage $V_{a}$ and the output motor speed $\Omega$
+				- This can be done by finding an expression for current from the mechanical differential equation $J \frac{d\Omega}{dt}=Ki_{a}-\beta\Omega$:
+			- The expressions for current in terms of speed and its derivative are as follows:
+				- $\large i_{a} = \frac{\beta\Omega+J \frac{d\Omega}{dt}}{K}$
+				- $\large \frac{di_{a}}{dt} = \frac{\beta\ \frac{d\Omega}{dt}+J \frac{d^2\Omega}{dt^2}}{K}$
+			- Substituting this into the electrical differential equation results in the following equation 
+				- $\frac{R}{K}\left( \beta\Omega(t)+J\frac{d\Omega}{dt} \right)+\frac{L}{K}\left( \frac{\beta d\Omega}{dt} + J\frac{d^2\Omega}{dt^2} \right)=V_{a}(t)-K\Omega(t)$
+			- Converting this equation into the frequency domain results in:
+				- $\frac{R}{K}\left( \beta\Omega(s)+J\Omega(s)s \right)+\frac{L}{K}\left( \beta \Omega(s)s + J\Omega(s)s^2 \right)=V_{a}(s)-K\Omega(s)$
+			- After some algebraic rearranging of the above equation, the following transfer function can be found:
+				- $$H(s)=\frac{\Omega(s)}{V_{a}(s)}=\frac{K}{LJs^2+(JR+L\beta)s+K^2+\beta R}$$
+	- ## Part c: The Transfer Function Bode Plot
+		- The code and graph are shown below
+			- ![[Pasted image 20221129180532.png]]
+			- ![[Pasted image 20221129180502.png]]
+	- ## Part d: The DC Value of $\Large V_{a}(t)$ in Terms of the Duty Ratio D
+		- In order to find an expression for the DC term, the input signal $V_{a}(t)$ can be defined as the following piecewise function
+			- $V_{a}(t) = {12, 0\leq t \leq DT}$
+			- $V_{a}(t) = {0, DT< t \leq T}$
+				- Where $T$ is the period and $D$ is the duty cycle
+		- The DC term is the average value over a period, which can be found with the following integral
+			- $\frac{1}{T}\int_{0}^{T}V_{a} \, dx=\frac{1}{T}\left( \int_{0}^{DT}12 \, dx+\int _{DT}^{T}0 \, dx \right)=\frac{12DT}{T}=12D$
+		- The DC term in terms of duty ratio $D$ is $12D$
+	- ## Part e: The DC Value of $\Large V_{a}(t)$ in Volts
+		- From the `hw` vector found in part c, the transfer function magnitude at $\omega=0$ is 33.804. If the transfer function is defined as $H=\frac{\Omega(s)}{V(s)}$, and $\Omega(0)=250$, then $V(0)=\frac{\Omega(0)}{H(0)}=\frac{250}{33.8035}=$
+			- $$V(0)=    7.3957$$
+	- ## Part f: The Duty Ratio D
+		- If the average value of the input PWM signal is equal to the duty ratio times 12, as found in part d, then the duty ratio can be found as $D=\frac{V(0)}{12}=    \frac{7.3957}{12}=$
+			- $$D=0.6163$$
+	- ## Part g: The Cosine Amplitude At the Fundamental Frequency
+		- To find the amplitude at this frequency, the piecewise function defined in part d must be used.
+		- This means that the integral to find the value of $\alpha_{n}$ at the fundamental frequency, or $\alpha_{1}$ can be written as follows
+			- $\large \alpha_{1}=\frac{1}{T}\int _{0}^{T}V_{a}(t)e^{ -j\omega_{0} t} \, dt=\frac{1}{T}\int_{0}^{DT}12e^{ -j\omega_{0} t}\, dt=\frac{12(e^{ -j\omega_{0}DT }-1)}{-j\omega_{0} T}$
+		- If $T=\frac{2\pi}{\omega_{0}}$, then $T\omega_{0}=2\pi$:
+			- $\large \alpha_{1}=\frac{12(e^{ -j\omega_{0}D }-1)}{-j\omega_{0} DT}=\frac{12(e^{ -j2\pi D }-1)}{-j2\pi}$
+		- Plugging in $D=0.6163$, which was found in part f, $\alpha_{1}$ can be found as
+			- $\large \alpha_{1}=-1.275-j3.332$
+		- If $C_{n}=2|\alpha_{n}|$ then:
+			- $\large C_{1}=7.1352$
+	- ## Part h: The Fundamental Frequency of $\Large V_{a}(t)$
+		- We desire the speed variation at the fundamental frequency to be less than 1% of the average speed. From this constraint, the following inequality can be derived.
+			- $2|\Omega(\omega_{0})|<0.01|\Omega(0)|$
+		- Plugging in the desired average speed $|\Omega(0)|=250$ results in:
+			- $2|\Omega(\omega_{0})|<2.5$
+			- $|\Omega(\omega_{0})<1.25$
+		- If the transfer function $H(\omega)$ is defined as $\frac{\Omega}{V_{a}}$, then:
+			-  $|H(\omega_{0})||V_{a}(\omega_{0})| < 1.25$
+			-  $\large |H(\omega_{0})<\frac{1.25}{|V_{a}(\omega_{0})|}$
+		- In part g,the alpha magnitude of $V_{a}$ at the fundamental frequency as $|V_{a}(\omega_{0})|=|\alpha_{1}|=3.57$. Plugging this into the inequality above results in:
+			- $\large |H(\omega_{0})| < \frac{1.25}{3.5676} < 0.3504$
+		- Converting this to decibels results in 
+			- $|H(\omega_{0})| <-9.11dB$ 
+		- By looking at the transfer function Bode plot found in part c, it can be seen that choosing $\omega_{0}=120$ would result in a transfer function magnitude within this range.
+			- Plugging $\omega_{0}=120$ into the `h(w)` function defined in part c shows the following result, which is within the range defined above:
+				- $H(120)=0.338$
+		- This means that $\omega_{0}$ can be chosen to be:
+			- $\large \omega_{0}=120$ rad/sec
+	- ## Part i: Simulating the Motor Response
+		- In project 1, a program was written that can simulate the response of this motor given some input voltage signal.
+		- Inputting the square wave waveform defined above into this program involves the following code:
+			- ![[Pasted image 20221207175357.png]]
+				- This is using the duty ratio and frequency found in parts f and h
+			- The graphs generated by this simulation are shown below
+				- ![[Pasted image 20221207180721.png]]
+			- Using the following code, the average speed and the speed variation during the steady state condition can be found 
+				- ![[Pasted image 20221207180822.png]]
+			- The output of the above code is as follows
+				- ![[Pasted image 20221207180846.png]]
+			- The expected values for these two calculations were found in part h as follows:
+				- Average Speed = $|\Omega(0)|=250$
+				- Speed Variation = $2|\Omega(2\pi60)|=2.5$
+			- The average value is within 40 millionths of a percent of the expected value
+			- The speed variation, however, shows a much higher percent error of **7.63%**
+				- This is because the calculation in part h only takes in the first harmonic at the fundamental frequency. In the simulation, there are also many other harmonics at higher frequencies that also affect the speed variation in steady state.
+					- These higher frequency components are of a much lower magnitude, and so the error is only 7.63%	  
+- # Problem 2: Filtering A Signal For Control
+	- ## Part a: The Sawtooth Waveform and Its Fourier Transform
+		- The gap between peaks is 0.1 microseconds, so the period is **0.0001 seconds**
+		- The code used to generate the sawtooth waveform and its graph are shown below
+			- ![[Pasted image 20221205185433.png]]
+				- The period is $10^{-4}$, so $\omega_{0}=2\pi*10^4$
+				- The sawtooth function generates a triangle wave where the value of $x(0)=-1$, so the function needs to be flipped across the x-axis.
+		- The following code was used to find the Fourier transform for $n=\pm1,\pm 2,\pm 3$
+			- ![[Pasted image 20221206153827.png]]
+				- In this function is the method of numeric integration explained during the lecture given on 11/21/22. 
+					- For the 0th alpha value, the value that should be calculated is the average value of the function across a period. This can be done by summing together the values multiplied by the time between samples, and then dividing by the period. 
+					- For all other values, the function is also multiplied by $e^{-jn\omega_{0}t}$ to isolate the term which has the frequency $n\omega_{0}$
+			- The values are as follows:
+				- $\alpha_{-3} = 0.045 \angle0$
+				- $\alpha_{-2} = 0\angle0$
+				- $\alpha_{-1} = 0.405 \angle0$
+				- $\alpha_{0} = 0\angle0$
+				- $\alpha_{-1} = 0.405 \angle0$
+				- $\alpha_{2} =0\angle0$
+				- $\alpha_{-3} = 0.045 \angle0$
+		- From the alpha values found above, the C and $\phi$ values can be found as 
+			- $C_{n}=2*|\alpha_{n}|, \phi=\angle\alpha_{n},n>0$
+			- The cosine signals are as follows
+				- $C_{1}=.81\cos(2\pi 10^4 t)$
+				- $C_{2}=0\cos(4\pi 10^4t)$
+				- $C_{3}=0.09\cos(6\pi 10^4t)$
+	- ## Part b: The Constraints of the Transfer Function
+		- For the first constraint, if the amplitude of the output signal at $\omega_{0}=2\pi60$ needs to be $\approx$ 1% of the input amplitude, then $|H(\omega_{0})|\approx0.01$, as the amplitude of the output signal is the magnitude of the transfer function times the amplitude of the input signal
+			- $20\log(.01)=-40dB$, so $20\log(|H(\omega_{0})|\approx-40dB$
+		- For the second constraint, the phase shift of the output signal is the phase of the sum of the phase of the input signal and the angle of the transfer function. This means that, to meet the second constraint, the phase shift at $\omega=2\pi 60$ must be less than 4 degrees, 
+			- $|\angle H(2\pi 60)|<4\degree$ 
+		- For the third constraint, if the amplitude at $\omega=2\pi 60$ should stay the same, then means $|H(2\pi 60)|\approx 1$.
+			- $20\log(1)=0dB$, so $20\log(|H(2\pi 60)|)\approx 0dB$
+	- ## Part c: Choosing a Filter
+		- The approach used to select the transfer function was to tweak the corner frequency of each function and use the code shown below to test the function against the three constraints.
+			- ![[Pasted image 20221205140048.png]]
+		- $\large H_{1}(\omega)$
+			- This transfer function has the following bode plot at $\omega_{c}=2\pi 100$
+				- ![[Pasted image 20221205154637.png]]
+				  - At this frequency, this is the output of the tests
+					- ![[Pasted image 20221205150811.png]]
+			-  After the corner frequency, the magnitude drops by 20 decibels per decade. If the desired decibel magnitude at the fundamental frequency is -40, then the corner frequency should be placed 2 decades before $\omega_{0}$ to achieve this magnitude
+				- To pass condition 1, $\omega_{c} \approx\omega_{0}\times 10^{-2}\approx2\pi100$
+			- Because of the pole, the phase shift decreases at $-45\degree$ per decade starting at $\frac{\omega_{c}}{10}$
+				- To pass condition 2, $\omega_{c}>{10*2\pi 60}>2\pi600$
+					- Assuming straight line approximation
+				- Impossible to meet condition 1 and 2 at the same time
+			- Any value of $\omega$ less than the corner frequency will result in a decibel magnitude of 0, which corresponds to a magnitude multiplication of 1.
+				- To pass condition 3, $\omega_{c} > 2\pi 60$
+					- This is only true for the straight line approximation. In reality, the magnitude starts decreasing before the corner frequency. Through guess and check, it can be found that $\omega_{c}>2\pi425$ in order to meet this condition
+					- It is impossible to meet condition 1 and 3 at the same time
+			- This means there is no value of $\omega_{c}$ that could pass all 3 conditions for the transfer function $H_{1}(\omega)$
+		- $\large H_{2}(\omega)$
+			- Shown below are the bode plots for this function at $\omega_{c}=2\pi 1000$
+				- ![[Pasted image 20221205151925.png]]
+					- Test output at this frequency
+						- ![[Pasted image 20221205154846.png]]
+				- After the corner frequency, the magnitude drops by 40 decibels per decade. If the desired decibel magnitude at the fundamental frequency is -40, then the corner frequency should be placed 1 decade before $\omega_{0}$ to achieve this magnitude
+					- To pass condition 1, $\omega_{c} \approx\omega_{0}\times 10^{-1}\approx2\pi1000$
+				- At the fundamental frequency, which must be 1 decade after $\omega_{c}$, the phase shift has already almost reached its peak at $-180\degree$, as the quadratic pole causes the phase shift to decrease at $-90\degree$ per decade starting at $\frac{\omega_{c}}{10}$. To pass condition 2, the corner frequency should be placed a decade after $2\pi 60$
+					- To pass condition 2, $\omega_{c}>{10*2\pi 60}>2\pi600$
+						- While this is true for the straight line approximation, the true transfer function does not behave this way. To pass condition 2, the condition for the corner frequency is actually this: $\omega_{c}>2\pi 1200$
+						- This was found through guessing $\omega_{c}$ values and checking with the test code 
+						- At this corner frequency, the magnitude at $\omega_{0}$ is too far past -40dB to meet condition 1
+					- It is impossible to meet condition 1 and 2 at the same time
+			- Like in the previous function, $\omega_{c}>2\pi60$ is all that is needed to meet condition 3
+				- To pass condition 3, $\omega_{c} > 2\pi 60$
+			- There is no value of $\omega_{c}$ that can make $H_{2}(\omega)$ meet all 3 conditions
+		- $\large H_{3}(\omega)$
+			- Shown below are the bode plots for this function at $\omega_{c}=2\pi 3162$
+				- ![[Pasted image 20221205152931.png]]
+			- The slope after the corner frequency is -80 dB per decade, so the corner frequency should be placed half a decade before the fundamental frequency $\omega_{0}$ in order to meet the -40 dB requirement. 
+				- To pass condition 1, $\omega_{c}\approx\omega_{0}*10^{-0.5}\approx2\pi 3162$
+			- The transfer function angle decreases by $180\degree$ per decade at $\frac{\omega_{c}}{10}$  and then jumps up to positive $180\degree$ immediately after the corner frequency. After the corner frequency, the angle decreases by $180\degree$ per decade until it reaches $0\degree$ at $10\omega_{c}$. To pass condition 2, $\omega_{c}$ should be placed either 1 decade before or after $2\pi 60$ 
+				- To pass condition 2, $\omega_{c} <2\pi 6 \lor \omega_{c} > 2\pi 600$
+			- Like in the previous functions, $\omega_{c}>2\pi60$ is all that is needed to meet condition 3
+				- To pass condition 3, $\omega_{c} > 2\pi 60$
+		- The only filter that can meet all three constraints is $H_{3}(\omega)$ with $\omega_{c}=2\pi 3162$
+			- The bode plots of this transfer function can be seen below
+				- ![[Pasted image 20221205152931.png]]
+				- Below is the condition check output for this function
+					- ![[Pasted image 20221205155234.png]]
+		- The Bode plots of the above transfer functions were generated with the following code
+			- ![[Pasted image 20221206190813.png]]
+				- By changing which line is uncommented in the `h(w,wc)` function at the bottom, the transfer function that is being evaluated can be changed
+	- ## Part d: Constructing the Filtered Output Signal
+		- The following code was used to find the output signal.
+			- ![[Pasted image 20221130210553.png]]
+				- The $\alpha_{n}$ values of the triangle wave signal were calculated in part a, and only the last 3 values within the `alpha` vector are needed to construct the output signal, as the shifted cosine form of the Fourier Series only uses positive n-valued harmonics. 
+					- Another value of $\alpha$ must be added that corresponds to the $2\cos(2\pi 60)$ term that is added to the sawtooth wave to construct the $\alpha_{n}$ values for the $V_{in}$ signal
+					- This $\alpha$ value is $1\angle0$, which corresponds to an amplitude of 2, and a phase shift of 0
+				- The $\alpha_{n}$ values of the $V_{out}$ signal can be found by multiplying the alpha values of the $V_{in}$ signal by the value of the transfer function at the frequency that corresponds to each value of $\alpha_{n}$ 
+					- $\large \alpha_{out_{n}}=H(n\omega_{0})\times\alpha_{in_{n}}$
+				- The $V_{out}$ signal is constructed with the following Fourier Series formula
+					-  $x(t)=\sum_{n=0} ^{\infty}2|\alpha_{n}|\cos(n\omega_{0}t+\angle\alpha_{n})$
+				- This is using the following formulas for relating the different forms of the Fourier Series
+					- $C_{n}=2|\alpha_{n}|$
+					- $\phi_{n}=\angle\alpha_{n}$
+					-  $x(t)=\sum_{n=0} ^{\infty}C_{n}\cos(n\omega_{0}t+\phi_{n})$
+		- Below is the graph of the $V_{in}$ signal, the constructed $V_{out}$ signal, and a 60Hz cosine wave for comparison
+			- ![[Pasted image 20221205124350.png]]
+				- The filter has removed the high frequency triangle wave component of the signal and left only the 60 Hz cosine wave
+- # Problem 3: A Simple Power and Quality Analyzer
+	- ## Part a: The Fourier Series of the Voltage Signal
+		- The `alpha_n` function is reused from the previous problem
+			- ![[Pasted image 20221204191934.png]]
+		- The code used to generate the `alpha_n`, vector is shown below
+			- ![[Pasted image 20221207194906.png]]
+		- This `alpha_n` vector was used to plot the Fourier Transform of the input voltage signal, as shown below:
+			- ![[Pasted image 20221207195025.png|620]]
+	- ## Part b: The $\Large a_{n}$ and $\Large b_{n}$ Vectors
+		- Shown below are the graphs of $a_{n}$ and $b_{n}$ plotted against frequency
+			- ![[Pasted image 20221205184322.png]]
+				- The component with the highest magnitude is the sine wave at the fundamental frequency. This is what would be expected from a 60Hz sine wave from a power outlet with some noise added to it.
+			- The $a_{n}$ and $b_{n}$ vectors were generated with the following code
+				- ![[Pasted image 20221207200011.png]]
+			- This is using the following formulas for relating the different forms of the Fourier Series
+				- $C_{n}=2|\alpha_{n}|$
+				- $\phi_{n}=\angle\alpha_{n}$
+				- $a_{n}=C_{n}\cos(\phi_{n})$
+				- $b_{n}=-C_{n}\sin(\phi_{n})$
+	- ## Part c: Recreating the Input Signal:
+	- Using the following formula, the input signal can be recreated using the Fourier Series calculated in part a
+		- $x(t)=\sum_{n=0} ^{\infty}a_{n}\cos(n\omega_{0}t)+b_{n}\sin(n\omega_{0}t)$
+		- This formula is implemented with the following code:
+			- ![[Pasted image 20221207200258.png]]
+		- The graph of the recreated input signal is shown below
+			- ![[Pasted image 20221207200346.png]]
+- # Problem 4: A Touch Tone Recognition System
+	- ## Part a: Representing Phone Numbers With Sine Waves
+		- Using this diagram of a phone keypad, each number can be represented as the sum of a sine wave with its frequency corresponding to the column of the number, and another sine wave with its frequency corresponding to the row of the number.
+			- ![[Pasted image 20221205161030.png]]
+		- The constructed signals are as follows
+			- $d_{0}=\sin(2\pi941t)+\sin(2\pi1336t)$
+			- $d_{1}=\sin(2\pi697)+\sin(2\pi1209)$
+			- $d_{2}=\sin(2\pi697)+\sin(2\pi1336)$
+			- $d_{3}=\sin(2\pi697)+\sin(2\pi 1447)$
+			- $d_{4}=\sin(2\pi 770)+\sin(2\pi 1209)$
+			- $d_{5}=\sin(2\pi 770)+\sin(2\pi 1336)$
+			- $d_{6}=\sin(2\pi 770)+\sin(2\pi 1447)$
+			- $d_{7}=\sin(2\pi 852)+\sin(2\pi 1209)$
+			- $d_{8}=\sin(2\pi 852)+\sin(2\pi 1336)$
+			- $d_{9}=\sin(2\pi 852)+\sin(2\pi 1447)$
+	- ## Part b: Generating Digit Tones in MATLAB
+		- The code used to create generate the above functions can be seen below
+			- ![[Pasted image 20221128140130.png]]
+		- Running this script produces the expected sound of the number 2 being pressed on the keypad
+	- ## Part c: The Sound of My Phone Number
+		- The code to generate the sound of my phone number is shown below
+			- ![[Pasted image 20221204165338.png]]
+		- Running this script produces the expected sound of me dialing my own phone number
+	- ## Part d: Analyzing the Fourier Transform of Digit Signals
+		- Shown below are the plots of the Discrete Fourier Transforms of $d_{2}$ and $d_{5}$
+			- ![[Pasted image 20221204192534.png]]
+				- These graphs are generated by iterating over each sample of the signal and isolating the component whose period is equal to the amount of time between the start of the signal and the point in time that is being currently analyzed. This is repeated for all 2048 samples of the signal that are processed.
+					- This isolation is done with the following formula
+						- $\large X_{k}= \sum_{n=0}^{N-1} x_{n}e^{ \frac{-j2\pi}{N}kn }$
+				- The two peaks in magnitude on each graph correspond to the two sine wave components that were found in Part a, albeit with some error caused by the loss of data due to discretization.
+		- Shown below is the code used to find the Discrete Fourier Transform plots for signals $d_{2}$ and $d_{5}$
+			- ![[Pasted image 20221205234328.png]]
+				- The `freqs` function finds the two frequencies in the dft vector with the greatest magnitudes .
+					- This function will be explained in part e. It is not relevant for this part, and is only used for the x-axis markings.
+			- The Discrete Fourier Transform function is shown below
+				- ![[Pasted image 20221205234420.png]]
+					- This function takes in 2048 samples of the signal generated by the keypad and computes the magnitude and angle of one component of the Fourier series per sample
+						- The x vector must therefore be padded to a length of 2048 to compute 2048 Fourier Series coefficients.
+					- It is an implementation of the formula shown above
+	- ## Part e: Determining the Phone Number Stored In an Audio File
+		- In the `touch.mat` file downloaded from the project 2 folder in the class files is a vector `x1` that contains samples of an audio signal that was generated by the keypad using the method described in part a. Determining what phone number was keyed onto the keypad to create this signal can be done in either of the following two ways.
+		- The Discrete Fourier Transforms of the digits contained in the `x1` signal can be seen below
+			- ![[Pasted image 20221204183746.png]]
+				- These graphs can be analyzed and compared against the keypad diagram from part a to find the phone number contained in the x1 signal, but an automated method can also be used. 
+		- The code used to generate these graphs is shown below
+			- ![[Pasted image 20221206172342.png]]
+				- Since the digits are 1000 samples each, with 100 samples of silence between each digit, the indices of each digit can be found as $i_{1}(n)=(n-1)\times1100$, $i_{2}(n)=i_{1_{n}}+1000$ 
+					- This doesn't work for $n=1$, since Matlab starts array indexes at 1. The first index is 1, and 1000 samples after that is 1001
+					- $i_{1_{1}}=1, i_{2_{1}}=1001$
+		- As mentioned above, the phone number in the `x1` signal can be found using an automated method, which takes much less time than analyzing the plots by hand. The following functions were created to take in a signal `x` containing 7 numbers generated by the keypad and determine the phone number contained in the signal
+			- First, a function that extracts the two frequencies with the greatest magnitudes from a DFT vector. 
+				- This vector is generated using the `dft` function shown in part d.
+				- ![[Pasted image 20221204154038.png]]
+			- Next, a function that takes in this vector of the two highest frequencies and returns a vector of coordinates corresponding to the column and row on the keypad
+				- ![[Pasted image 20221204165238.png]]
+			- Next, a function that takes in these keypad coordinates, and returns the number that was pressed.
+				- ![[Pasted image 20221204153856.png]]
+			- Finally, the function that takes in the phone number signal, splits it into the digits contained in the signal, and returns the phone number contained in the signal.
+				- ![[Pasted image 20221204164100.png]]
+					- This is using the indexing method used earlier to find the discrete Fourier transforms
+		- Using this method to extract the numbers that were pressed to cr eate the `x1` signal requires the following two lines of code.
+			- ![[Pasted image 20221204165534.png]]
+		- Executing the code above produces the following output
+			- ![[Pasted image 20221204164202.png]]
+		- This means the phone number contained in the `x1` audio file is **491-5877**
+	- ## Work for fun
+		- The function in part e was very fun to write, so thanks for the challenge Professor Cox!
+			- Here's the output for the second phone number in the `touch.mat` file
+				- ![[Pasted image 20221204164650.png]]
+			- And for my phone number vector I created in part c
+				- ![[Pasted image 20221204165258.png]]
+		- I enjoyed this project and the last one a great deal, and I'm glad you gave me these challenges. Your class was my favorite of the semester by far because of your constant emphasis on the practical applications of the material you taught. It was very refreshing to see a class taught this way, and it kept me fully engaged from start to finish. Putting my brain to work on the problems you assigned in this class really helped me remember why I chose this major in the first place, and I appreciate that. 
+
+For class #Analytical-Foundations 

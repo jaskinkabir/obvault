@@ -1,0 +1,11 @@
+- # DC Analysis
+	- In DC conditions, the original circuit pictured below can be transformed into its DC equivalent by replacing capacitors with open circuits and disabling the AC voltage sources.
+		- ![[Pasted image 20230425190957.png]]
+	- DC Equivalent:
+		- ![[Pasted image 20230425191032.png]]
+	- To find the DC gate-source voltage, the voltage at the gate must first be found. This can be done using the voltage divider formula:
+		- $V_{G}=V_{DD}-(V_{DD}-V_{SS}) \frac{R_{1}}{R_{1}+R_{2}}$
+	- After plugging in these values, $V_{G}$ can be found to be $-0.526$
+	- Since the MOSFET must be in saturation mode to achieve amplfication, it can be assumed that the following equation can be used to find the drain current:
+		- $I_{D}=\frac{1}{2}k_{n}(V_{GS}-V_{T})^2$
+	- Since the voltage

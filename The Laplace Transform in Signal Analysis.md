@@ -1,0 +1,67 @@
+Continues [[The Continuous Time Fourier Transform (CTFT)]]
+Continued by [[Properties of the Laplace Transform ROC]]
+Continued by [[LTI Systems and the Laplace Transform]]
+
+- ## The Laplace Transform
+	- $$\mathscr{L}[x(t)]]\doteq \int _{-\infty}^{\infty}e^{-st }\, dt,\,s=\sigma+j\omega $$
+		- $=\int _{-\infty}^{\infty} e^{-\sigma t}e^{-j\omega t}dt$
+		- $$\mathscr{L}[x(t)]]\doteq\mathbb{F}\{x(t)e^{-\sigma t}\}$$
+	- Example:
+		- $$x(t)=e^{-at}u(t)\,, a>0$$
+			- $X(j\omega)=\frac{1}{a+j\omega}$
+			- $X(s)=\int_{-\infty}^{\infty} e^{-(a+\sigma)t}u(t) \, dt$
+			- $$X(s)=\frac{1}{a+\sigma\,+j\omega},\,\sigma+a>0$$
+	- Example:
+		- $x(t)=-e^{-at}u(-t)$
+		- $X(s)=\int_{-\infty}^{\infty} -e^{-at}u(-t) \, dt$
+		- $=-\int_{-\infty}^{0} e^{-(a+\sigma)t}e^-j\omega t \, dt$
+		- $$X(s)= \frac{1}{a+\sigma+j\omega}, \, a+\sigma<0$$
+			- Two input functions give the same expression, but with different **Regions of Convergence**
+				- $\sigma +a$ has different ranges of accepted values.
+- ## Rational Functions and the Region of Convergence
+	- If x(t) is given by the linear combination of exponentials, 
+		- $$X(s)=\frac{N(s)}{D(s)}$$
+			- Where $N$ and $D$ are polynomials
+				- $X(s)$ is a **rational function**
+			- The roots of $N$ are values of s such that $N(s)=0$ and are called zeros of $X(s)$
+			- The roots of D are called poles of $X(s)$
+	- Example:
+		- $x(t)=e^{-3t}u(t)+e^{-t}\cos(3t)u(t)$
+		- $x(t)=u(t)(e^{-3t}+e^{-t}(\frac{1}{2})(e^{j3t}+ e^{-j3t})$
+		- $x(t)=u(t)\left( e^{-3t}+\frac{1}{2}(e^{-(1-j3)t} + e^{-(1+j3)t} \right)$
+		- $X(s)_{1}=\frac{1}{s+3}\, \mathscr{R}\{s\}>-3$
+		- $X(s)_{2} = \frac{\frac{1}{2}}{s+(1-j3)}$, $\mathscr{R}\{s\}>-1$ 
+		- $X(s_{3})=\frac{\frac{1}{2}}{s+(1+j3)},$ $\mathscr{R}\{s\}>-1$
+			- The overall ROC, is where $\mathscr{R}\{s\}>-1$
+			- 
+		- $X(s)=\frac{2s^2+5s+12}{(s+3)(s+(1-j3)(s+(1+j3)))}$
+			- 2 zeros 3 poles
+				- All poles exist outside the ROC by definition
+	- ### Properties Of The Laplace Transform ROC
+		- **Prop 1: **The ROC consists of strips parallel to $j\omega$ axis (vertical)
+			- The ROC only concerns real values of $S$, so the imaginary component cannot affect the ROC
+		- **Prop 2: **The ROC cannot contain any poles
+			- The value of X(s) would be infinite
+		- **Prop 3: **If $x(t)$ is of finite duration, and absolutely integrable, then the ROC is the entire s plane.
+			- If $x(t)$ is BIBO stable, there are no restrictions on the domain of $X(S)$
+			- If a signal is bounded in time, it is unbounded in the s-plane
+		- **Prop 4:** If x(t) is right sided, and the line $Re\{s\}=\sigma_{0}$ is in ROC, then all values of $S$, s.t. $Re\{s\}>\sigma_{0}$, are within the ROC 
+			- $x(t)$ is right sided if $\exists\, T,x(t\leq T)=0$
+			- If $x(t)$ is right sided, knowing any point on the S plane is in the ROC implies any point to the right of that point is also in the ROC.
+		- **Prop 5:** Prop 4 exists in reverse.
+		- **Prop 6:** If $x(t)$ is two-sided, and $Re\{S\}=\sigma_{0}$ , the ROC will be some finite strip of the S-plane that contains this line
+		- **Prop 7:** If $X(s)$ is rational, then the ROC is either bounded by the poles of $X(s)$ or extends to infinity
+		- **Prop 8:** If $X(s)$ is rational, and $x(t)$ is right sided, then the ROC extends to the right of the rightmost pole
+			- The left-sided version of this is also true
+			- This is in accordance with prop 4
+-  ROC exp:
+	- $x(t)=e^{-b|t|}$, $X(s)$?
+	- $x(t)=e^{-bt}u(t)+e^{bt}u(-t)$
+		- $X_{1}(s)=\frac{1}{s+b}$, $s>-b$
+		- $X_{2}(s)=\frac{-1}{s-b}$, $s<b$
+	- $X(s)=\frac{1}{s+b}-\frac{1}{s-b}$
+		- Total ROC: $-b<Re\{s\}<b$
+			- b must be positive
+	- 
+
+For class #sigsys 

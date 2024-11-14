@@ -1,0 +1,45 @@
+Continues [[The DFT]]
+Linked to [[The Z-Transform ROC]]
+- ## Defintion
+	- $$X(z)=Z\{x[n]\}=\sum_{n=-\infty}^{\infty}z^{-n}$$
+	- $$x[n]=\frac{1}{2\pi j}\oint X(z)z^{n-1} \, dz $$
+		- Notice the inverse is a closed integral; over one period of X(z)
+		- It is also continuous, because the Z transform is continuous
+	- The fourier transform is a case of the Z-Transform where $z=e^{j\omega}$
+		- $X(\omega)=X(z)|_{z=e^{j\omega}}$
+- ## Plotting the Z-Transform Requires 4 Dimensions
+	- Im and Re of Z
+	- Im and re of X[z]
+	- Typically plot magnitude of $X[z]$ on the z-axis, then re{z} on x, Im{z} on y
+- ## Relation to Laplace Transform
+	- ![[Pasted image 20240314102912.png]]
+	- Taking the Laplace transform of a sampled signal is equivalent to multiplying each sample by $e^{-st}$, where $t=nT_{s}$
+	- The Z-Transform is a sampled Laplace Transform
+		- $$X_{s}(s)=X(z)|_{z=e^{sT_{s}}}=\sum_{n=-\infty}^{\infty}x[n]e^{-snT_{s}}$$
+	- ![[Pasted image 20240314103500.png]]
+		- The DTFT corresponds to points on the unit circle because the magnitude of $z$ in the case of the DTFT is 1
+- ## Z-Transform Example
+	- ![[Pasted image 20240314104124.png]]
+	- DTFT is the same thing but with $z=e^{j\omega}$
+		- ![[Pasted image 20240314104340.png]]
+- ## Z-Transform ROC
+	- The ROC is the region in the z-plane where X(z) is bounded
+	- X(z) is undefined outside the ROC
+	- In previous example, the ROC is |Z|>1
+	- ### The Z-Transform exists if
+		- $$|X(z)| \leq |\sum_{n=-\infty}^{\infty}x[n]z^{-n}|\leq \sum_{n=-\infty}^{\infty}|x[n]z^{-n}|< \infty$$
+		- In polar notation $z=re^{j\omega}$
+		- $$|X(z)|=|\sum_{n=-\infty}^{\infty}x[n]r^{-n}e^{-j\omega n}|\leq\sum_{n=-\infty}^{\infty}|x[n]r^{-n}e^{-j\omega n}| \leq |\sum_{n=-\infty}^{\infty}x[n]r^{-n}|$$
+		- The flexibility to select r in the z-transform allows convergence for some sequences for which the DTFT may not exist
+	- In other words X(z) exists if
+		- $|\sum_{n=-\infty}^{\infty}x[n]r^{-n}| < \infty$
+		- $$\sum_{n=1}^{\infty}|x[-n]r^{n}|+\sum_{n=0}^{\infty}|x[n]r^{-n}|$$
+		- ![[Pasted image 20240314110042.png]]
+		- ![[Pasted image 20240314110216.png]]
+			- Left side involves $r^{n}$ where r must be small for the value to converge
+			- Right side involves $r^{-n}$ where r must be large for the value to converge
+- ## Exponential Sequence Example
+	- ![[Pasted image 20240314110315.png]]
+	- ![[Pasted image 20240314110816.png]]
+- 
+For class #digital-signal-processing 

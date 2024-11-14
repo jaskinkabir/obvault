@@ -1,0 +1,55 @@
+- ## DSB-SC Modulation
+	- Double-sideband suppressed-carrier modulation
+	- Shift a baseband signal $m[n]$ to high frequency
+	- 
+	- $f_{dsb-sc}[n]=m[n]\cos(\omega_{c}n)$ where $F\{m[n]\}=M(\omega)$
+	- $F\{f_{dsb-sc}[n]\}=\sum_{n=-\infty}^{\infty}m[n]\cos[\omega_{c}n]e^{-j\omega n}$
+	- $$m[n]\cos[\omega_{c}n]\iff \frac{1}{2}[M(\omega-\omega_{c})+M(\omega+\omega_{c})]$$
+		- Frequency Shift property
+	- ### DSB-SC Transmitter
+		- ![[Pasted image 20240326102010.png]]
+		- ![[Pasted image 20240326102141.png]]
+	- ### DSB-SC Receiver
+		- ![[Pasted image 20240326102625.png]]
+		- ![[Pasted image 20240326102720.png]]
+		- Receiver's lowpass should have the same bandwidth as the original $m[n]$
+	- ### Problems with DSB-SC
+		- Signal loses power/voltage across distance, so amplification must be performed by receiver
+		- How can phase shift be determined by the receiver? How can the transmitter and receiver be synchronized?
+## Quadrature Amplitude Modulation
+- ## Quadrature Amplitude Modulation
+	- QAM is most commonly used
+	- Takes advantage of orthogonality of sin and cos
+	- Results in "double-use" of frequency channel
+	- $$f_{qam}[n]=m_{c}[n]\cos[\omega_{c}n]+m_{s}[n]\sin[\omega_{c}n]$$
+	- ![[Pasted image 20240326103501.png]]
+	- ### Receiver Analysis
+		- ![[Pasted image 20240326103524.png]]
+		- Because $\pm\cos$ and $\pm \sin$ are 90 degrees apart, independent data streams can be encoded in each channel without affecting the other
+		- ![[Pasted image 20240326104442.png]]
+			- Note that both trig identities of $\sin^{2}$ and $\cos^{2}$ result in a component of 1
+			- Meaning that the resulting sum of products at the output of the receiver's multiplier contains $0.5m_{c}[n]+\dots$ or $0.5m_{s}[n]+\dots$ for the sine channel
+			- low-pass filter can recover these original signals
+	- ## Constellations
+		- Multiple bits can be transmitted per unit of time (the terminology in data comm is symbol)
+		- This is done by plotting $m_{c}[n]$ and $m_{s}[n]$ against each other. A set of points on this graph (typically a power of two in number) are chosen to each represent a different set of bits
+		- 16-QAM
+			- ![[Pasted image 20240403213702.png]]
+			- If the receiver sees an amplitude of 1 on $m_{c}[n]$ and an amplitude of 3 on $m_{s}[n]$, then the value `1100` was transmitted. (12d)
+			- Thus, the total number of bits per symbol this method can transmit is 4
+		- An $N$-point QAM system can transmit $\log_{2}N$ bits per sample.
+		- If there is noise, the receiver will interpret the data to represent the closest point on the constellation chart (as in Euclidean distance)
+- ## Downsampling
+	- ### Definition
+		- Done generally by an integer factor and is defined as 
+			- $y[n]=x[kn]$
+			- If k=4, $y[n]=x[4n]$, every 4th sample is retained rest discarded
+		- This process decreases the sample rate by a factor of k, which saves computation time and power, but loses data
+	- ### Effect on Spectrum
+		- $$Y(\omega)=\frac{1}{k} \sum_{\alpha=0}^{k-1}X\left( \frac{\omega}{k} - \frac{2\pi\alpha}{k} \right)$$
+		- Now that the sampling rate has been decreased, $Y(\omega)=2\pi$ now corresponds to $\frac{1}{k}$ times the original sample frequency in Hz, so the continuous time sampled spectrum $Y_{s}(\Omega)$ aliases at 1/4 the original rate
+		- $Y_{s}(\Omega)$ has $\frac{1}{k}$ the amplitude of $X_{s}(\Omega)$
+		- Since the sample rate is decreased, the bandwidth increases. Aliasing is now easier to achieve
+		- ![[Pasted image 20240326105231.png]]
+
+For class #digital-signal-processing

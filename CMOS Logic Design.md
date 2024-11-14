@@ -1,0 +1,22 @@
+- ## Multi-Level Logic Implementations
+	- Take $F=\overline{(a+b)(c+d)}$
+		- ### Naive implementation:
+			- ![[Pasted image 20240124103628.png]]
+			- Transistor breakdown
+				- Each OR Gate requires
+					- 4 transistors for NOR
+					- 2 transistors for inverter
+				- NAND requires 4 transistors
+				- **Total of 16 transistors**
+		- ### Based VLSI Implementation
+			- There is a process for designing multilevel logic
+				- Design NFET side first, then invert structure for PFET
+				- On NFET side, any variables that are ANDed together are in series, any that are ORed are in parallel
+					- ![[Pasted image 20240124105446.png]]
+						- This shows $AB + CD$
+							- A and B are in parallel, that pairing is in series with the parallel pair of C and D
+				- Then invert these rules for the PFET side and connect
+					- ![[Pasted image 20240124110151.png]]
+					- The same logic has been achieved with just 8 transistors
+
+For class #vlsi

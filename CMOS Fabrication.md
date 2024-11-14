@@ -1,0 +1,66 @@
+Implementation of [[CMOS Logic Design]]
+Continued by [[Gate Layout]]
+# This shit needs to be reorganized 
+
+- ## Process Overview
+	- CMOS Transistors are fabricated on a silicon wafer
+	- Lithography progress similar to printing press
+	- On each step, different materials are deposited or etched
+	- Easiest to understand by viewing both top and bottom cross-section of wafer in a simplified manufacturing process
+- ## idk
+	- Typically use P substrate and deposit materials onto it
+	- ![[Pasted image 20240124110558.png]]
+		- Side view
+		- A contact is placed above the A polysilicon to apply a field to the input
+	- ![[Pasted image 20240124110733.png]]
+		- Top view
+		- A mask is applied to the wafer to place the components into it
+	- ![[Pasted image 20240124110632.png]]
+		- The p substrate is at the top of this diagram
+- ## Fabrication Steps
+	- Start with blank wafer
+	- Build inverter from bottom up
+	- ### Forming N-Well
+		- Coat wafer with protective dioxide ($SiO_{2}$)
+		- Remove layer where n-well should be
+		- Implant or diffuse n dopants into exposed wafer
+		- Strip off $SiO_{2}$
+		- How to implant into n-well?
+			- Spin on photoresist
+				- Light sensitive polymer
+				- Softens where expose to light
+			- Expose photoresist through n-well mask
+			- Strip off exposed photoresist
+				- The photoresist that is softened can be removed easily
+			- How to get through $SiO_{2}$?
+				- Etch oxide with hydroflouric acid (HF)
+				- Only atttacks oxide where resist has been exposed
+			- Use mixture of acids called piranha etch to remove photoresist
+		- n-well is then formed using diffusion or ion implantation
+			- Diffusion
+				- Place wafer in furnace with arsenic (or any Group 5 ) gas
+				- Heat until As atoms diffuse into exposed Si
+			- Ion Implantation
+				- Blast wafer with beam of As ions
+				- Only enter exposed Si not past $SiO_{2}$
+		- Strip off remaining oxide using HF
+		- Back to bare wafer with n-well
+	- ### Polysilicon
+		- Deposit thin layer of gate oxide (6-7 atomic layers)
+		- Chemical Vapor Deposition (CVD)
+		  
+	- ### Metallization
+		- Sputter aluminum over whole wafer
+		- With a pattern to only place metal where contacts need to be connected
+- ## Summary
+	- Masks are created to expose only some parts of the wafer to light
+	- Etch that part away
+	- Implant certain materials into the substrate wafer depending on the purpose of the mask
+- ## Layout
+	- Chips are specified with aset of masks
+	- Minum dimensions of masks determine transistor size, speed cost and power
+	- Feature size $f=$ distance between source and drain
+		- Determined by width of polysilicon
+		- Express rules in terms of $\lambda=\frac{f}{2}$
+			- eg $\lambda=0.3 \mu m$ in a $0.6\mu m$ process
+For class #vlsi 

@@ -1,0 +1,234 @@
+**By Jaskin Kabir
+Collaborators: Anu, Aidan, Hunter**
+- ## Problem 1: AC Circuit Simulations 1
+	- ### Part A
+		- #### a-a: DiffEq
+			- Using KVL, the differential equation is as follows
+				-$V_{s}(t) = L \frac{di}{dt}(t) + Ri(t)$
+			- Plugging in the values from the circuit gives:
+				- $$\large{480\sqrt{ 2 }\cos(2\pi 60-\phi) = 0.0045\frac{di}{dt}(t) + 0.1i(t)}$$
+		- #### a-b: Steady State Solution
+			- Since the input function is in the form $A\cos(\omega t + \phi)$, where $A, \omega, \text{and } \phi$ are given by the problem, the particular, or steady state solution must be in the form $B\cos(\omega t + \phi_{B})$
+			- Converting this into the phasor domain, the differential equation becomes:
+				- $L \frac{d}{dt}(Be^{ j\phi_{B} }e^{ j\omega t }) + RBe^{ j\phi_{B} }e^{ j\omega t } = A\cos(\omega t + \phi_{A})$
+			- After rearranging the equation with some algebra, the equation becomes:
+				- $Be^{ j\phi_{b}} = \frac{A}{jL\omega+R}$
+					- This equation can also be derived from converting the circuit to the phasor domain
+			- Which results in:
+				- $B = 399.45\angle-86.23\degree$
+			- After converting to the time domain:
+				- $$\large{I_{ss} = 399.45\cos{(2\pi 60t - 86.23\degree)}}$$
+		- #### a-c: Amplitude
+			- The amplitude is the coefficient of the cosine function, which in this case is **399.45 Amps**
+	- ### Part B
+		- #### b-a: Choosing $\Delta t$
+			- For a series RL circuit like this one, the time-constant is equal to $\frac{R}{L}$, which is **0.045 seconds** 
+				- In order to see the characteristics of the transient response:
+					- $\Delta t \ll 5\tau$
+				- Plugging in tau results in:
+					- $\Delta t \ll 0.225$
+					- $\Delta t < \frac{0.225}{100}$
+					- **$\Delta t <0.00225$**
+			- The period of the input voltage is given by $T = \frac{2\pi}{\omega}$, which in this case is $\frac{1}{60}$ seconds
+				- To see the characteristics of the steady-state response:
+					- $\Delta t \ll T$
+					- $\Delta t \ll \frac{1}{60}$
+					- $\Delta t < \frac{1}{6000}$
+					- $\Delta t < 0.000167$ 
+			- In order to see accurately see the characteristics of the full solution, the smaller result must be picked. This means that:
+				- $$\large{\Delta t = 0.00017}$$
+		- #### b-b: Choosing end time
+			- To see the characteristics of the transient response, $t_{f} \geq 7\tau$
+				- Plugging in the value for tau gives:
+					- $t_{f}  \geq 0.3150$
+			- For the steady-state response, $t_{f} \geq 2T$
+				- $t_{f} \geq 0.033$
+			- To see the characteristics of the full solution, the larger result must be picked. This means that:
+				- $$\large{t_{f}} = 0.315 sec$$
+		- #### b-c: Discretization
+			- Discretizing the solution required rearranging the differential equation and using the following approximation:
+				- $\frac{di}{dt} \approx \frac{i(n+1)-i(n)}{\Delta t}$ 
+				- Where n is an integer that substitutes t with the relation $t=n\Delta t$
+			- This resulted in the discretized equation
+				- $$I(n+1) = \frac{\Delta}{\tau}V_{s}(n) + \left( 1-\frac{\Delta t}{\tau} \right )I(n) $$
+			- The code used to solve for the current after t=0 and plot the graph is shown below
+			- ![[Pasted image 20221014191006.png]]
+			- ![[Pasted image 20221014191021.png]]
+		- #### b-d: Finding maximum current
+			- To find the maximum current and the angle at which it occurs, the discretization was placed inside a function that returns the maximum value of the current that it solves for. Then, the program loops over a range of values for phi from 0 to 180 and outputs the maximum current it found along with the angle at which it occurred. The code can be seen below
+				- ![[Pasted image 20221014180949.png]]
+			- **The max current was 733.7046A and the angle was 87.8 degrees**
+			- The approximate value of 88 degrees was used to make the next calculations easier
+	- ### Part C
+		- #### c-a: DiffEq for t<0
+			- The differential equation is the same as that of the circuit after the switch closes, but with an added resistor.
+				- $\large{480\sqrt{ 2 }\cos(2\pi 60-\phi) = 0.0045\frac{di}{dt}(t) + 23.14i(t)}$
+		- #### c-b: Steady State Solution
+			- Plugging in the new value for phi gives:
+				- $\large{Be^{ j\phi_{b}} = \frac{Ae^{ -j88\degree } }{jL\omega+R}}$
+			- Which results in a new steady state solution of
+				- $$\large{I_{ss} = 29.257\cos(2\pi 60t - 92.193\degree)}$$
+			- #### c-c: The impact of $\phi$
+				- The current at time 0 can be found by plugging in 0 for t, which results in:
+				- $I_{0} = 29.257\cos(-92.193\degree)$
+			- $$\large{I_{0} = -1.1195A}$$
+		- #### c-d: Simulating the new $\phi$ 
+			- Rerunning the simulation gives the following graph
+				- ![[Pasted image 20221014190756.png]]
+		- #### c-e: Maximum current
+			- The new maximum current value, found using the max(y) function, is **732.7601A**
+- ## Problem 2: Audio Filtering
+	- ### Part a: DiffEq
+		- Since the voltage across the capacitor can be defined as $V_{in}-V_{out}$, the current across the output resistor can be written as:
+			- $I(t) = C\frac{dv_{c}}{dt}$
+			- $I(t) = C\frac{d}{dt}(V_{in}-V_{out})$
+			- $I(t) = C( \frac{dV_{in}}{dt} - \frac{dV_{out}}{dt})$
+		- Since the voltage across the resistor is equal to its resistance times the current flowing through it, the final differential equation is as follows
+			- $$\large{V_{out} = RC \left (\frac{dV_{in}}{dt} - \frac{dV_{out}}{dt} \right )}$$
+	- ### Part b: Discretization
+		- The process starts with assigning $x=V_{in}$ and $y=V_{out}$ to simplify the writing.
+		- By applying the approximation  $\frac{dx}{dt} \approx \frac{x(n+1)-x(n)}{\Delta t}$ for both y and x, the differential equation becomes:
+			- $y(n) = RC(\frac{x(n+1)-x(n)}{\Delta t}-\frac{y(n+1)-y(n)}{\Delta t})$
+		- Rearranging this equation results in the following discretized equation:
+			- $$\large{y(n+1)=\frac{RC}{RC+\Delta t}\ (y(n)+ x(n+1)-x(n))}$$
+	- ### Part c: Matlab Implementation
+		- ![[Pasted image 20221014193303.png]]
+	- ### Part d: Filtered result
+		- The sentence I heard was **"If only you knew the power of the dark side"**-Darth Vader
+	- ### Part e: Audio Signal Graphs
+		- ![[Pasted image 20221014193641.png]]
+- ## Problem 3: Traditional Communication
+	- ### Part a: Proof of Theory
+		- The relationship $x_{out}(t) = \frac{1}{2}x_{audio}(t) + \frac{1}{2}x_{audio}(t)\cos(4\pi ft)$ can be proven by using Euler's identity and the following algebraic steps 
+		- ![[Pasted image 20221016165123.png]]
+			- To simplify the writing, the variable a was used to represent $x_{audio}(t)$ and the variable X was used to represent $2\pi ft$
+	- ### Part b: Setup and Implementation of Multiplier
+		- #### Setup
+			- ![[Pasted image 20221014194941.png]]
+		- #### Implementation
+			- ![[Pasted image 20221014195116.png]]
+				- The discrete time n values for the first graph were found using the relation $n=\frac{t}{\Delta t}$ and listed below
+					- $n_{start} = 23152500$
+					- $n_{end} = 2337300$
+				- The t and n values for the second graph were as follows:
+					- $t_{end} = 10.60004$
+					- $n_{start} = 23373000$
+					- $n_{end} = 23373088$
+		- #### GRAPH 1:
+			- ![[Pasted image 20221014195556.png]]
+		- #### GRAPH 2:
+			- ![[Pasted image 20221014195607.png]]
+	- ### Part c: Explanation of part b
+		- #### c-1
+			- The amplitude is varying because the technology used to create the input signal is amplitude modulation. The amplitude of the carrier cosine wave should vary according to the input audio signal.
+		- #### c-2
+			- After working out what Xout(t) should be, it's clear that the frequency of Xout(t) should be twice that of the input x(t). This is because the coefficient of πft has changed from 2 in the input to 4 in the output. This is shown in the graph, where over the same period of time, twice as many periods of the cosine wave are seen (2 vs 4).
+	- ### Part d: Implementation of Digital Low-Pass Filter
+		- From KVL, the input voltage can be related with the voltage across the resistor/capacitor with
+			- $x_{out}(t) = V_{L} + V_{R}$
+		- Which can be simplified to:
+			- $x_{out}(t) = L \frac{di}{dt}+V_{C}$
+		- From KCL, the current across the inductor and the capacitor and resistor can be related with
+			- $I_{L} = I_{C} + I_{R}$
+		- Which can be simplified to:
+			- $I_{L} = C \frac{dV_{C}}{dt} + \frac{V_{C}}{R}$
+		- After substituting the expression found for the inductor current into the first equation, as well as some rearranging, the final differential equation becomes
+			- $$\large{\frac{x_{out}(t)}{LC}=\frac{dV_{C}^2}{dt}+\frac{1}{RC}\frac{dV_{C}}{dt}+\frac{1}{LC}V_{C}}$$
+		- Discretizing this function involved introducing 3 new functions defined as follows:
+			- $y_{1} = V_{C}$
+			- $y_{2} = \frac{dV_{c}}{dt}$
+			- $x_{in}(t) = \frac{x(t)}{LC}$
+		- 2 constant variables were also introduced
+			- $a = \frac{1}{RC}$
+			- $b = \frac{1}{RC}$
+		- This means the original differential equation can be written as
+			- $x_{in}(t) = \frac{dy_{2}}{dt} +by_{2} + cy_{1}$
+		- After applying the approximations:
+			- $y_{2}= \frac{dy_{1}}{dt} = \frac{y_{1}(n+1)-y_{1}(n)}{\Delta t}$
+			- $\frac{dy_{2}}{dt} = \frac{y_{2}(n+1)-y_{2}(n)}{\Delta t}$
+		- The differential equation can be broken up into two discretized equations:
+			- $$\large{y_{1}(n+1) =y_{1}(n)+\Delta ty_{2}(n)}$$
+			- $$\large{y_{2}(n+1)=\Delta t(x_{in}(n)-by_{2}(n)-cy_{1}(n))+y_{2}(n)}$$
+		- Implementing this in matlab results in:
+			- ![[Pasted image 20221016154131.png]]
+		- For the graphs, the n values were found again with the relation $n=\frac{t}{\Delta t}$ as follows
+			- $n_{start} = 23328900$
+			- $n_{end} = 23342130$
+		- The above script created these graphs:
+			- ![[Pasted image 20221016154418.png]]
+	- ### Part e: Explanation of part d
+		- #### e-1: The fate of $\cos(4\pi ft)$
+			- The circuit has filtered out the component of xout that was multiplied by $cos(4\pi ft)$, which leaves just $\frac{1}{2}x_{audio}(t)$.
+		- #### e-2: Relating input x(t) and y(t)
+			- The input $x(t)$ contains the original audio being used to modulate the amplitude of some carrier cosine wave. When the result of this modulation is multiplied by that same carrier signal again, the frequency of the carrier signal is doubled, and the wave is given an offset caused by the original audio signal. Y1(t), which has passed through the filter, is then the original audio signal with half the amplitude, and none of the carrier wave. From the graph, it can be seen that it is a wave follows the amplitude of the input wave, which is what was expected.
+	- ### Part f: Listening to the signals
+		- After listening to the input and audio signals, it is clear that the input audio was a recording of Lincoln's Gettysburg address. The input audio signal had a high frequency distortion that was then removed in the output signal. However, the volume of the output signal was cut in half, which is why the signal was multiplied by two in the above graph.
+- ## Problem 4: Complex Communication
+	- ### Part a: Choosing the Demodulation Function
+		- Through the algebraic steps shown below, the function $x_{3}(t)$ should be chosen such that 
+			- $$\large{x_{3}(t) = e^{-j2\pi ft}}$$
+			- ![[Pasted image 20221016160540.png]]
+	- ### Part b: Extracting and Demodulating the Audio
+		- Since each value of the audio signal is broken up into a real and imaginary part, and then placed sequentially in the bin file, the following code was used to extract the values from the file.
+			- ![[Pasted image 20221016160745.png]]
+		- From executing the function size(x), it is clear that x is a row vector, so no transpose operation is required.
+		- The code for this problem can be seen below
+			- ![[Pasted image 20221016161142.png]]
+	- ### Part c: Listening to the audio signals
+		- The real part of xout is the Star Wars main title theme, and the imaginary part is the Imperial March.
+- ## Problem 5: DC Motor Control
+	- ### Part a: DiffEq
+		- Through KVL, the differential equation can be written as
+			- $V_{a} = I_{a}R_{a} + V_{L_{a}}+K\Omega(t)$
+		- After substituting values from the schematic, the final differential equation is:
+			- $$\large{3.38I_{a}(t)+0.01 \frac{dI_{a}}{dt} + K\Omega(t)}$$
+	- ### Part b: Discretization
+		- The discretization process is the same as the one used in the problems above. The following approximations were used:
+			- $\frac{dI_{a}}{dt} \approx \frac{I_{a}(n+1)-I_{a}(n)}{\Delta t}$
+			- $\frac{d\Omega}{dt} \approx \frac{\Omega_{a}(n+1)-\Omega_{a}(n)}{\Delta t}$
+		- After substituting these approximations into the differential equations, algebra can be used to rearrange and find the two discretized equations
+			- $$\large{I_{a}(n+1) = \Delta t\left( \frac{V_{a}(n)}{L}-\frac{R}{L}I(n)-\frac{K}{L}\Omega(n) \right) +I_{a}(n)}$$
+			- $$\large{\Omega(n+1) = \Delta t\left( \frac{K}{J}I_{a}(n)-\frac{B}{J}\Omega(n) \right)}+\Omega(n)$$
+	- ### Part c: Choosing $\Delta t$
+		- For the electrical equation, assuming $\Omega(t)$ is 0 turns the circuit into a simple series RL circuit, for which $\tau = \frac{L}{R}$, which means that $\tau$ for this equation is $\frac{.01}{3.38} = 2.959*10^{-7}$
+			- Since $\Delta t$ must be much less than $5\tau$, 
+				- $\Delta t = \frac{5L}{100R} = \large{1.4793*10^{-4}}$
+		- For the mechanical equation, $\tau$ can be found to be $\frac{J}{B}$ or $\frac{2*10^{-4}}{5*10^{-6}} = 40$
+			- Since $\Delta t$ must be much less than $5\tau$, 
+				- $\Delta t = \frac{5J}{100B} = \large{2}$
+		- To see the full characteristics of the system, the smaller value for $\Delta t$ should be chosen, and so the $\Delta t$ value for this problem should be:
+			- $$\large{\Delta t = 1.4793*10^{-4}}$$
+	- ### Part d: Matlab Implementation
+		- The code and graphs are shown below
+			- ![[Pasted image 20221016180742.png]]
+			- ![[Pasted image 20221016171134.png]]
+	- ### Part e: Deriving Motor Position
+		- The discretized equation for the motor position can be found with the same method used above
+			- $\theta(n+1) = \Delta t\Omega(n)+\theta(n)$
+		- The code and graphs can be seen below
+			- ![[Pasted image 20221016181031.png]]
+			- ![[Pasted image 20221016181046.png]]
+	- ### Part f: Crude Position Controller
+		- The following code was added to the loop to stop the motor at $\theta = \frac{\pi}{4}$
+			- ![[Pasted image 20221016181659.png]]
+		- The graph can be seen below
+			- ![[Pasted image 20221016181713.png]]
+	- ### Part g: Feedback-Based Position Controller Implementation
+		- Implementing this position controller was done by adding this line of code to the loop and defining variables kpth = 1, and thref = $\frac{\pi}{4}$
+			- ![[Pasted image 20221016182153.png]]
+		- The graphs can be seen below
+			- ![[Pasted image 20221016193654.png]]
+			- These graphs use the rad2deg function to make sure the y-axis is displayed in terms of degrees, even though the function is calculated in terms of radians.
+	- ### Part h: Choosing $K_{p\theta}$
+		- Since the speed of the motor depends on the voltage applied to it, it would make sense to think of $K_{p\theta}$ as a gain, or correction factor value. Since the graphs above show a very underdamped, overcorrected response, it would make sense for a smaller value to provide better results.
+		- With a value of $K_{p\theta}=1,$ the motor takes around 10 seconds to settle on a position of 45 degrees, likely because of the overcorrection forcing it to correct its own corrections in a slowly decaying feedback loop
+		- The graph was regenerated 3 times, each with a different value for $K_{p\theta}$
+			- With a value of 0.1, it takes the motor around 7 seconds to settle on 45, but the motor still jumps past 45 degrees and fluctuates a bit before settling
+				- ![[Pasted image 20221016183206.png]]
+			- With a value of 0.01, the motor seems to move towards 45 degrees and slow down almost immediately with no fluctuation, however this process now takes around 10 seconds. With this value, the graph looks overdamped.
+				- ![[Pasted image 20221016183341.png]]
+			- With a value of 0.001, the motor takes an almost perfectly linear path to 45 degrees, but takes over 50 seconds to do so
+				- ![[Pasted image 20221016183547.png]]
+		- These results show that, when choosing the value for $K_{p\theta }$, there is a tradeoff between speed and precision. A higher value will result in a higher voltage, and therefore a higher speed, for the motor. However, this speed is met with an inaccurate, fluctuating response as the motor approaches 45 degrees. With a very small value, the motor very precisely approaches the target position and does not fluctuate, but it takes a long time to do so. Choosing the proper value for $K_{p\theta}$ would depend on the needs of the specific application for the motor, and whether speed or accuracy is more important. $K_{p\theta}$, there is also less torque applied by the motor as there is a slower acceleration, which would be useful when protecting the motor and the mechanical system it is attached to is important.
+
+For class #Analytical-Foundations 

@@ -1,0 +1,21 @@
+{
+  "operators": "",
+  "color1": "#000000",
+  "color2": "#1864ab",
+  "color3": "#d9480f",
+  "colorPicker": false,
+  "minHeight": "100",
+  "livePreview": false,
+  "addDollars": false,
+  "idHidden": false,
+  "formattingHidden": true,
+  "selectVisable": true,
+  "rectVisable": false,
+  "diamondVisable": false,
+  "ellipseVisable": false,
+  "arrowVisable": true,
+  "lineVisable": true,
+  "penVisable": true,
+  "textVisable": true,
+  "gridModeEndabled": false
+}

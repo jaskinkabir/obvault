@@ -1,0 +1,194 @@
+Related to [[ADC and DAC Quantization Noise]]
+- ## Definition of Robotics
+	- Actuated mechanism programmable in two or more axes with a degree of autonomy, moving within its environment, to perform intended tasks
+	- Programmed actuated mechanism with a degree of autonomy, moving within its environment, to perform intended tasks
+	- **Service Robots** 
+		- Performs useful tasks for humans or equipment including industrial automation
+		- Examples
+			- Walmart inventory robot
+			- Self driving car
+			- Roomba
+		- *Personal Care Robots:* Service robots that perform actions contributing directly towards improvement in human quality of life
+	- **Industrial Robots**
+		- Automatically controlled, reprogrammable multipurpose manipulator, programmable in three or more axes which can either be fixed or mobile
+	- **Medical Robots**
+		- A robot or robotic device intended to be used as medical electrical equipment or systems
+	- **Military Robots**
+		- Kill
+		- Autonomous or remote controlled mobile robots designed for military applications from transport to search and rescue to attack
+- ## Actuators
+	- ### Types of Motion
+		- ![[Pasted image 20240229152725.png]]
+	- ### Traction
+		- Highest frictional force possible without slip
+		- Depends on factors brom both contactic surfaces
+	- ### Types of Actuators
+		- **Linear (screw)**
+			- No lubrication
+			- Longer life
+			- Low Cost
+			- Low maintenance
+		- **Propeller**s
+			- Convert rotation into thrust
+		- **DC Motors**
+			- Powered by DC current
+			- voltage applied proportional to output speed
+			- More prone to damage with larger loads
+			- Types:
+				- Shunt-wound minimum speed variation through load range
+					- Precise speed and torque control
+				- Series-wound high starting torques for permanent load
+					- Heavy industrial
+				- Compount-wound for both series and shunt for high torque and control
+					- elevators and hoists
+				- Brushes and a commutator are used to mechanically switch voltage direction based on motor position
+				- Brushless motors use a hall sensor and a feedback system to control the coils with transistors
+			- ### Stepper
+				- Brushless electric motor where each revolution is broken into steps
+					- Accurate, fast, reliable
+					- Low torque at high speeds
+					- Hard to control at high speeds
+					- No feedback
+			- ### Servo
+				- Consists of a motor, feedback device, and a controller
+					- Feedback is an encoder or resolver
+				- PWM controls position
+		- ### Hydraulics
+			- Uses fluid to transfer force with pistons
+		- ### Pneumatics
+			- Hydraulics but with air
+			- Need air filter, compressor
+			- Accumulator (reservoir)
+			- Actuators
+			- Pressure gauges
+- ## Motor Encoders and Gearing
+	- Gear ratio is typically motor:wheel
+		- 300:1 means 300 motor for 1 wheel rotation
+			- Direction of power transmission
+- ## Hardware Design
+	- Batteries in series increase voltage, same capacity
+	- Batteries in parallel keep votlage, increase capacity
+	- Batteries should be arranged such that they discharge equally
+		- ![[Pasted image 20240229154050.png]]
+		- Rightmost battery has 4x the load
+	- To reduce voltage:
+		- Voltage divider
+			- Waste energy to heat resistor
+		- Voltage regulator
+		- DC/DC Converter
+			- Efficient
+			- Costly
+		- Transformer
+			- Complex
+			- Convert to AC then back to DC
+				- Lossy
+	- General vs detailed block diagram
+		- Detailed will have specific pins listed
+		- Every connection is explicitly stated, only 1 signal per wire
+			- Each wire must be labeled
+		- ![[Pasted image 20240229154258.png]]
+- ## RSLK Block Diagram
+	- Wheel Diameter 7cm, wheelbase 14cm
+	- 360 pulses per wheel rotation
+	- 3 pulses per motor rotation
+	- 120:1 gearing
+	- Bump sensors use an internal pulldown
+	- Light sensor array uses 8 analog input pins
+		- Takes 3.3V and 0V
+	- ## Motor Controllers
+		- Take Enable, Direction, and Speed from the MCU
+		- Take 5V, 0V, and 3.3V from the PSU
+		- Output M+ and M- signals to the motor
+		- Motors themselves output encoder signals back to the MCU
+			- These encoders need 0V and 3.3V from the PSU as well
+	- Ultrasonic sensor
+		- Typically needs 5V level converter
+		- **MSP432 DIGITAL OUTPUTS ARE 3.3V**
+	- **FULL HARDWARE DIAGRAM**
+		- ![[Pasted image 20240229155412.png]]
+- ## Algorithms and Building Blocks
+	- Algorithms are written in pseudocode
+		- Concept of operation
+		- Can be used as comments
+		- MUST INCLUDE INTRO
+			- Outline of function 
+			- Name and date at the end
+		- Do not include the actual formulas
+			- Just write what the formula will do
+- ## Sensors
+	- ### TYPES
+		- Proprioceptive: Internal measurements
+		- Exteroceptive: Environmental
+		- Active: Outputs energy to gather data
+		- Passive: Measures energy input
+	- ### Hall Effect
+		- ![[Pasted image 20240229160006.png]]
+		- Latching
+			- Determines speed and direction of changing field
+			- For rotary encoding and position
+		- Switch
+			- Merely detects field
+		- Analog
+			- Proportional to magnetic flux density to detect absolute position or angular movements
+	- ### Touch Sensor
+		- Capacitive and Resistive
+	- ### LIDAR
+		- Light Detection and Ranging
+	- ### GPS
+		- Uses 32 satellites to calculate coordinates, altitude, and speed
+		- Problems
+			- Obstruction of satellites as they move around the earth
+			- Multi Path effect
+				- Interference between gps satellite signal and same signal reflected or diffracted from local objects
+	- ### Accelerometer
+		- MEMS accelerometer
+			- micro electromechanical system
+			- Mass at the centre suspended by 4 piezoresistive doped beams
+			- Movement of mass changes resistance of the beams
+	- ### Gyroscope
+		- Measures orientation based on conservation of angular momentum
+		- Can be rotary, vibrational (MEMS), or optical
+	- ### Temp Sensors
+		- **RTD**
+			- Resistive
+			- Change in resistance of metallic resistive element proportional to temperature
+			- Linear and accurate
+			- But not very robust and prone to contamination
+			- Also slow
+		- **Thermistor**
+			- Resistance of ceramic/polymer follows change in temperature
+			- Fast and cheap
+			- But the resistance is nonlinear and is still not robust
+		- **Thermocouple**
+			- Compares voltages of two different conductors at different locations to find differential temp
+			- Self powered, no self heat from resistance, rugged
+			- Requires a cold water reference and are less sensitive
+	- ### Pressure Sensor
+		- Absolute, differential or gauge
+		- Strain gauge, capacitive, inductive, potentiometric, piezoelectric
+	- ### IR Sensor
+		- Active: Emit and detect
+		- Passive: Detect only
+		- Short range, cheap and efficient
+		- Communication, night vision, thermal imaging and distance measuring
+	- ### Microphone
+		- Piezo, condenser, dynamic
+	- ### LEDs as light sensors
+		- Detect ambient light
+		- Can only sense wavelengths equal or shorter than its emission wavelength
+- ## Analog to Digital Conversion
+	- An ADC outputs a digital value n based on an input voltage using the following three parameters
+		-  $N$ bits of precision,
+		- $V_{+ref}$ max voltage
+		- $V_{-ref}$ min voltage
+	- From these parameters you can determine
+		- Step size
+			- $$\Delta V=\frac{V_{+ref}-V_{-ref}}{2^{N-1}}$$
+		- Value of n for any given input voltage
+			- $$n=\frac{V_{in}-V_{-ref}}{\Delta V}=\frac{(V_{in}-V_{-ref})(2^{N-1})}{V_{+ref}-V_{-ref}}$$
+				- n must be rounded, as the ADC will choose the closest value of n (according to this class)
+		- Actual Voltage for a given value of n
+			- $$V_{in}=n\Delta V+V_{-ref}=\frac{n*(V_{+ref}-V_{-ref})}{2^{N-1}}+V_{-ref}$$
+		- 
+	For class #robotics
+	

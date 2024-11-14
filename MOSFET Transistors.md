@@ -1,0 +1,46 @@
+Continues [[Diodes and the P-N Junction]]
+- ## Metal Oxide Semiconductor Field Effect Transistor
+	- ### Properties
+		- $\large C_{ox}$: Oxide Capacitance
+		- $\large k_{n}$: Transconductance
+		- $W:$ Width of Channel
+		- $L$: Length of Channel
+		- $\mu_{n}$: Mobility of Electrons
+		- $k'_{n}=$$\mu_{n}C_{ox}$ Transconductance Parameter
+		- $k_{n}=$$\mu_{n}C_{ox}\left( \frac{W}{L} \right)$ MOSFET Transconductance Parameter
+	- 2 NPN Junctions with an oxide on top of the bridge between two n-type regions
+		- Act as opposing diodes, preveting current flow
+		- Source is typically connected to gnd
+		- Drain connected to voltage
+			- $V_{DS}$ is created
+	- On top of the oxide is a metal plate known as the gate
+	- As voltage is applied to the gate, negative carriers are drawn to the gate from within the p-type transistor
+	- A bridge of negative carriers is created between the two n-type regions
+		- N-Channel MOSFET
+			- P-Channel MOSFET has positive carrier bridge
+	- $V_{t}:$ Threshold voltage
+		- $V_{GS}>V_{t}$ for any current to flow from drain to source
+- ## N-MOS Operation Modes
+	- $V_{OV}=V_{GS}-V_{t}$
+		- Overdrive voltage
+	- ![[Pasted image 20230320133241.png]]
+	- Cut off Region
+		- $V_{GS} < V_{t}$
+	- Triode (Linear) Region $V_{DS}<V_{OV}$
+		- $V_{GS} > V_{t}$
+		- Current approximately increases linearly with $V_{DS}$
+			- $i_{D}\approx k_{n}(V_{OV}V_{DS})$
+	- Saturation Region $V_{DS}\geq V_{OV}$
+		- As $V_{DS}$ increases, the resistance from drain to source increases
+		- At a high enough voltage, the resistance is too high for the current to be affected by $V_{DS}$
+		- The current is constant at $i_{D}=\frac{1}{2}k_{n}V^{2}_{OV}$
+- ## Transconductance
+	- $g_{m}=\frac{1}{r_{ds}}=\frac{2I_{d}}{V_{ov}}=k_{n}V_{ov}$ 
+- ## Modulation Parameter $\Large \lambda$
+	- $$V_{A}=\frac{1}{\lambda}$$
+	- 
+- ## PMOS Transistor
+	- Opposite behavior of NMOS
+	- Current flows from Source to Drain when $V_{SG}>V_{t}$
+	- When negative voltage is applied to the gate, 
+For class #Electronics-Semiconductors 

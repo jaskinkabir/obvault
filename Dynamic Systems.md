@@ -1,0 +1,40 @@
+Using [[Complex Phasors]]
+- In any system with energy storage (dynamic systems) have 2 componens of the response
+	- A response derived directly from its input
+		- Steady state response
+		- Driven response
+	- A response that reflects the finite amount of time it takes for the energy to change from the initial to the final state
+		- This is the homogenous/complementary/**Transient Response**
+		- System response
+- ## The solution Approach For DiffEQ
+	- 1.  Solve the homogenous equation
+		- Transient response
+		- $y_{c}(t)$
+	- 2. Solve the non homogenous equation
+		- Find particular solution with undetermined coefficients
+	- 3. Find total soluion
+		- Use inital conditions
+- ### Example:
+	- ![[Pasted image 20220914141620.png]]
+- ## Damping of Solutions
+	- For the characteristic equation $s^{2} + bs + c$
+		- Solution will be in form $$Y_{c}(t) = C_{1}e^{s_{1}t} + C_{2}e^{s_{2}t}$$
+		- If b=0. **Undamped**
+			- $s_{1}= j*\sqrt{c}$
+			- $s_{2}= -j*\sqrt{c}$
+			- $$Y_{c}(t) = C_{1}e^{j\sqrt{c}} + C_{2}e^{-j\sqrt{c}}= 2|C_{1}|cos(\sqrt{c}t + \angle C_{1})$$
+				- A constant amplitude sinusoidal function
+				- No energy loss in the system
+		- if $b^{2}-4c < 0$ **Underdamped**
+			- Only imaginary solutions to characteristic equation
+			- $$Y_{c}(t) = 2|C|e^{\sigma_{d}t} cos(\omega_{d}+ \angle C)$$
+				- $\sigma_{d} = real(s_{1})$
+				- $\omega_{d} = |imag(s_{1})|$
+		- if $b^{2}-4c=0$ **Critically Damped**
+			- Impossible in the real world
+		- if $b^{2}-4c > 0$ **Overdamped**
+	- The damping of the system is determined by $b^{2}-4c$
+	- The b term is typically the lossy part of the system
+	- 
+
+For class #Analytical-Foundations 

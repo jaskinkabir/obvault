@@ -1,0 +1,5 @@
+- $$V_{A}=\frac{1}{\lambda}$$
+- $$i_{D}=K_{n}v_{OV}^2\left( 1+\frac{v_{DS}}{V_{A}} \right)$$
+	- In saturation
+- $$r_{o}=\frac{V_{A}}{I_{D}}$$
+- $$g_{m}=\frac{2I_{D}}{V_{OV}}$$
