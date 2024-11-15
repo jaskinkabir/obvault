@@ -1,3 +1,4 @@
+Continues [[The Perceptron]]
 # Difference Between ANN and Classical ML
 - A neural network has no fixed model
 	- A neural network is **Model-Free**
@@ -12,7 +13,8 @@
 ## Model-Free
 - Deep neural networks give us the ability to approximate highly nonlinear phenomena without an explicit model for them
 - The DNN does not worry about the exact function that represents the data (linear, quadratic, piecewise, etc)
-	- A DNN has a **universal** approximator and a method to estimate its parameters
+	- A DNN ha
+	- s a **universal** approximator and a method to estimate its parameters
 	- The approximator can be customized to the needs of the problem just by composing simple building blocks
 
 For class #intro-ML
