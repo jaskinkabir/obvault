@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre labs/Prelab 9.md",
+                "file": "Lab prelabs/Prelab 9.md",
                 "mode": "source",
                 "source": false
               },
@@ -163,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre labs/Prelab 9.md"
+                "file": "Lab prelabs/Prelab 9.md"
               },
               "icon": "lucide-list",
               "title": "Outline of Prelab 9"
