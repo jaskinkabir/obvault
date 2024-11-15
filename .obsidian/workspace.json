@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Artificial Neural Networks (ANN).md",
+                "file": "Pre labs/Prelab 9.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Artificial Neural Networks (ANN)"
+              "title": "Prelab 9"
             }
           }
         ]
@@ -163,10 +163,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Artificial Neural Networks (ANN).md"
+                "file": "Pre labs/Prelab 9.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Artificial Neural Networks (ANN)"
+              "title": "Outline of Prelab 9"
             }
           },
           {
@@ -201,8 +201,8 @@
   },
   "active": "828709682bc6418a",
   "lastOpenFiles": [
-    "The Perceptron.md",
     "Artificial Neural Networks (ANN).md",
+    "The Perceptron.md",
     "Datapath and Control Signals.md",
     "CPU Pipelining-Multicycle Execution.md",
     "LEGv8 Architecture.md",
