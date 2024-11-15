@@ -1,0 +1,27 @@
+- 1. For the full wave rectifier of Figure 4-4. If $C = 330 µF$, $RL = 3.3kΩ$, $V_{in}=5VRMS$ @60 Hz and each diode’s forward voltage drop is 0.7 volts, calculate 
+	- a. Ripple frequency $f_{r}$ 
+		- $f_{r}=2F_{in}=\large 120Hz$
+	- b. Peak output voltage $V_{p}$ (This is not the sinusoidal input voltage’s peak.) 
+		- $V_{p}=\sqrt{ 2 }V_{inRMS}-2V_{D}=5\sqrt{ 2 }-1.4=\large5.671V$
+	- c. Peak-to-peak ripple voltage, $V_{r}$
+		-  $V_{r}=\frac{V_{p}}{f_{r}R_{L}C}=\frac{5.671}{3300*330*10^{-6}}* \frac{1}{120}=\large0.0434V$
+	- d. Load current, $I_{L}$ (A good approximation is obtained by neglecting ripple.) 
+		-  $I_{lav}=\frac{V_{oAvg}}{R_{L}}=\frac{2*5.671}{\pi} \frac{1}{3300}=\large 1.094mA$
+	- e. Average diode current, $I_{Dav}$
+		- $I_{Dav}=I_{lav}=\large 1.094mA$
+	- f. Maximum diode current, $I_{Dmax}$ 
+		- $I_{Dmax}=\frac{V_{p}}{R_{L}}=\frac{5.671}{3300}=\large 1.718mA$
+- 2. Repeat Question 1, but for a full-wave bridge rectifier when one of the diodes (D1 from Figure 4-4) is blown (open). This is equivalent to a half-wave rectifier but with two diodes in series. (It may be helpful to re-draw the circuit in order to visualize this.)
+	- a. Ripple frequency $f_{r}$ 
+		- $f_{r}=f_{0}=\large 60Hz$
+	- b. Peak output voltage $V_{p}$ (This is not the sinusoidal input voltage’s peak.) 
+		- $V_{p}=\sqrt{ 2 }V_{inRMS}-2V_{D}=5\sqrt{ 2 }-1.4=\large 5.671V$
+	- c. Peak-to-peak ripple voltage, $V_{r}$
+		- $V_{r}=\frac{V_{p}}{R_{L}C}T=\frac{5.671}{3300*330*10^{-6}}* \frac{1}{60}=\large0.0868V$
+	- d. Load current, $I_{L}$ (A good approximation is obtained by neglecting ripple.) 
+		-  $I_{lav}=\frac{V_{oAvg}}{R_{L}}=\frac{2*5.671}{\pi} \frac{1}{3300}=\large 1.094mA$
+	- e. Average diode current, $I_{Dav}$
+		- $I_{Dav}=I_{lav}=\large 1.094mA$
+		- $I_{Davg}=\frac{2V_{p}}{\pi} * \left( \frac{1}{\frac{1}{j2\pi f_{r}C}+R_{s}} + \frac{1}{R_{L}} \right)$
+	- f. Maximum diode current, $I_{Dmax}$ 
+		- $I_{Dmax}=\frac{V_{p}}{R_{L}}=\frac{5.671}{3300}=\large 1.718mA$

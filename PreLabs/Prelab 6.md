@@ -1,0 +1,7 @@
+- $\sin(x)+\sin(y)=2\sin\left( \frac{x+y}{2} \right)\cos\left( \frac{x-y}{2} \right)$
+- $\sin(\omega t)+A\cos(\omega t+\phi)=\sin(\omega t) + A\sin(\omega t + \phi + \frac{\pi}{2})$
+- $= 2\sin\left(\frac{\omega t + \omega t + \phi + \frac{\pi}{2}}{2}\right)\cos\left(\frac{\omega t - \omega t - \phi - \frac{\pi}{2}}{2}\right)$
+- $= 2\sin\left(\frac{2\omega t + \phi + \frac{\pi}{2}}{2}\right)\cos\left(\frac{\phi}{2}\right)$
+- $= 2\sin\left(\omega t + \frac{\phi}{2} + \frac{\pi}{4}\right)\cos\left(\frac{\phi}{2}\right)$
+- $$=2\cos\left(\frac{\phi}{2}\right)\sin\left(\omega t + \frac{\phi}{2} + \frac{\pi}{4}\right)$$
+- 
