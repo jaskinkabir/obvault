@@ -133,4 +133,4 @@ Chapter 9.3 (From 2014)
 - However, to connect a channel on one TDM stream to a channel on another TDM stream, some sort of space division switching is needed
 - We do not wish to switch all time slots from one TDM stream to another; it is preferrable to do it one slot at a time.
 - This is known as TMS
-- 
+For class #data-comm

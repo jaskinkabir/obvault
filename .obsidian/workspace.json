@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Artificial Neural Networks (ANN).md",
+                "file": "Prelab 10.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Artificial Neural Networks (ANN)"
+              "title": "Prelab 10"
             }
           }
         ]
@@ -163,10 +163,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Artificial Neural Networks (ANN).md"
+                "file": "Prelab 10.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Artificial Neural Networks (ANN)"
+              "title": "Outline of Prelab 10"
             }
           },
           {
@@ -201,6 +201,19 @@
   },
   "active": "ac759f5725d7832f",
   "lastOpenFiles": [
+    "Multi-Class Logistic Classifier.md",
+    "Logistic Classifiers.md",
+    "Power and Subsets.md",
+    "Cinderella Chapter 1.md",
+    "Personal/Puerto Rico.md",
+    "Untitled 14.md",
+    "Untitled 29.md",
+    "Untitled 30.md",
+    "Untitled 31.md",
+    "Untitled 32.md",
+    "Digital Data, Analog Signals.md",
+    "Circuit Switching Under the Hood.md",
+    "Artificial Neural Networks (ANN).md",
     "Lab prelabs/Prelab 9.md",
     "PreLabs/Prelab 9.md",
     "PreLabs/Prelab 7.md",
@@ -210,35 +223,22 @@
     "PreLabs/Prelab 2.md",
     "PreLabs",
     "New folder",
-    "Artificial Neural Networks (ANN).md",
     "The Perceptron.md",
     "Datapath and Control Signals.md",
     "CPU Pipelining-Multicycle Execution.md",
     "LEGv8 Architecture.md",
     "Execution Time and Throughput.md",
     "Control Hazards and Branch Prediction.md",
-    "Storing Fractional Numbers.md",
-    "Binary Integer Division.md",
-    "Data Hazards Forwarding and Stalling.md",
-    "Single Cycle Instruction Execution.md",
-    "Parallelism Via Instructions.md",
-    "2D Linear Regression and the Loss Function.md",
-    "Homework 4.md",
     "Excalidraw/Pasted image 20241111235516.png",
     "Excalidraw/Pasted image 20241111235336.png",
     "Excalidraw/Pasted image 20241111235036.png",
     "Excalidraw/Pasted image 20241111234022.png",
-    "8 Great Ideas in Computer Architecture.md",
     "Excalidraw/Pasted image 20241111230528.png",
     "Excalidraw/Pasted image 20241111230206.png",
     "Excalidraw/Pasted image 20241111225608.png",
     "Excalidraw/Pasted image 20241111224712.png",
     "Excalidraw/Pasted image 20241111224705.png",
     "Excalidraw/Pasted image 20241111224637.png",
-    "Exceptions and Interrupts.md",
-    "LEGv8 Branch Instructions.md",
-    "Untitled 32.md",
-    "Senior Thesis Problem Summary.md",
     "New Text Document.txt",
     "Untitled 1.canvas",
     "Excalidraw/HM1-2024.pdf",

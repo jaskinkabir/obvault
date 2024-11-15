@@ -1,5 +1,0 @@
-- $y(t)=b_{1}x(t) + \int b_{1}x(t) + b_{2}y(t) \, dt$
-	- $y(t)$
-	- 
-	- $h(t)=b_{1}\delta(t)+\int b_{1}\delta(t) +b_{2}h(t)\, dt$
-- 
