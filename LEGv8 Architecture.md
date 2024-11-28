@@ -1,4 +1,4 @@
-Continues [[8 Great Ideas in Computer Architecture]]
+Continues [[8 Great Idas in Computer Architecture]]
 Continued by [[LEGv8 Branch Instructions]]
 # Register Operands
 - In legV8, there are only 32 registers

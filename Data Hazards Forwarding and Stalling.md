@@ -1,5 +1,5 @@
 Continues [[CPU Pipelining-Multicycle Execution]]
-Continued by [[Control Hazards and Branch Prediction]]
+Continued by [[Control Hazards and Branch Prcoediction]]
 # Pipelined Datapath Diagram
 ![[Pasted image 20241028180453.png]]
 ## Data Hazard

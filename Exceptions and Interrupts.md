@@ -1,5 +1,5 @@
 Continues [[CPU Pipelining-Multicycle Execution]]
-Continues [[Control Hazards and Branch Prediction]]
+Continues [[Control Hazards and Branch Prcoediction]]
 Continued by [[Parallelism Via Instructions]]
 # Exception Vs. Interrupt
 - An Exception is an unscheduled event that disrupts execution

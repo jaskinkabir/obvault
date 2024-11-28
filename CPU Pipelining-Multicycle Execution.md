@@ -1,6 +1,6 @@
 Continues [[Single Cycle Instruction Execution]]
 Continued by [[Data Hazards Forwarding and Stalling]]
-Continued by [[Control Hazards and Branch Prediction]]
+Continued by [[Control Hazards and Branch Prcoediction]]
 Continued by [[Exceptions and Interrupts]]
 Continued by [[Parallelism Via Instructions]]
 Continued by [[Datapath and Control Signals]]

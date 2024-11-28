@@ -77,7 +77,7 @@ module buffer_predictor(
 	input wire taken, 
 	output wire prediction); 
 	
-	reg [1:0] prediction_buffer [4:0];
+	reg [1:0] prediction_buffer [0:31];
 
 	wire [4:0] buffer_addr = branch_address[4:0];
 	assign prediction = prediction_buffer[buffer_addr][1];
@@ -111,7 +111,7 @@ module correlating_predictor(
 	input wire taken, 
 	output wire prediction); 
 	
-	reg [1:0] prediction_buffer [4:0];
+	reg [1:0] prediction_buffer [31:0];
 	reg last_branch_taken;
 
 	wire [5:0] buffer_addr = branch_address[4:0] << 1 + last_branch_taken;

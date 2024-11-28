@@ -8,7 +8,7 @@ Continued by [[Naive Bayes Classifier]]
 	- Convert problem to a statistics, to predict probability
 - **The linear regression predicts probability that a data point is of class 1**
 ## How To Predict Class
-- Piecewise y=1 if hgeq threshold
+- Piecewise y=1 if h geq threshold
 $$ y =
 \begin{cases}
 1 & h_{\theta}(x) \geq t \\
@@ -49,6 +49,7 @@ $$
 	- $g'(z)=g(z)(1-g(z))$
 - Do some fucked up math
 - $$\theta_{j} = \theta_{j} - \frac{\alpha}{m} \sum_{i=1}(h_{\theta}(x^{(i)})-y^{(i)})x_{j}^{(i)}$$
+	- It's the same as the linear regression cost function
 # How to Split Data into >2 Classes?
 - Consider the case of 10 classes
 	- Create 10 logistic regression models $h_{\theta_{1}}-h_{\theta_{10}}$
