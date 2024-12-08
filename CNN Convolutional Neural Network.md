@@ -1,3 +1,5 @@
+Continues [[Image Classification With ANN]]
+Continued by [[Skip Connections and Resnets]]
 # Weakness of Fully Connected Image Processing
 - Sees image as just one dimension
 	- Lose information

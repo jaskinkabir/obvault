@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Set Relation Properties.md",
+                "file": "Skip Connections and Resnets.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Set Relation Properties"
+              "title": "Skip Connections and Resnets"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "max pool",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": false,
@@ -221,10 +221,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Set Relation Properties.md"
+                "file": "Skip Connections and Resnets.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Set Relation Properties"
+              "title": "Outline of Skip Connections and Resnets"
             }
           },
           {
@@ -259,6 +259,9 @@
   },
   "active": "3e4f6dc54897f13c",
   "lastOpenFiles": [
+    "CNN Convolutional Neural Network.md",
+    "Skip Connections and Resnets.md",
+    "Set Relation Properties.md",
     "Associative Cache Mapping.md",
     "Cache Performance.md",
     "Caching.md",
@@ -268,12 +271,10 @@
     "Binary Integer Division.md",
     "Prelab 10.md",
     "Image Classification With ANN.md",
-    "CNN Convolutional Neural Network.md",
     "Excalidraw/Pasted image 20241126140147.png",
     "Excalidraw/Pasted image 20241126133901.png",
     "Excalidraw/Pasted image 20241126133853.png",
     "Excalidraw/Pasted image 20241126133851.png",
-    "Set Relation Properties.md",
     "Set Relations.md",
     "Set Relation Digraph Representation.md",
     "Set Operations.md",
@@ -289,7 +290,6 @@
     "Multi-Class Logistic Classifier.md",
     "Power and Subsets.md",
     "Cinderella Chapter 1.md",
-    "Personal/Puerto Rico.md",
     "PreLabs",
     "New folder",
     "Excalidraw/Pasted image 20241111235516.png",
