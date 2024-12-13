@@ -1,5 +1,5 @@
 Continues [[Image Classification With ANN]]
-Continued by [[Skip Connections and Resnets]]
+Continued by [[Building Very Deep Networks]]
 # Weakness of Fully Connected Image Processing
 - Sees image as just one dimension
 	- Lose information
@@ -36,6 +36,10 @@ Continued by [[Skip Connections and Resnets]]
 - Consider a model with 1 hidden layer of 4 neurons followed by a second layer of 3 neurons
 - ![[Pasted image 20241126140147.png|1000]]
 - Start with 3 channel RGB image
+	- 3 channel, 32x32 into 4 neurons
+	- Each neuron has i-1 convolutional kernels in it and produces i-1 images
+	- Sum the images, output of 1 neuron sum is 1 32x32 image
+	- output of 1 layer is l_1 32x32 images
 - Pass through hidden layer of 4 neurons
 	- Pass through 4 3-channel convolutional filters
 		- Each neuron has 3 internal filters, and outputs 3 'images'

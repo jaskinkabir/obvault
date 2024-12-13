@@ -1,5 +1,6 @@
 Continues [[Logistic Classifiers]]
 Continues [[Multi-Class Logistic Classifier]]
+Continued by [[Classification Threshold and Balancing Precision and Recall]]
 # Evaluation Metrics
 ## Accuracy, Error Rate
 - Accuracy is percent of correct classifications
