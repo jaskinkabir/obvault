@@ -1,0 +1,3 @@
+- $$P(Y | X) = \prod_{i=1}^{n}P(y^{i}|x^{i})$$
+- $$-\log P(Y | X) = \sum_{i=1}^{n}-\log P(y^{i}|x^{i})=\sum_{i=1}^{n}\ell(y^{i},\,  \hat{y}^{i})$$
+- Where for any pair of label $y$ and model prediction $\hat{y}$ over $q$ classes, the loss function is $$\ell(y,\,  \hat{y})=\sum_{j=1}^{q}y_{j}\log \hat{y}_{j}$$

@@ -62,5 +62,14 @@
       ],
       "key": "G"
     }
+  ],
+  "templater-obsidian:templater/Graph.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "G"
+    }
   ]
 }
