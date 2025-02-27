@@ -58,4 +58,7 @@ https://www.edmunds.com/kia/niro/2019/vin/KNDCB3LC2K5244107/?radius=75
 ## Pros
 - 47 Mile EV range
 	- Double the average
+## Cons
+- 111,605 miles
+	- Also insane
 - 

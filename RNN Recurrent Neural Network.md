@@ -24,4 +24,10 @@ Continues [[CNN Convolutional Neural Network]]
 ![[Pasted image 20250213174618.png]]
 - At time step 3, the output depends on the previous 2 hidden states as well as the current input
 - In other words it depends on the string of inputs "m" "a" "c"
-For class #intro-DL
+
+# Building an RNN
+- Pass the input sequence to the RNN layer
+- The output of the RNN has an extra dimension for time step
+	- Output Size (hidden state) x time step x batch
+- Pass the activations from the current time step to the fc layer
+For class #intro-DL 
