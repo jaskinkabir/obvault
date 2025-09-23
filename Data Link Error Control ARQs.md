@@ -86,7 +86,8 @@ Error control mechanisms are all referred to as **Automatic Repeat Request (ARQ)
 	- 2. Station B receives all seven frames and cumulatively acknowledges with RR7
 	- 3. Because of a noise burst, the RR7 is lost
 	- 4. A times out and retransmits frame 0
-	- 5. B has already advanced its receive window to accept frames 7,0,1,2,3,4,5. Thus it assumes frame 7 has been lost and that this is a new frame 0, which it accepts. 
+	- 5. B has already advanced its receive window to accept frames 7,0,1,2,3,4,5. Thus it assumes frame 7 has been lost and that this is a new frame 0, which it accepts.
+		- It can accept this packet because SREJ allows for out of order TX and RX 
 - The problem is that there is an overlap between the sending and receiving windows. To overcome the problem, the max window size should be no more than half the range of sequence numbers.
 	- Max window size is $2^{k-1}$
 

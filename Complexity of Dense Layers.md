@@ -1,5 +1,5 @@
 Continued by [[CNN Complexity and Filtering Techniques]]
-
+Related to [[Artificial Neural Networks (ANN)]]
 # Single Dense Layer
 ## Params
 - Each neuron in a layer has a number of weights equal to the input size, and a bias

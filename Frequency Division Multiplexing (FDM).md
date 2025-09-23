@@ -11,11 +11,15 @@ Chapter 8.1
 	- Each channel is separate by guard bands, to prevent interference.
 ## Operation
 - $n$ analog or digital signals $[m_{i}(t),i=1,n]$ are to be multiplexed onto the same medium
-	- Each signal $m_{i}(t)$ is modulated onto a carrier $f_{i}$; because multiple carriers are to be used, each is referred to as a **subcarrier**
+	- Each signal $m_{i}(t)$ is modulated onto a carrier $f_{i}$. Because multiple carriers are to be used, each is referred to as a **subcarrier**
 - The resulting analog, modulated signals are then summed to produce a composite **Baseband** signal $m_{b}(t)$
 - This baseband signal may even be modulated to a different carrier frequency to produce $s(t)$
 ## Image
 ![[Pasted image 20240804191456.png]]
+## Requirements
+- Useful bandwidth must exceed the required bandwidth of each signal
+	- $B>\Sigma B_{i}$
+- Carrier frequencies must be separated by guard bands
 ## Bandwidth
 - The FDM Signal $s(t)$ has total bandwidth $B$ where $B> \sum_{i=1}^nB_{i}$.
 - At the receiving end, this signal is demodulated to retrieve $m_{b}(t)$, which is then passed through $n$ band-pass filters
@@ -27,6 +31,7 @@ Chapter 8.1
 - Intermodulation noise:
 	- On a long link, the nonlinear effects of amplifiers on a signal in one channel could produce frequency components in other channels
 		- Think about amplifier frequency response curves
+- Even if there is no data to be transmitted on a given channel, it must still be allocated to keep the logic consistent
 # Analog Carrier Systems
 ## AT&T Hierarchy
 - In the US, AT&T has designated a hierarchy of FDM schemes to accommodate transmission systems of various capacities

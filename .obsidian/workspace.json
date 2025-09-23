@@ -4,49 +4,147 @@
     "type": "split",
     "children": [
       {
-        "id": "f748f346406c3b50",
+        "id": "339772f4c7b85c89",
         "type": "tabs",
         "children": [
           {
-            "id": "46b0663fda891e6d",
+            "id": "42d7a99b52914cb1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "RNN Recurrent Neural Network.md",
+                "file": "Ethernet and MAC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RNN Recurrent Neural Network"
+              "title": "Ethernet and MAC"
             }
           },
           {
-            "id": "69b98dbf2a9403a4",
+            "id": "2d6349a1809ee729",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bi-Directional RNN.md",
+                "file": "datacomm 2 HW/Datacomm2 HW1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Bi-Directional RNN"
+              "title": "Datacomm2 HW1"
             }
           },
           {
-            "id": "329c48d6788b26c5",
+            "id": "6e21da1a99c2ce22",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Augmentation.md",
+                "file": "Time Division Multiplexing (TDM).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Data Augmentation"
+              "title": "Time Division Multiplexing (TDM)"
+            }
+          },
+          {
+            "id": "492ee178a9dd2d07",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Internet Checksum.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Internet Checksum"
+            }
+          },
+          {
+            "id": "366bdd2305d60baf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Data Link Error Control ARQs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Data Link Error Control ARQs"
+            }
+          },
+          {
+            "id": "4e4929b779eb66a2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCP-IP Protocol Architecture.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "TCP-IP Protocol Architecture"
+            }
+          },
+          {
+            "id": "112c4c9ac9578c3a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Packet Switching Networks.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Packet Switching Networks"
+            }
+          },
+          {
+            "id": "6f340e915142b96c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Circuit Vs. Packet Switching.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Circuit Vs. Packet Switching"
+            }
+          },
+          {
+            "id": "d839d25863d8d5a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Data Link Flow Control.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Data Link Flow Control"
+            }
+          },
+          {
+            "id": "6b98179d10ce42e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ethernet and MAC.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ethernet and MAC"
             }
           }
         ]
@@ -81,7 +179,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "iot",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": false,
@@ -141,8 +239,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           },
           {
@@ -192,13 +290,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "RNN Recurrent Neural Network.md",
+                "file": "Ethernet and MAC.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of RNN Recurrent Neural Network"
+              "title": "Outline of Ethernet and MAC"
             }
           },
           {
@@ -207,8 +305,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ],
@@ -220,6 +318,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -231,43 +330,45 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "46b0663fda891e6d",
+  "active": "828709682bc6418a",
   "lastOpenFiles": [
-    "Data Augmentation.md",
-    "Excalidraw/Pasted image 20250227084917.png",
-    "Bi-Directional RNN.md",
-    "Excalidraw/Pasted image 20250226165517.png",
-    "Excalidraw/Pasted image 20250226165515.png",
-    "Excalidraw/Pasted image 20250226165006.png",
-    "RNN Recurrent Neural Network.md",
+    "datacomm 2 HW/Datacomm2 HW1.md",
+    "Ethernet and MAC.md",
+    "Time Division Multiplexing (TDM).md",
+    "Multiple Channel Access (DATA LINK MUX).md",
+    "Circuit Switching Under the Hood.md",
+    "Data Link Flow Control.md",
+    "Internet Checksum.md",
+    "Data Link Error Control ARQs.md",
+    "datacomm 2 HW/Datacomm2 HW2.md",
+    "Circuit Vs. Packet Switching.md",
+    "Packet Switching Networks.md",
+    "Circuit Switching Networks.md",
+    "TCP-IP Protocol Architecture.md",
+    "iotml_hw/Paper Review.md",
+    "datacomm 2 HW",
+    "Thesis Notes.md",
+    "System Software.md",
     "History of Programmable Logic.md",
-    "Untitled 3.md",
-    "iotml_hw/IoT ML HW1 Analytical Questions.md",
-    "Reconfig Quiz.md",
-    "Model Regularization.md",
-    "Building Very Deep Networks.md",
-    "Excalidraw/Pasted image 20250220145245.png",
-    "Excalidraw/Pasted image 20250220144926.png",
-    "Excalidraw/Pasted image 20250220144714.png",
-    "Properties of Systems.md",
-    "Car Comparison.md",
-    "Excalidraw/Pasted image 20250213174618.png",
-    "Excalidraw/Pasted image 20250213173741.png",
-    "Excalidraw/Pasted image 20250213173503.png",
-    "Modern CNNs.md",
-    "IoT ML HW2.md",
-    "Designing MCU Hardware and Firmware.md",
-    "CNN Complexity and Filtering Techniques.md",
-    "Complexity of Dense Layers.md",
-    "ML Optimization Fundamentals.md",
-    "Model Quantization.md",
-    "CNN Convolutional Neural Network.md",
-    "Untitled 4.md",
-    "Optimization HW1.md",
-    "Strong Convexity and Smoothness.md",
-    "Properties of Convexity.md",
-    "Characterizing LTI Systems.md",
+    "Make and Makefiles.md",
+    "System and Function Calls.md",
+    "Three Y's.md",
+    "Logic Circuit Building Blocks.md",
+    "FPGA Terminology.md",
+    "Structs In Memory.md",
+    "Microcontroller Architecture.md",
+    "2D Linear Regression and the Loss Function.md",
     "Gradient Descent.md",
+    "Excalidraw/Pasted image 20250918150359.png",
+    "Excalidraw/Pasted image 20250913181124.png",
+    "Excalidraw/Pasted image 20250913180851.png",
+    "Excalidraw/Pasted image 20250911153529.png",
+    "Excalidraw/Pasted image 20250909151546.png",
+    "Excalidraw/Pasted image 20250904153318.png",
+    "Excalidraw/Pasted image 20250904151612.png",
+    "Excalidraw/Pasted image 20250904150235.png",
+    "Excalidraw/Pasted image 20250828153155.png",
+    "Excalidraw/Pasted image 20250828152214.png",
     "iotml_hw",
     "PreLabs",
     "New folder",
@@ -278,7 +379,6 @@
     "TCP",
     "DatStruct Assignments",
     "templater/Untitled",
-    "Excalidraw/Untitled",
-    "Personal"
+    "Excalidraw/Untitled"
   ]
 }

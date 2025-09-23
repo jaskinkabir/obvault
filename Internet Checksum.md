@@ -1,5 +1,6 @@
 Chapter 6.4
 Continues [[Types of Errors and Error Detection Schemes]]
+Related to [[TCP-IP Protocol Architecture]]
 For class #data-comm
 - Used in IP, TCP, and UDP
 # Internet Checksum Method
@@ -8,6 +9,15 @@ For class #data-comm
 	- If there is a carry bit, add 1 to the sum to keep the number of bits the same
 - Invert all bits of this sum (take one's complement)
 - Append this sum to the end of the frame
+# Verification
+- Receiver adds all segments together with 1's complement addition
+- Take 1's complement of the sum
+- If the sum is 0, no errors have ocurred
+- Example:
+	- Receiver receives `0111 0111 0001`
+	- Sum is 7 + 7 + 1 = 15 or `1111`
+	- 1's complement is `0000`
+	- Verified
 # Notes
 - Note that the checksum is the same size as the word size. Thus $n-k$ is the word size
 - To verify proper transmission, the receiver takes the sum of all words, including the checksum, with wraparound carry 

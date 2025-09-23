@@ -1,8 +1,9 @@
 Continues [[params]]
+Related to [[CNN Convolutional Neural Network]]
 # CNN Complexity
+
 - Params = $D_{out}(W_{F}H_{F}D_{in}+1)$
-	- This is for a single layer
-- MACs: Each output pixel is computed from $D_{in}W_{F}H_{F}$ pixels
+	- This is for a single layer- MACs: Each output pixel is computed from $D_{in}W_{F}H_{F}$ pixels
 	- $D_{in}W_{F}H_{F}$ MACs per pixel per output channel
 	- MACS = $D_{IN}W_{F}H_{F}D_{OUT}W_{OUT}H_{OUT}$
 - Example
@@ -52,3 +53,4 @@ $(3*3*128)*()$
 - MACs of DW = $W_{F}H_{F}$ per output pixel
 - MACs of 1x1 = $D_{in}$ MACs per output pixel
 - Together $$\frac{\text{\#MACs}}{\text{Out Pixel}}=D_{in}+W_{F}H_{F}$$
+For class #IoT-ML

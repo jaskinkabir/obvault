@@ -57,6 +57,9 @@ Continued by [[Circuit Vs. Packet Switching]]
 - A preplanned route is established before any packets are sent.
 - Once this route is established, all packets between a pair of stations follow this same route through the network
 - Each packet must contain a virtual circuit identifier as well as data
+	- VCI is scoped to each switching station, not globally
+	- Each node needs a VCI to represent the incoming connection and outgoing connection
+	- 
 - Each node on the preestablished route knows where to direct such packets, and no routing decisions are required
 - While the route between stations is set up before data transfer, this is not a dedicated path as in circuit switching
 	- A transmitted packet is buffered for transmission at each node and queued for transmission for output over a line, while other packets may share the use of this line.

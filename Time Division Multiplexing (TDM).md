@@ -29,16 +29,62 @@ Chapter 8.2
 	- Each time slot contains just one bit
 - At the RX, the interleaved data is demuxed and routed to the destination buffers
 - **Synchronous TDM is called Synchronous because the time slots are preassigned and fixed**
-	- The time slots for each source are transmitted whether or not the source has data to send
+	- The time slots for each source are transmitted whether the source has data to send
 	- This is also the case for FDM
 	- Even when fixed assignment is used, TDM can handle sources of different data rates
 		- Slower data sources are assigned one time slot, faster ones are assigned more
+### Procedure
+1. Time slots pre-assigned to different sources
+2. Multiple digital signals are interleaved in time
+3. Interleaving can be at bit level or in blocks
+4. Data rate of the link is $n$ times faster, and the unit duration is $n$ times shorter
+	1. Input bit rate = output frame rate
+5. A complete cycle of data units from each input is collected into a frame
+	1. Each frame is $n$ slots, each slot duration is $\frac{1}{n}$ shorter
+### Requirements
+1. Data rate of medium must exceed data rate of each signal to be transmitted
+	1. Output data rate must be at least $n$ times the input data rate
+### Example Problem
+![[Pasted image 20250828153155.png]]
+1. Bit duration = $\frac{1}{bps_{i}} = 1\mu s$
+2. Output bit duration = $\frac{1}{n*bps_{i}}=250ns$
+3. Output bit rate = $\frac{1}{bps_{o}}=4Mbps$
+4. Output frame rate = 1 mega frame per second
 ## Statistical TDM
-- The statistical Mux dynamically allocated time slots on demand
+- Synchronous TDM has the problem of wasting slots when that input channel has no data
+- The statistical TDM dynamically allocates time slots on demand
 - There are $n$ I/O lines, but only $k$, where $k<n$, time slots available on the TDM frame.
-- For input, the multiplexor scans the input buffers, collecting data until a frame is filled. It then sends this frame
+- For input, the multiplexer scans the input buffers, collecting data until a frame is filled. It then sends this frame
 - The receiver will receive this frame and distribute the slots to the appropriate destinations
 - Packet switching is a form of Statistical TDM
+### Why?
+- Statistical TDM allows for a slower output bit rate for the same input bit rate
+- This is possible because not all input lines are used at once
+### Problems
+- Address bits must be appended to each input
+	- $n$ bit address field inside each slot: $2^{n}$ output lines
+	- Ratio of data size to address size must be large enough to justify this overhead
+	- Cannot be used for bit-level interleaving
+- During peak periods, capacity may not be enough
+	- MUX buffers inputs to hold temporary excess input
+	- Tradeoff: buffer size (delay) vs. data rate of the line
+### Example Problem
+For 4 bits in a frame
+```
+
+__11|\
+0000| \  [0010][0001][1101]
+0101| /
+__01|/
+```
+3 bits per frame
+```
+
+__11|\
+0000| \  [001][000][011][101]
+0101| /
+__01|/
+```
 # TDM Link Control
 - The transmitted data stream in figure 8.6b does not contain headers and trailers typically associated with synchronous transmission
 - This is because control mechanisms provided by data link protocol are not needed

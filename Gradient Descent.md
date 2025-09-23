@@ -1,5 +1,5 @@
 Continues [[Strong Convexity and Smoothness]]
-
+Expands [[2D Linear Regression and the Loss Function]]
 # Gradient Descent
 - The objective is to identify a sequence of points ${x_{t}}$ that converge to the optimal solution
 - A direction $d$ is called a descent direction at x if $$f(\overrightarrow{x} + t\overrightarrow{d}) < f(\overrightarrow{x}),\, \forall t<\overline{t}$$

@@ -1,4 +1,5 @@
 Continues [[CNN Convolutional Neural Network]]
+Continued by [[Modern RNNs]]
 # RNN
 - Countless learning tasks involve learning from sequential data
 - RNNs are deep learning models that capture the dynamics of sequences via reccurent connections
@@ -18,6 +19,7 @@ Continues [[CNN Convolutional Neural Network]]
 	- 1. Concatenating the input $X_{t}$ and the hidden state $H_{t-1}$
 	- 2. Feeding the concatenation result into a fully connected layer with the activation function $\phi$
 - The output of this FC layer is the hidden state $H_{t}$
+$H(I+H+B+O)+BO$
 - The model parameters are the concatenation of 
 ![[Pasted image 20250213173741.png]]
 ## Example 
