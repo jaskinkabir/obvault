@@ -1,0 +1,1 @@
+This repo contains all the notes I've taken for any of my classes or anything I've researched since Fall 2021. Each class/topic gets its own folder
