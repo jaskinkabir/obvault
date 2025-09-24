@@ -1,0 +1,37 @@
+Continued by [[LAN and WAN]]]
+- ## Basic Terms
+	- **Data Communication:** Transmission of signals
+	- **Networking:** Tech and architecture of comm networks to connect devices
+- ## Communication Model:
+	- Source->Transmitter->Transmission System->Receiver>Destination
+	- ![[Pasted image 20240703184318.png]]
+	- Source receives information $m$ and generates input data $g(t)$
+	- Transmitter transforms $g(t)$ into transmitted signal $s(t)$ tand transmits across the transmission system
+	- Receiver transforms $s(t)$ into received signal $r(t)$, then it outputs output data $g'(t)$
+	- Destination transforms output data $g'(t)$ into output information $m'$
+- ## Key Communication Tasks
+	- ### Utilization
+		- Ensure that each aspect of the communication system is fully and efficiently utilized
+		- Ex: Multiplexing, congestion control
+	- ### Interfacing
+		- Devices on either side of the transmission system must be able to interface with it
+	- ### Signal Generation
+		- Transmitters must be able to generate signals that are capable of being propagated across the TX system
+		- Signals must be able to be interpreted by the RX system
+	- ### Synchronization
+		- TX and RX systems must be synchronized. RX should be able to determine when a signal begins and ends
+	- ### Exchange Management
+		- If data is exchanged in both directions, it must be decided whether both devices can talk at the same time or in turns
+		- The amount and format of data, etc must be decided
+	- ### Error Detection/Correction
+		- Errors and distortion should be able to be handled somehow
+	- ### Flow Control
+		- Ensure that the RX system is not overwhelmed by data being sent by the TX faster than the RX can process it
+	- ### Recovery
+		- The system must be able to resume operation in case of interruption
+	- ### Addressing and Routing
+		- When more than two devices share a TX/RX system, the source system must indicate the identity of the intended destination
+		- The transmission system must assure that only the destination system receives the data
+	- ### Security
+		- Only the receiver can access the data
+For class #data-comm

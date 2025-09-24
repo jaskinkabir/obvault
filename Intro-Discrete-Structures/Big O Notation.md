@@ -1,0 +1,20 @@
+- # Determining the Big Theta $\Large \Theta$ Growth Function
+	- ### $\Theta(1)$ functions are constant and have 0 growth
+	- $\Theta(\log(n)) < \Theta(n^{k),} \text{  }k>{0}$
+	- $\Theta(n^a) < \Theta(n^{b),}\text{  }0<a<b$
+	- $\Theta(a^n) < \Theta(b^{n}),\text{  }0<a<b$
+	- $\Theta(a^{n}) > \Theta(n^{k})\text{ }, \forall k, a>1$
+		- Exponential are faster than polynomials
+	- If $r \neq 0$, then $\Theta(rf)=\Theta(f)$
+		- Constant factors do not affect growth function
+	- If h is a non-zero function, and $\Theta(f) \leq \Theta(g)$, then $\Theta(hf) \leq \Theta(hg)$
+	- If $\Theta(f) < \Theta(g), \text{ } \Theta(f+g)=\Theta(g)$
+	- Ordering:
+		- Exponential
+		- Polynomial
+			- Includes linear
+		- Logarithmic
+- ## Function Mapping/Transformation
+	- $f:A\to B$
+		- Is a relation such that for all $a \in A$ in the domain, f(a) is exactly one element from the codomain B
+For class #Intro-Discrete-Structures 

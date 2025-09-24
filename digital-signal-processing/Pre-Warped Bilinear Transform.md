@@ -1,0 +1,42 @@
+Continues [[Bilinear Transformation IIR Design]]
+Continued by [[FIR Design Windowing Method]]
+- ## Understanding Frequency/Z-Plane Warping
+	- ### True (nonlinear) Mapping
+		- The true mapping of $s$ to $z$ is $z=e^{sT}$
+		- This mapping has the following properties. Remember that $s=\sigma+j\omega$
+		- The origin maps to the point (1,0)
+			- $s=0+0j\iff z=1+0j$
+		- How does the real part of $s$ change the $z$ value?
+			- As $\sigma\to \infty$, $z\to \infty$
+			- As $\sigma \to -\infty$, the z value simply moves closer to the origin.
+				- $s=-\infty+0j \iff e^{-\infty T}=0+0j$
+		- The imaginary part?
+			- $j\omega$ simply rotates the point on the real axis about the origin by $\omega$ radians. When $\sigma=0$, changing $\omega$ linearly rotates $z$ around the unit circle
+		- This can be described as follows:
+			- The negative real axis is scrunched inwards such that $-\infty \to 0$ and $0\to 1$
+			- The imaginary component rotates this scrunched grid around the origin 
+			- ![[Pasted image 20240416180434.png]]
+			- ![[Pasted image 20240416180812.png]]
+	- ### Bilinear Transform Mapping
+		- Remember the formula $$z= \frac{1+\frac{T}{2}s}{1-\frac{T}{2}s}$$
+		- The origin still maps to 1,0
+		- However, that is where the similarities end
+		- The description of this mapping is as follows
+			- The imaginary axis is scrunched such that $\pm j\infty \to -1$
+			- The left side of the real axis is scrunched such that $-\infty \to -1$ 
+		- There is no rotation due to the imaginary component of $s$. The warping is done such that the $s=0+j\omega$ line wraps around the unit circle
+			- ![[Pasted image 20240416180714.png]]
+		- ![[Pasted image 20240416180757.png]]
+		- Let's examine this mapping mathematically
+			- Find how some analog frequency $\omega_{a}$ is warped by the bilinear transform to $\omega_{d}$
+			- Apply the transform to $\omega_{a}$ $$z=\frac{ 1+ \frac{j\omega_{a}T}{2} }{1- \frac{j\omega_{a}T}{2}}$$
+			- Convert back to s by using $z=e^{sT}$ $$e^{j\omega_{d}T}=\frac{ 1+ \frac{j\omega_{a}T}{2} }{1- \frac{j\omega_{a}T}{2}}$$
+				- $$\omega_{d}=\frac{1}{Tj} \ln\left(\frac{ 1+ \frac{j\omega_{a}T}{2} }{1- \frac{j\omega_{a}T}{2}}\right)$$
+				- The nyquist frequency is defined as $f_{N}=\frac{1}{2T},\, \omega_{N}=\frac{\pi}{T}$
+				- As you plot this equation for $\omega_{d}$, you find that as the analog frequency reaches the nyquist frequency and surpasses it, the digital frequency will be warped asymptotically towards the nyquist frequency.
+- ## Pre-Warping
+	- The mapping from $\omega_{a}\to\omega_{d}$ can be approximated with the following equation $$\omega_{d}=\frac{2}{T}\arctan\left( \frac{T}{2}\omega_{a} \right) \iff \omega_{a}=\frac{2}{T}\tan\left( \frac{T}{2}\omega_{d} \right)$$
+	- By applying this warping function to the analog frequency before applying the bilinear transform, we can assure that the critical frequency that defines our filter is properly mapped to the z-domain.
+	- This results in the following formula $$s=\frac{\omega_{c}}{\tan\left( \frac{\omega_{c}T}{2} \right)} \frac{1-z^{-1}}{1+z^{-1}}$$
+
+For class #digital-signal-processing 

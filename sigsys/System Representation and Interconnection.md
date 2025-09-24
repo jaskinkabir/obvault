@@ -1,0 +1,34 @@
+Continued by [[Properties of Systems]]
+- ## Representing Systems
+	- A system is anything that can be represented as a function that transforms some input variable into its dependent output
+	- ### Block Diagram
+		- ![[Pasted image 20230125163703.png]]
+	- 
+	- ### Function Representation
+		- $y=S(x)$
+		- $y=S\acute{x}$
+			- $S$ is acting on $x$
+- ## Types of Systems
+	- ### Scaling
+		- $y(t)=\alpha \,x(t)$
+	- ### Differentiator/Integrator
+		- $y(t)=\frac{d}{dt}x(t)$
+		- $y(t)=\int _{-\infty}^{t}x(t) \, dx$
+	- ### Time Shifter
+		- $y(t)=x(t-T)$
+			- $T>0$: Delay
+			- $T<0:$ Predictor/Advancing
+	- ### Convolution
+		- $\large y(t)=\int _{-\infty}^{\infty}x(t-z)h(\zeta) \, dz$
+- ## System Interconnection
+	- ### Cascade/Series
+		- ![[Pasted image 20230125164421.png]]
+		- $y=G(F(x))$
+	- ### Parallel
+		- ![[Pasted image 20230125164536.png]]
+		- $y=G(x)+F(x)$
+	- ### Feedback
+		- ![[Pasted image 20230125164703.png]]
+		- $y=F(x-G(y))$
+
+For class #sigsys 

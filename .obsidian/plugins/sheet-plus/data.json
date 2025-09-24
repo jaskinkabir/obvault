@@ -1,0 +1,14 @@
+{
+  "showSheetButton": "true",
+  "folder": "/sheets",
+  "excelFilenamePrefix": "sheet",
+  "excelFilenameDateTime": "YYYY-MM-DD HH.mm.ss",
+  "sheetHeight": "100",
+  "rowHeight": "25",
+  "colWidth": "100",
+  "authorizationCode": "",
+  "embedLinkShowFooter": "false",
+  "numberFormatLocal": "en",
+  "mobileRenderMode": "desktop",
+  "darkModal": "dark"
+}

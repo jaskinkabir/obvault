@@ -1,0 +1,81 @@
+Related to [[Boolean Algebra]]
+[[Flip Flops]]
+- ## Logic Refresher/Introductions
+	- ### Binary Representation of data
+		- Counting and Math in binary is essentially the same as normal (decimal) numbers
+	- ### Gates
+		- AND OR NOT XOR
+		- These four operations can be used to perform all mathematical operations
+			- The foundation of modern computing
+		- You can implement these systems in silicon, or in the advanced circuit simulation tool known as Minecraft
+- ## Logical Building Blocks in Minecraft
+	- ### Minecraft only has OR and NOT
+		-   Two quick slides with truth tables
+		-   All logic can be represented with these two operations
+	- ### AND Gate
+		-   Show the circuit
+		- It's possible to explain how it works with the diagram/truth table
+			-  Easier to explain in Minecraft
+	- ### XOR
+		- Show the circuit
+		- Traditional $A\overline{B}+\overline{A}B$ method
+		- Simplification with comparators
+	- Quickly show examples of every gate in existence
+- ## Computation
+	- Quick overview of adders
+		- Show 4 bit ripple carry
+	- Subtraction
+		- Two's Complement
+	- Multiplication and division maybe? 
+		- I don't even know how to fuckin do this yet lol
+- ## Memory
+	- If all logic exists so then does memory
+	- ### S/R Latches
+		- Show truth table, circuit, and explain in Minecraft
+		- Show more complicated flip-flops
+	- ### T-Flip Flops
+		- Show that Minecraft has a much simpler shortcut for T-Flip Flops
+	- ### Edge Detection and Triggering
+		- Making flip-flops edge triggered
+	- ### Repeater Locking
+		- A memory method unique to Minecraft
+			- Sometimes it's okay to take advantage of your tools
+		- Show the Juul example
+- ## Finale: Creating Complex Logical Systems: Tic-Tac-Toe
+	- ### Planning Phase
+		- How will cells be represented in binary?
+		- Make sure not to think like a programmer
+			- 00, 10, 11 vs 00, 01, and 10
+		- How to store the cell data
+			- S/R Latches are the best bet
+		- Win/Tie Detection
+			- Explain Behavior and circuit diagram
+		- Game Control
+			- Turn Flip flop
+		- Draw shit out first man, it helps
+	- ### Designing Phase
+		- ### Display
+			- Finding shortcuts in display design
+			- Decoding
+		- ### Memory Cell
+			- Stacked S/R Latches controlling each other
+			- Comparator blocking 
+		- ### Win Detector
+			- Show how the programmer's method would overcomplicate this
+		- ### Tie Detection
+			- Show that sometimes over planning will lead to oversight
+			- Tie detection can just be tacked onto 3 win detectors
+		- ### Turn Flip-Flop
+			- Edge detection on the write signal
+			- In real life a more complex system would need to be used 
+	- ### Building Phase
+		- #### Wiring and Practical Design
+			-  Minecraft's biggest disadvantage is the interference between wires
+			- Spacing out connections and preventing spaghetti
+				- Show the previous design of win detection
+			- ### COLOR CODING
+				- EXTREMELY IMPORTANT
+				- Make sure you don't confuse yourself
+		- #### Black Box Principle
+			- Make sure modules don't interfere with each other
+For topic #OCPMR

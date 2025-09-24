@@ -1,0 +1,42 @@
+- ## Interface
+	- A piece of hardware that exchanges data according to a protocol
+	- ## Protocol Classifications
+		- ### Synchronicity:
+			- Clock and data 
+		- ### Responsiveness
+			- Whether assertion of a coordinating signal receives a response or not
+			- Two signals to perform handshaking are referred to as a responsive pair
+		- ### Initiator
+			- Which module initiates transfer
+		- ### Control Level
+			- Whether signal is coordinating transfer of a single element or a block of data
+- ## Bus
+	- ### Bus Signals
+		- #### Control
+			- Clock
+			- Request and grant
+			- Command (read/write)
+		- #### Data
+			- Data to be transferred
+			- Address of data
+	- ### Synchronous Bus
+		- Clock is part of control signal 
+			- Not the processor clock
+		- Transactions take a fixed number of cycles
+		- ### Protocol Example:
+			- Processor pulls read request high
+			- Places address on bus for 2 cycles
+			- Wait for data to be read for 4 cycles
+			- Data is placed on bus for 2 cycles
+			- Request signal is pulled low
+	- ## Asynchronous Bus
+		- No clock
+		- Devices use responive handshake to coordinate
+			- Move on when both parties agree
+		- Example
+			- Place address on bus, raise readReq
+				- Memroy raises Ack to indicate it has seen request and read address
+			- Device sees Ack, drops readReq and Address
+			- Memory drops Ack when it sees readreq dropped
+			- When data reeady, memory places on bus and raises dataready
+For class #reconfig

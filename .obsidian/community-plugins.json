@@ -14,5 +14,6 @@
   "cmdr",
   "obsidian-git",
   "obsidian-tikzjax",
-  "obsidian-table-generator"
+  "obsidian-table-generator",
+  "sheet-plus"
 ]

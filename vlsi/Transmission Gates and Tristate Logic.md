@@ -1,0 +1,51 @@
+Continues [[CMOS Signal Strength]]
+Continued by [[Clock Skew and Path Constraints]]
+- ## Transmission Gates
+	- Pass a signal based on Enable signal
+		- Uses only 2 transistors
+	- ![[Pasted image 20240207103221.png]]
+		- $EN$ signal will turn on the nmos, which will pass a 0 from $A$ to $B$
+		- $\overline{EN}$ signal turns on PMOS, which passes 1 from $A$ to $B$
+		- Notice that there is no direct path from B to $Vdd$ or $GND$
+			- Signal will degrade over consecutive gates time
+			- This is called **Nonrestoring**
+- ## Tristate Buffer
+	- Produces $Z$ or high impedance/floating when not enabled
+		- There is no path to either $V_{dd}$ or GND
+	- $X$ is produced when the output is driven to both GND and $V_{dd}$
+		- Should never happen
+	- ### Restoring Buffer
+		- Uses more gates but will produce strong output
+		- Basic version
+			- ![[Pasted image 20240207102718.png]]
+				- Requires inverted enable and inverts Y out
+		- Realistic version
+			- ![[Pasted image 20240207102807.png]]
+- ## Transmission Gate/Nonrestoring MUX
+	- ![[Pasted image 20240207103616.png]]
+	- Uses only 4 transistors
+- ## Inverting MUX
+	- ![[Pasted image 20240207103742.png]]
+	- Uses compound AOI22
+	- Adds inverter on the output
+- ## D-Latch
+	- ![[Pasted image 20240207103951.png]]
+	- ![[Pasted image 20240207104002.png]]
+- ## D Flip-Flop
+	- Built from master and slave D-Latches
+	- How is edge sensitivity achieved?
+		- ![[Pasted image 20240207104346.png]]
+		- Similar to locks in Panama Canal
+		- When clk is low, master latch is sensitive to D
+		- When clk rises, master latch is no longer sensitive to D, but slave allows QM to move to Q
+		- QM cannot be updated except for the rising edge 
+	- ### Setup and hold time
+		- ![[Pasted image 20240207104950.png]]
+		- During the rising edge of the clock signal, there is a time when both latches are partially on
+			- Slave on,
+			-  master off
+		- This means there is a time when Q is sensitive to D, which should never happen
+		- This creates the necessity for designated setup and hold times during which D must be stable
+			- Setup is time before rising edge
+			- Hold is after
+For class #vlsi 

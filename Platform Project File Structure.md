@@ -1,5 +1,0 @@
-- Hardware
-- Software
-- IP Repo
-- Linux Kernel
-- Root Filesystem

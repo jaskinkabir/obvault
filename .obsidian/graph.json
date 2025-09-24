@@ -1,11 +1,11 @@
 {
-  "collapse-filter": false,
+  "collapse-filter": true,
   "search": "-file:.excalidraw",
   "showTags": true,
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": false,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
       "query": "tag:#Analytical-Foundations",
@@ -94,14 +94,14 @@
   ],
   "collapse-display": false,
   "showArrow": false,
-  "textFadeMultiplier": 0,
+  "textFadeMultiplier": -1.9,
   "nodeSizeMultiplier": 0.7125,
   "lineSizeMultiplier": 1,
   "collapse-forces": false,
-  "centerStrength": 0.517487508922198,
-  "repelStrength": 20,
+  "centerStrength": 0.684965034965035,
+  "repelStrength": 19.965034965035,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.3411665997231684,
-  "close": true
+  "scale": 0.07199155640756327,
+  "close": false
 }
