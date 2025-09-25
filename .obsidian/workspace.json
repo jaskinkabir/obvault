@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3249aa3e8af306dd",
+        "id": "e39067d18b8c9d1d",
         "type": "tabs",
         "children": [
           {
-            "id": "f52ae6ae3581b50e",
+            "id": "2589f2d6cc91dd4a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "thesis/PYNQ Environment on Versal Devices.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "PYNQ Environment on Versal Devices"
             }
           }
         ]
@@ -164,13 +164,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "thesis/PYNQ Environment on Versal Devices.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of PYNQ Environment on Versal Devices"
             }
           },
           {
@@ -205,8 +205,12 @@
       "sheet-plus:Create excel file": false
     }
   },
-  "active": "f52ae6ae3581b50e",
+  "active": "2589f2d6cc91dd4a",
   "lastOpenFiles": [
+    "Untitled.md",
+    "thesis/PYNQ Environment on Versal Devices.md",
+    "templater/Graph.md",
+    "thesis/Thesis Ideas.md",
     "README.md",
     "Intro-Discrete-Structures/Counting Problems.md",
     "sheets/sheet2025-09-23 15.50.02.univer.md",
@@ -232,10 +236,6 @@
     "intro-ML/CNN Convolutional Neural Network.md",
     "intro-ML/Classifier Evaluation.md",
     "intro-ML/Classification Threshold and Balancing Precision and Recall.md",
-    "intro-ML/Batch Vs Layer Normalization.md",
-    "intro-ML/Building Very Deep Networks.md",
-    "intro-ML/Artificial Neural Networks (ANN).md",
-    "intro-ML/2D Linear Regression and the Loss Function.md",
     "intro-ML",
     "intro-DL",
     "embedded/projects",
