@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "PYNQ Environment on Versal Devices"
             }
+          },
+          {
+            "id": "edbeffa380fdda70",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Personal/gitignore test.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "gitignore test"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -164,13 +179,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "thesis/PYNQ Environment on Versal Devices.md",
+                "file": "Personal/gitignore test.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of PYNQ Environment on Versal Devices"
+              "title": "Outline of gitignore test"
             }
           },
           {
@@ -205,10 +220,10 @@
       "sheet-plus:Create excel file": false
     }
   },
-  "active": "2589f2d6cc91dd4a",
+  "active": "edbeffa380fdda70",
   "lastOpenFiles": [
-    "Untitled.md",
     "thesis/PYNQ Environment on Versal Devices.md",
+    "Personal/gitignore test.md",
     "templater/Graph.md",
     "thesis/Thesis Ideas.md",
     "README.md",
