@@ -1,4 +1,4 @@
-Continues [[Transport and Internet Layer Data Headers]]
+Continues [[IPv4]]
 Continued by [[The IPv6 Address]]
 ## IPv4 vs IPv6
 - IPv6 adds extra functionality to IP, but the driving force behind its development was that the internet grew too large
@@ -7,6 +7,7 @@ Continued by [[The IPv6 Address]]
 	- An IPv4 address is written as 
 		- 4 bytes in decimal numbers separated by dots
 	- Not even enough for half of all humans
+- Also, two level addressing (network and host) wastes space
 - IPv6 has a whopping 128 bit address space, which takes up 8 total 32 bit words of each IPv6 header, 4 for each address
 	- This allows for $3.4\times10^{38}$ addresses
 	- We will probably never run out
@@ -18,13 +19,13 @@ Continued by [[The IPv6 Address]]
 ## Other IPv6 Enhancements
 - Improved option mechanism
 	- Separate optional headers between IPv6 header and transport layer header
-	- Most are not examined by intermediate routes
+	- Most are not examined by intermediate routers
 		- Improved speed and simplified router processing
 		- Easier to extend options
 	- The option headers are extension headers that follow the fixed 40-byte IPv6 header to carry optional info. Routers don't need to read this stuff so it's faster
 - Dynamic assignment of addresses
 - Increased addressing flexibility
-	- Anycast: Delivery to one of a set of nodes
+	- Anycast: Delivery to one of a set of nodes (usually nearest)
 	- Improved scalability of multicast addresses
 - Support for resource allocation
 	- Labeling of packets to particular traffic flow
@@ -32,6 +33,7 @@ Continued by [[The IPv6 Address]]
 ## IPv6 Headers
 - ![[Pasted image 20251013190340.png]]
 - ![[Pasted image 20240705165400.png]]
+- Notice that the IPv6 base header has fewer fields than the IPv4 header. This improves processing speed
 - Includes:
 	- **Version**:
 		- Which IP version
@@ -52,7 +54,8 @@ Continued by [[The IPv6 Address]]
 			- Zero flow label: indicates no flow label is in use
 	- **Payload Length**
 		- **16 bits**
-		- Size of payload, including al extension headers plus data
+		- Size of payload, including all extension headers plus data
+		- Measured in bytes
 	- **Next Header**
 		- **8 Bits**
 		- Identifies type of the next header
@@ -96,7 +99,7 @@ Continued by [[The IPv6 Address]]
 	- Options: Option type (8 bits) + Length (8 bits, length of the option data field in bytes) + Option Data (variable length)
 		- Jumbo payload (32 bits): Length of packets in bytes excluding the header
 			- IPv6 supports sending up to $2^{32}$ bytes
-			- Used when sending packets over $2^{16}=65536$ octets
+			- Used when sending packets over $2^{16}=65536$ bytes
 			- Payload length in IPv6 header = 0, no fragment header
 		- Router alert
 			- Tells router that the contents of the packet are of interest to the router and it must handle the control data – for traffic control purposes
@@ -105,5 +108,37 @@ Continued by [[The IPv6 Address]]
 			- PadN 
 				- Insert $N \geq 2$ bytes of padding into the options area of the header
 				- This is to ensure that the header is a multiple of 8 bytes
+## Fragment Header
+![[Pasted image 20251014144321.png]]
+- Includes
+	- Next Header (**8 bits**)
+	- Reserved **8 bits** to keep format
+	- Fragment offset (**13 bits**)
+		- Position in 64-bit units
+	- Reserved **2 bits**
+	- More flag
+	- Identification (**32 bits**)
+		- All fragments with the same identifier, source addr, and destination addr are reassembled
+## Destination Options
+- Same format as Hop-By-Hop options
+- Only read by destination node
+## Routing 
+![[Pasted image 20251014144541.png]]
+- Similar to IPv4 source routing
+	- List of one or more intermediate nodes to be visited
+- Includes
+	- Next Header (**8 bits**)
+	- Header Extension Length (**8 bits**)
+		- In bytes
+	- Routing type (**8 bits**) Only Type 0 defined
+	- Segments left (**8 Bits**)
+		- Number of nodes still to be visited
+- The data in the header is a list of addresses
+	- ![[Pasted image 20251014144856.png]]
+	- If A wants to send a packet to B and knows the route (source routing), it will set the base header's source to its address and the destination address to router 1
+	- Then it will list the intermediate nodes in the data of the optional routing header. It will also fill the Segments Left field with the number of nodes in the route
+		- The ultimate address (addr of B) is the last address in the routing header
+	- Each router along the path will decrement the Segments Left field, and put the next address of the routing header into the destination field of the base header
+	- 
 
 For class #data-comm
