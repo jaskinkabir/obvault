@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "fa71da4665dd0ccf",
+            "id": "240cf2f3b962dfae",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,37 +20,8 @@
               "icon": "lucide-file",
               "title": "Datacomm2 HW3"
             }
-          },
-          {
-            "id": "0a9787d63b91225e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ICMP.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ICMP"
-            }
-          },
-          {
-            "id": "dec6611fc92b1de4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "IPv6.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "IPv6"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "\"The IP Layer\"",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": false,
@@ -193,13 +164,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "IPv6.md",
+                "file": "data-comm/2homework/Datacomm2 HW3.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of IPv6"
+              "title": "Outline of Datacomm2 HW3"
             }
           },
           {
@@ -234,18 +205,28 @@
       "sheet-plus:Create excel file": false
     }
   },
-  "active": "dec6611fc92b1de4",
+  "active": "240cf2f3b962dfae",
   "lastOpenFiles": [
+    "data-comm/2homework/Datacomm2 HW2.md",
+    "data-comm/2homework/Datacomm2 HW1.md",
     "data-comm/2homework/Datacomm2 HW3.md",
+    "data-comm/Transport and Internet Layer Data Headers.md",
+    "data-comm/ARP.md",
+    "ARP.md",
+    "The IP Layer.md",
+    "data-comm/TCP-IP Protocol Architecture.md",
     "IPv6.md",
+    "reconfig/System Software.md",
+    "data-comm/The IPv6 Address.md",
+    "data-comm/The IPv4 Address.md",
+    "data-comm/IPv6.md",
+    "data-comm/ICMP.md",
+    "data-comm/Fragmentation and Reassembly.md",
+    "embedded/Counters.md",
     "data-comm/Untitled 1.md",
     "The IPv6 Address.md",
     "Excalidraw/Pasted image 20251013191957.png",
-    "data-comm/Transport and Internet Layer Data Headers.md",
-    "data-comm/TCP-IP Protocol Architecture.md",
-    "The IP Layer.md",
     "Excalidraw/Pasted image 20251013190340.png",
-    "ARP.md",
     "ICMP.md",
     "Excalidraw/Pasted image 20251013185512.png",
     "Excalidraw/Pasted image 20251013185428.png",
@@ -260,18 +241,9 @@
     "Excalidraw/Pasted image 20251009134721.png",
     "thesis/Pynq and Raspberry Pi.md",
     "sheets/sheet2025-10-03 12.43.47.univer.md",
-    "data-comm/2homework/Datacomm2 HW2.md",
     "data-comm/labs/Lab1.md",
     "Excalidraw/Complex Numbers 2022-08-31 13.38.57.excalidraw.md",
     "data-comm/labs",
-    "Fragmentation and Reassembly.md",
-    "data-comm/Protocol Architecture.md",
-    "embedded/ADC.md",
-    "data-structures/Assignment 4 Big O Analysis.md",
-    "data-comm/Local Area Networks (LANs).md",
-    "data-comm/Ethernet and MAC.md",
-    "data-comm/Connectionless Internetworking.md",
-    "embedded/DAC.md",
     "sheets",
     "robotics",
     "research-tools",

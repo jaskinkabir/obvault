@@ -1,4 +1,9 @@
 Jaskin Kabir 801186717
+Uses
+[[Routing in Packet-Switching Networks]]
+[[The IPv4 Address]]
+[[Transport and Internet Layer Data Headers]]
+[[IPv6]]
 1. Consider the following network. With the indicated link costs, use Dijkstra’s least cost  algorithm to compute the least cost path from x to all other network nodes. Show how the algorithm works by filling in the table below.
 	1. ![[Pasted image 20251003124328.png]]
 

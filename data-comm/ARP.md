@@ -7,4 +7,5 @@ Continues [[TCP-IP Protocol Architecture]]
 	- When needed, system uses ARP on LAN to find MAC adddress
 	- Source broadcasts ARP request
 	- Destination replies with ARP response
-- 
+
+For class #data-comm
