@@ -1,0 +1,4 @@
+- The Raspberry pi platform makes development for embedded linux systems approachable for beginners
+- While the overhead is significant, is there a threshold where the ease of use overcomes this overhead?
+- If the processor is fast enough, and there is enough RAM available, the difficulty of debugging or upgrading optimized code may be more costly than developing on this "beginner's" platform
+- PYNQ may provide a similar platform for FPGA based systems

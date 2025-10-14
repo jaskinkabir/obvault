@@ -4,39 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "e39067d18b8c9d1d",
+        "id": "1802728848a3cefc",
         "type": "tabs",
         "children": [
           {
-            "id": "2589f2d6cc91dd4a",
+            "id": "fa71da4665dd0ccf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "thesis/PYNQ Environment on Versal Devices.md",
+                "file": "data-comm/2homework/Datacomm2 HW3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PYNQ Environment on Versal Devices"
+              "title": "Datacomm2 HW3"
             }
           },
           {
-            "id": "edbeffa380fdda70",
+            "id": "0a9787d63b91225e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/gitignore test.md",
+                "file": "ICMP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "gitignore test"
+              "title": "ICMP"
+            }
+          },
+          {
+            "id": "dec6611fc92b1de4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "IPv6.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "IPv6"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -179,13 +193,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Personal/gitignore test.md",
+                "file": "IPv6.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of gitignore test"
+              "title": "Outline of IPv6"
             }
           },
           {
@@ -220,55 +234,54 @@
       "sheet-plus:Create excel file": false
     }
   },
-  "active": "edbeffa380fdda70",
+  "active": "dec6611fc92b1de4",
   "lastOpenFiles": [
-    "thesis/PYNQ Environment on Versal Devices.md",
-    "Personal/gitignore test.md",
-    "templater/Graph.md",
-    "thesis/Thesis Ideas.md",
-    "README.md",
-    "Intro-Discrete-Structures/Counting Problems.md",
-    "sheets/sheet2025-09-23 15.50.02.univer.md",
+    "data-comm/2homework/Datacomm2 HW3.md",
+    "IPv6.md",
+    "data-comm/Untitled 1.md",
+    "The IPv6 Address.md",
+    "Excalidraw/Pasted image 20251013191957.png",
+    "data-comm/Transport and Internet Layer Data Headers.md",
+    "data-comm/TCP-IP Protocol Architecture.md",
+    "The IP Layer.md",
+    "Excalidraw/Pasted image 20251013190340.png",
+    "ARP.md",
+    "ICMP.md",
+    "Excalidraw/Pasted image 20251013185512.png",
+    "Excalidraw/Pasted image 20251013185428.png",
+    "Counters.md",
+    "The IPv4 Address.md",
+    "Excalidraw/Pasted image 20251013184032.png",
+    "sheets/sheet2025-10-03 12.43.50.univer.md",
+    "Excalidraw/Pasted image 20251009191213.png",
+    "Excalidraw/Pasted image 20251009190458.png",
+    "Excalidraw/Pasted image 20251009190454.png",
+    "Excalidraw/Pasted image 20251009190231.png",
+    "Excalidraw/Pasted image 20251009134721.png",
+    "thesis/Pynq and Raspberry Pi.md",
+    "sheets/sheet2025-10-03 12.43.47.univer.md",
+    "data-comm/2homework/Datacomm2 HW2.md",
+    "data-comm/labs/Lab1.md",
+    "Excalidraw/Complex Numbers 2022-08-31 13.38.57.excalidraw.md",
+    "data-comm/labs",
+    "Fragmentation and Reassembly.md",
+    "data-comm/Protocol Architecture.md",
+    "embedded/ADC.md",
+    "data-structures/Assignment 4 Big O Analysis.md",
+    "data-comm/Local Area Networks (LANs).md",
+    "data-comm/Ethernet and MAC.md",
+    "data-comm/Connectionless Internetworking.md",
+    "embedded/DAC.md",
     "sheets",
-    "robotics/Robotics OS (ROS).md",
-    "robotics/Robotics Midterm Review.md",
     "robotics",
-    "research-tools/Thesis format.md",
-    "research-tools/System and Function Calls.md",
-    "research-tools/System Software.md",
-    "research-tools/Sass Notes 9-6.md",
-    "research-tools/Make and Makefiles.md",
     "research-tools",
-    "intro-ML/Types of Machine Learning.md",
-    "intro-ML/The Perceptron.md",
-    "intro-ML/SVM Classifiers.md",
-    "intro-ML/Naive Bayes Classifier.md",
-    "intro-ML/Logistic Classifiers.md",
-    "intro-ML/Improving Learning.md",
-    "intro-ML/Image Classification With ANN.md",
-    "intro-ML/Feature Mapping and Kernelization.md",
-    "intro-ML/Dimensionality Reduction and Feature Selection.md",
-    "intro-ML/CNN Convolutional Neural Network.md",
-    "intro-ML/Classifier Evaluation.md",
-    "intro-ML/Classification Threshold and Balancing Precision and Recall.md",
     "intro-ML",
     "intro-DL",
     "embedded/projects",
     "embedded",
     "digital-signal-processing",
     "data-structures",
-    "data-comm/homework",
     "Untitled.canvas",
-    "Pasted image 20220830130028.png",
-    "Excalidraw/Pasted image 20250923161711.png",
-    "Excalidraw/Pasted image 20250923145837.png",
-    "Excalidraw/Pasted image 20250918150359.png",
-    "Excalidraw/Pasted image 20250913181124.png",
-    "Excalidraw/Pasted image 20250913180851.png",
-    "Excalidraw/Pasted image 20250911153529.png",
-    "Excalidraw/Pasted image 20250909151546.png",
-    "Excalidraw/Pasted image 20250904153318.png",
-    "Excalidraw/Pasted image 20250904151612.png",
     "Untitled 1.canvas"
   ]
 }

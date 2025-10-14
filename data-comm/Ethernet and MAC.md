@@ -12,8 +12,8 @@ Continues [[Local Area Networks (LANs)]]
 4. For receiving station: if frame OK and address matches, send ACK
 5. Frame may be damaged by noise or collision
 	1. Collision region is twice the packet length. If packet length is L:
-		1. Packets cannot be on the media Ls before transmission, because they will collide
-		2. Packets cannot be on the media L after transmission start because collision
+		1. Stations cannot start transmission Ls before transmission, because they will collide
+		2. Stations cannot start transmission Ls after transmission start because collision
 	2. No packets can be on the media during collision region
 6. Max utilization of the channel: 18%
 ### Slotted Aloha

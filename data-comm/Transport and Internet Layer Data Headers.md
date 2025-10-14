@@ -1,4 +1,6 @@
 Continues [[TCP-IP Protocol Architecture]]
+Continued by [[The IPv4 Address]]
+Continued by [[IPv6]]
 ## Headers
 - A set number of bits appended to whatever data that must be transmitted
 - Contains information about the message, how it should be transmitted, source, destination, etc
@@ -55,7 +57,7 @@ Continues [[TCP-IP Protocol Architecture]]
 - ***In essence, all UDP does is add a port addressing capability to the IP layer***
 	- Also adds an optional checksum
 - ![[Pasted image 20240705164422.png]]
-### IPv4 Headers
+## IPv4 Headers
 - An IPv4 header is a minimum of 20 octets. The header, together with the segment from the transport layer, forms an **IP-level PDU** aka an **IP Datagram/Packet**
 - ![[Pasted image 20240705164929.png]]
 - Includes:
@@ -63,6 +65,8 @@ Continues [[TCP-IP Protocol Architecture]]
 		- Which IP version
 	- **IHL**: Internet Header Length
 		- Size of the header, **4 bits**
+		- Measured in 32-bit words (4 bytes)
+		- Minimum of 5 (header is minimum 20 bytes)
 	- **DS**: Differentiated Services
 		- **8 Bits**
 		- Type of service
@@ -70,57 +74,65 @@ Continues [[TCP-IP Protocol Architecture]]
 		- End-to-end notification of network congestion
 		- Source provides congestion control
 		- **2 bits**
+			- 0: No ECN
+			- 1 or 2: set by sender, indicate ECN capable
+			- 3: set by router, indicate congestion has been encountered
 	- **Total Length**
-		- **16 bits** indicates total packet size
-	- **ID, Flags, and Fragment Offset fields** are used for fragmentation and reassembly
+		- **16 bits** indicates total packet size in bytes
+		- header+data
+	- Identification
+		- **16 Bits**
+		- Sequence number
+	- Flags
+		- **3 bits**
+		- Only 2 are defined
+			- More
+			- Don't fragment (datagram discarded if exceeds max size)
+			- 
+	- Fragment Offset
+		- **13 bits**
+		- In 64 bit units
+		- Data field must be a multiple of 64 bits (except for the last fragment)
+			- 8 bytes
 	- **Time To Live**
 		- Lifetime of packet to prevent network failure in the event of a routing loop
 		- Called Hop Limit in IPv6
+		- Decremented
 	- **Protocol
 		- Field indicates whether this packet is part of a TCP or UDP segment
+			- TCP = 6
+			- UDP = 17
+			- ICMP = 1
+			- 
+		- Next higher layer to receive data field at destination
 	- **Header checksum**
 		- Separate from the Transport Layer checksum
 		- Only hashes the header itself
-	- 
+		- Verified at each router
 	- **32 bit** source and destination addresses
-## IPv4 vs IPv6
-- IPv6 adds extra functionality to IP, but the driving force behind its development was that the internet grew too large
-	- **IPv4 is running out of addresses!**
-- IPv4 uses a 32 bit address space which allows for only ~4.3 billion addresses
-	- An IPv4 address is written as 
-		- 4 bytes in decimal numbers separated by dots
-	- Not even enough for half of all humans
-- IPv6 has a whopping 128 bit address space, which takes up 8 total 32 bit words of each IPv6 header, 4 for each address
-	- This allows for $3.4\times10^{38}$ addresses
-	- We will probably never run out
-	- An IPv6 address is written as
-		- 8 groups of 2 bytes written in hex
-		- Separated by colons
-		- Terminating an address with a double colon means it is followed by all 0s
-## IPv6 Headers
-- ![[Pasted image 20240705165400.png]]
-- Includes:
-	- **Version**:
-		- Which IP version
-	- **IHL**: Internet Header Length
-		- Size of the header, **4 bits**
-	- **DS**: Differentiated Services
-		- **8 Bits**
-		- Type of service
-	- **ECN: Explicit Congestion Notification**
-		- End-to-end notification of network congestion
-		- Source provides congestion control
-		- **2 bits**
-	- **Flow Label**
-		- **20 bit** label indicating current packet's position in a group of packets
-	- **Payload Length**
-		- Size of payload, **16 bits**
-	- **Hop Limit**
-		- Called time to live in IPv4 
-		- Hop counts to prevent route loop
-		- **8 Bits*
-	- **Source and Destination Addresses**
-		- **128 bits each**.
-		- Each address takes up 4 32 bit words for a total of 8
+	- Padding will fill header to a multiple of 32 bits / 4 bytes
+## IHL Examples
+In IPv4, what is the length of the data field given an IHL  
+value of 12 and total length value of 40,000?
+- Header length is $4*12 = 48$ bytes
+- Total length is $40000$ bytes
+- Data length is $40000 - 48 = 39952$ bytes
+In an IPv4 packets, the value of the IHL is 5, the value of  
+the total length field is 40. How many bytes of data are  
+carried by this packet?
+- Header length is $4 * 5 = 20$ bytes
+- Total length is $40$ bytes
+- Data length is $40 - 20 = 20$ bytes
+## Offset Example
+An IPv4 packet header has the offset value 100, IHL=5,  
+total length=100 (all in decimal). What are the number of  
+the first byte and the last byte?
+- Header is $4*5=20$ bytes
+- Total length is $100$ bytes
+- Data length is $80$ bytes
+- Offset is $64 * 100 = 6400$ bits
+- Byte offset is $\frac{6400}{8}=800$ bytes
+- **First byte is Byte #800**
+- **Second byte is Byte #879**
 
 For class #data-comm

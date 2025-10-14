@@ -1,6 +1,8 @@
 Continues [[Protocol Architecture]]
 Continued by [[Transport and Internet Layer Data Headers]]
 Continued by [[Data Link Flow Control]]
+Continued by [[ICMP]]
+Continued by [[ARP]]
 ## TCP/IP 
 - Developed by DARPA (US Defense Advanced Research Project Agency)
 - Used by the global internet
