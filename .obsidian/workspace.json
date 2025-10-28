@@ -13,12 +13,40 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "data-comm/labs/Lab 2.md",
+                "file": "data-comm/labs/5187 Lab 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lab 2"
+              "title": "5187 Lab 2"
+            }
+          },
+          {
+            "id": "dc8939bfe9de92a6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "data-comm/IPv4.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "IPv4"
+            }
+          },
+          {
+            "id": "ed6c08355eae2b0e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "embedded/CAN Bus.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CAN Bus"
             }
           }
         ]
@@ -78,7 +106,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 329.5041847229004
+    "width": 329.5041847229004,
+    "collapsed": true
   },
   "right": {
     "id": "d0f01cd80b72091c",
@@ -166,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "data-comm/labs/Lab 2.md",
+                "file": "data-comm/labs/5187 Lab 2.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Lab 2"
+              "title": "Outline of 5187 Lab 2"
             }
           },
           {
@@ -209,10 +238,23 @@
   },
   "active": "9761aadb238c6c9c",
   "lastOpenFiles": [
+    "Excalidraw/Pasted image 20251028181958.png",
+    "Excalidraw/Pasted image 20251028181831.png",
+    "Excalidraw/Pasted image 20251028181733.png",
+    "Excalidraw/Pasted image 20251028181415.png",
+    "Excalidraw/Pasted image 20251028181337.png",
+    "Excalidraw/Pasted image 20251028181148.png",
+    "Excalidraw/Pasted image 20251028180936.png",
+    "Excalidraw/Pasted image 20251028180809.png",
+    "Excalidraw/Pasted image 20251028180802.png",
+    "data-comm/IPv4.md",
+    "data-comm/labs/5187 Lab 2.md",
+    "Excalidraw/Pasted image 20251028175640.png",
+    "Excalidraw/Pasted image 20251028175534.png",
+    "Untitled.md",
+    "embedded/CAN Bus.md",
     "data-comm/2homework/Datacomm2 HW2.md",
     "data-comm/2homework/Lab 2.md",
-    "data-comm/labs/Lab 2.md",
-    "embedded/CAN Bus.md",
     "Transport Protocols.md",
     "SPI.md",
     "data-comm/Transport Protocols.md",
@@ -230,23 +272,10 @@
     "embedded/Nucleo LCD.md",
     "embedded/Embedded Communications.md",
     "Datacomm-2 Lab 2.md",
-    "Excalidraw/Pasted image 20251028154206.png",
     "thesis/Ultra Ethernet.md",
-    "Excalidraw/Pasted image 20251028152217.png",
-    "Excalidraw/Pasted image 20251028152152.png",
     "Internetwork Operation.md",
     "data-comm/Data Link Error Control ARQs.md",
     "Nucleo LCD.md",
-    "Excalidraw/Pasted image 20251023180700.png",
-    "Excalidraw/Pasted image 20251023180517.png",
-    "Excalidraw/Pasted image 20251023165707.png",
-    "Excalidraw/Pasted image 20250904153318.png",
-    "Excalidraw/Pasted image 20251023164220.png",
-    "Excalidraw/Pasted image 20251023164126.png",
-    "Excalidraw/Pasted image 20251023164025.png",
-    "data-comm/Ethernet and MAC.md",
-    "data-comm/Routing in Packet-Switching Networks.md",
-    "data-comm/IPv4.md",
     "Untitled 1",
     "Untitled",
     "data-comm/labs",

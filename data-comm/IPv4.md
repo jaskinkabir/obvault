@@ -32,7 +32,6 @@ Continued by [[IPv6]]
 		- Only 2 are defined
 			- More
 			- Don't fragment (datagram discarded if exceeds max size)
-			- 
 	- Fragment Offset
 		- **13 bits**
 		- In 64 bit units
