@@ -14,9 +14,7 @@ Continues [[Protocol Architecture]]
 ## Steps
 1. Create two new datagrams, and copy the header fields into both
 2. Divide the data into two approximately equal portions along a 64-bit boundary
-	1. The first portion must be a multiple of 64 bits
-		1. 8 bits is also ok
-	2. 
+	1. The first portion must be a multiple of 64 bits (8 bytes)
 3. Figure out the offset and more flag bits
 	1. The second datagram's offset value is calculated as follows
 		1. Divide the length of the first fragment by 8

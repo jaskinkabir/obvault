@@ -39,15 +39,15 @@ Continued by [[IPv6]]
 		- Data field must be a multiple of 64 bits (except for the last fragment)
 			- 8 bytes
 	- **Time To Live**
+		- **8 bits**
 		- Lifetime of packet to prevent network failure in the event of a routing loop
 		- Called Hop Limit in IPv6
-		- Decremented
+		- Decremented at each router
 	- **Protocol
 		- Field indicates whether this packet is part of a TCP or UDP segment
 			- TCP = 6
 			- UDP = 17
 			- ICMP = 1
-			- 
 		- Next higher layer to receive data field at destination
 	- **Header checksum**
 		- Separate from the Transport Layer checksum
@@ -122,7 +122,6 @@ the first byte and the last byte?
 ## Subnets and Subnet Masks
 - Host portion of address partitioned into subnet number and host number
 - Each subnet assigned a subnet number
-- 
 - Use subnet mask to figure out how many bits are for the subnet number
 	- Mask is a 32 bit number in which the $n$ leftmost bits are 1s and the $32-n$ rightmost bits are 0s
 	- Erase the portion of the host field and get subnet ID through bitwise AND

@@ -1,0 +1,76 @@
+Cheat sheet allowed
+- Covers 4 chapters
+	- LANs
+	- Ethernet
+	- Internet Protocol
+	- Routing
+# LANs (11 and 12)
+- LAN Topology
+	- Bus and star
+	- **Characteristics of each topology**
+- Protocol Architecture: IEEE 802 reference model
+	- PHY, LLC, MAC
+	- MAC: Special for LAN
+		- Generally: round robin, reservation, contention
+		- MAC frame format
+		- Error detection
+	- LLC: Error correction, flow control
+- Bridge
+	- Bridge vs. repeater; bridge vs router
+	- Functions: retransmit, routing, address intelligence
+	- Spanning tree
+- Layer 2 Switches
+	- Differences with hub, bridge, router
+- Ethernet: IEEE 802.3
+	- 802.3 MAC
+	- ALOHA, slotted ALOHA
+	- For CSMA and binary exponential backoff, **Know how to calculate collision probability**
+# IP and Routing
+- Basic functions
+- Encapsulation
+- Fragmentation and reassembly
+	- **Know how to do offset and more fields**
+- Ordered Delivery: May arrive out of order
+- Addressing
+	- Level: network-level, port-level, device-level
+	- Mode: unicast, multicast, broadcast
+- Routing: 
+	- Least-cost (Dijkstra, Bellman-Ford)
+	- Source routing
+	- Route recording
+- IPv4 Header:
+	- Understand meaning of each field
+		- IHL, flags, offset, TTL especially
+	- IPv4 Address
+- IPv6
+	- Why change IP?
+	- Enhancements
+	- IPv6 Header
+	- Extension header
+- IP Routing
+	- Autonomous System
+	- Distance vector vs link state
+		- Count to infinity
+	- IRP vs ERP
+	- OSPF: an IRP using Dijkstra
+	- BGP: an ERP using path-vector
+- Two least-cost routing algorithms: show routing steps and results
+	- **Know how to do Dijkstra and Bellman-Ford by hand**
+
+# Exam Format
+- One single sided notes-sheet allowed
+- Both Concept and calculation questions
+	- 20 concept questions (MC, T/F, fill in blanks)
+	- 5 calculation questions
+		- 1-2 on LANs
+		- 1-2 on Internet Protocols
+		- 1 Q on routing
+- 1.25 hour#
+# Cheat Sheet Topics
+- Bus topologies
+- IEEE 802 model
+- MAC
+	- Aloha slotted unslotted
+	- CSMA
+		- Persistence
+- IPv4 and IPv6 headers and fields

@@ -45,7 +45,7 @@ Continued by [[Least Cost Algorithms]]
 - Nodes randomly or round robin selects one outgoing path for retransmission of incoming packet
 ### Properties
 - No network info needed
-- Route is typically lot least-cost nor min-hop
+- Route is typically not least-cost nor min-hop
 ## Adaptive
 - Used by almost all packet switching networks
 - Routing decisions change as conditions on the network change (failure/congestion)

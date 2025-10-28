@@ -1,0 +1,18 @@
+# Inter Integrated Circuit Comms
+- Consists of two signals SCL and SDA
+	- Clock and data
+	- Some slave devices may force the clock low at times to delay the master sending more data, or to require more time to prepare data before them master reads it
+		- This is called clock stretching
+- Half-Duplex, only one device talks at a time
+- Unlike UART or SPI, I2C bus drivers are open drain. This means they can pull the line low, but not high.
+	- A pullup resistor must be provided to generate high signals
+	- This means there is no bus contention where one device tries to drive the line high, while another tries to drive it low
+- Two types of messages: Address frame, or data frames
+	- Frames are always 9 bits
+	- 7 bits for the address, 1 for indicating reading or writing
+		- 1 for reading
+	- The 9th bit is acknowledge
+	- ![[Pasted image 20251016163204.png]]
+- Start condition: master pulls clock and data lines low
+- After the address message is sent, the slave must pull the data line low to acknowledge the message
+- 

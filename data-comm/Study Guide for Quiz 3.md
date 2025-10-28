@@ -1,7 +1,6 @@
 [[Routing in Packet-Switching Networks]]
 [[Fragmentation and Reassembly]]
-[[The IPv4 Address]]
-[[Transport and Internet Layer Data Headers]]
+[[IPv4]]
 [[ICMP]]
 [[ARP]]
 [[IPv6]]
@@ -10,8 +9,8 @@
 - Connectionless Internetworking
 	- Routing 
 	- Fragmentation & Reassembly
+		- More and offset field calculations
 	- Datagram lifetime
-	- 
 - IPv4 Examples
 	- Understand Header fields
 	- IP addresses
@@ -24,6 +23,7 @@
 	- Extension headers
 - Internet Routing
 	- Distance-vector
+		- Count to infinity problem
 	- Link-state
 	- OSPF
 	- BGP

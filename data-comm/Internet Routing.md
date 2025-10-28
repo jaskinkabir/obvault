@@ -1,5 +1,4 @@
 Continues [[Routing in Packet-Switching Networks]]
-
 # Routing Info vs Routing Alg
 - Routing info: about topology and cost in the internet (input to the algorithm)
 - Routing algorithm: Used to make routing decisions based on the information
@@ -20,26 +19,30 @@ Example:
 | C    | 1        | C    |
 | D    | 2        | B    |
 | E    | 2        | C    |
-- Count-To-Infinity problem
-	- ![[Pasted image 20251014150040.png]]
-	- Let's say A appears on this network
-		- Once A appears on the network, B will recognize that its distance to A is 1 hop
-		- Then it will broadcast this info to its neighbors
-		- C hears from B that A is 1 hops away from it, so it realizes that it is 2 hops from A(C-B-A)
-		- It will transmit this to D, who transmits to E
-		- Finally, each node knows how many hops to A
-	- Now let's say A becomes unreachable
-		- B knows that it can no longer see A
-		- But it hears from C that it can get to A through 2 hops, so it thinks it can get to A within 3 hops (B-C-B-A)
-			- This is wrong because B-A no longer exists
-		- Then C hears from B that it is now 3 hops from A, so it updates itself to be 4 hops from A
-		- This propagates through the network until each node has an infinite hop count to A
-	- This happens because B does not know that C's 2 hop route to A uses B itself.
+### Count To Infinity Problem
+- ![[Pasted image 20251014150040.png]]
+- Let's say A appears on this network
+	- Once A appears on the network, B will recognize that its distance to A is 1 hop
+	- Then it will broadcast this info to its neighbors
+	- C hears from B that A is 1 hops away from it, so it realizes that it is 2 hops from A(C-B-A)
+	- It will transmit this to D, who transmits to E
+	- Finally, each node knows how many hops to A
+- Now let's say A becomes unreachable
+	- B knows that it can no longer see A
+	- But it hears from C that it can get to A through 2 hops, so it thinks it can get to A within 3 hops (B-C-B-A)
+		- This is wrong because B-A no longer exists
+	- Then C hears from B that it is now 3 hops from A, so it updates itself to be 4 hops from A
+	- This results in a loop of infinite feedback where each node thinks its hop count to A is increasing to infinity
+- This happens because B does not know that C's 2 hop route to A uses B itself.
 - The summary of this problem is
 	- Good news propagates quickly, but bad news propagates slowly
 		- The # of exchanges required to know when a node is unreachable depends on the numerical value used to define infinity (when the nodes should consider a node uncreachable)
 			- Wise to set this to the longest possible path plus 1
 	- The core problem is that when X tells Y it has a path somewhere, Y has no way of knowing 
+#### Solution: Route Poisoning
+- When a route fails, the nodes spread the bad news by poisoning the route
+- This means it advertises the route to the unreachable node with a special metric value called infinity
+- The value chosen for infinity should be the longest possible path plus one
 ## Link-State Routing
 - Examples are Dijkstra and Bellman-Ford
 - Designed to overcome drawbacks of distance-vector

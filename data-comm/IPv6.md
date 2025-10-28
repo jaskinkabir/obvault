@@ -1,5 +1,4 @@
 Continues [[IPv4]]
-Continued by [[The IPv6 Address]]
 ## IPv4 vs IPv6
 - IPv6 adds extra functionality to IP, but the driving force behind its development was that the internet grew too large
 	- **IPv4 is running out of addresses!**
@@ -49,9 +48,11 @@ Continued by [[The IPv6 Address]]
 		- A flow is a sequence of packets with same source and destination
 		- It is uniquely identified by the combination of source, destination addresses and a 20-bit flow label
 		- Packets of the same flow are assigned the same flow label and handled in the same way
-		- The flow label is randomly and uniformlu selected from $[1,\,2^{20}-1]$
+		- The flow label is randomly and uniformly selected from $[1,\,2^{20}-1]$
 			- **Restriction**: Cannot reuse flow label in use
 			- Zero flow label: indicates no flow label is in use
+		- Allows for a stream of packets to be treated differently from other packets
+			- For example: realtime video
 	- **Payload Length**
 		- **16 bits**
 		- Size of payload, including all extension headers plus data
@@ -105,9 +106,9 @@ Continued by [[The IPv6 Address]]
 			- Tells router that the contents of the packet are of interest to the router and it must handle the control data – for traffic control purposes
 			- Asks intermediate routers to examine packets
 			- PAD1: Insert one byte of padding into the Options area of header
-			- PadN 
-				- Insert $N \geq 2$ bytes of padding into the options area of the header
-				- This is to ensure that the header is a multiple of 8 bytes
+		- PadN 
+			- This is to ensure that the header is a multiple of 8 bytes
+		- Insert $N \geq 2$ bytes of padding into the options area of the header
 ## Fragment Header
 ![[Pasted image 20251014144321.png]]
 - Includes
