@@ -85,3 +85,4 @@
 6. Associate sequence number with FIN
 ![[Pasted image 20251028154206.png]]
 
+For class #data-comm

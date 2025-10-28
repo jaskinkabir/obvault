@@ -30,4 +30,4 @@
 3. Are the values of the TTL fields similar, across all of ICMP packets from all of the routers?
 
 
-For class #data-comm/2homework
+For class #data-comm/labs

@@ -18,3 +18,6 @@
 	- Comms must be well defined in advance
 	- Master must control all comms
 	- Usually requires SS lines to each slave
+
+
+For class #embedded
