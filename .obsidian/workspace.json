@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9761aadb238c6c9c",
+            "id": "c345822688998e21",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "data-comm/labs/5187 Lab 2.md",
+                "file": "Personal/Faculty Research.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5187 Lab 2"
+              "title": "Faculty Research"
             }
           },
           {
@@ -106,8 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 329.5041847229004,
-    "collapsed": true
+    "width": 329.5041847229004
   },
   "right": {
     "id": "d0f01cd80b72091c",
@@ -195,13 +194,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "data-comm/labs/5187 Lab 2.md",
+                "file": "embedded/projects/5101 Project 5.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 5187 Lab 2"
+              "title": "Outline of 5101 Project 5"
             }
           },
           {
@@ -219,7 +218,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -236,46 +236,45 @@
       "sheet-plus:Create excel file": false
     }
   },
-  "active": "9761aadb238c6c9c",
+  "active": "c345822688998e21",
   "lastOpenFiles": [
-    "Excalidraw/Pasted image 20251028181958.png",
-    "Excalidraw/Pasted image 20251028181831.png",
-    "Excalidraw/Pasted image 20251028181733.png",
-    "Excalidraw/Pasted image 20251028181415.png",
-    "Excalidraw/Pasted image 20251028181337.png",
-    "Excalidraw/Pasted image 20251028181148.png",
-    "Excalidraw/Pasted image 20251028180936.png",
-    "Excalidraw/Pasted image 20251028180809.png",
-    "Excalidraw/Pasted image 20251028180802.png",
-    "data-comm/IPv4.md",
-    "data-comm/labs/5187 Lab 2.md",
-    "Excalidraw/Pasted image 20251028175640.png",
-    "Excalidraw/Pasted image 20251028175534.png",
-    "Untitled.md",
-    "embedded/CAN Bus.md",
-    "data-comm/2homework/Datacomm2 HW2.md",
-    "data-comm/2homework/Lab 2.md",
-    "Transport Protocols.md",
-    "SPI.md",
-    "data-comm/Transport Protocols.md",
-    "embedded/SPI.md",
-    "README.md",
-    "embedded/I2C.md",
+    "Personal/Names Index.md",
     "Untitled.base",
-    "Embedded Communications.md",
+    "data-comm/UDP.md",
+    "data-comm/TCP.md",
+    "data-comm/TCP Congestion Control.md",
+    "embedded/Real Time OS.md",
+    "UDP.md",
+    "TCP Congestion Control.md",
+    "Untitled.md",
+    "Untitled 1.md",
+    "Real Time OS.md",
+    "Personal/Faculty Research.md",
+    "TCP.md",
+    "data-comm/labs/5187 Lab 3.md",
+    "Excalidraw/Pasted image 20251201194412.png",
+    "Excalidraw/timeseq.png",
+    "Excalidraw/Pasted image 20251201191703.png",
+    "Excalidraw/Pasted image 20251201185653.png",
+    "Excalidraw/Pasted image 20251201185619.png",
+    "Excalidraw/rtt-graph.png",
+    "Excalidraw/Pasted image 20251201175232.png",
+    "Excalidraw/Pasted image 20251201173838.png",
+    "Excalidraw/Pasted image 20251201173146.png",
+    "Excalidraw/Pasted image 20251201172522.png",
+    "embedded/Bootloaders.md",
+    "embedded/projects/5101 Project 5.md",
+    "data-comm/2homework/Datacomm2 HW4.md",
+    "data-comm/Transport Protocols.md",
+    "data-comm/labs/5187 Lab 2.md",
+    "data-comm/2homework/Datacomm2 HW3.md",
+    "data-comm/IPv4.md",
+    "data-comm/TCP-IP Protocol Architecture.md",
+    "data-comm/Internet Applications.md",
+    "embedded/CAN Bus.md",
     "thesis/ultraethernet/Ultra Ethernet.md",
-    "thesis/ultraethernet/The Portals 4 Specification.md",
-    "thesis/ultraethernet/SHMEM.md",
-    "thesis/ultraethernet/MPI.md",
+    "data-comm/2homework/Datacomm2 HW2.md",
     "thesis/ultraethernet",
-    "data-comm/Internetwork Operation.md",
-    "embedded/Nucleo LCD.md",
-    "embedded/Embedded Communications.md",
-    "Datacomm-2 Lab 2.md",
-    "thesis/Ultra Ethernet.md",
-    "Internetwork Operation.md",
-    "data-comm/Data Link Error Control ARQs.md",
-    "Nucleo LCD.md",
     "Untitled 1",
     "Untitled",
     "data-comm/labs",

@@ -87,5 +87,6 @@
     "flexibile",
     "MOSI",
     "Reccomends"
-  ]
+  ],
+  "autoConvertHtml": true
 }

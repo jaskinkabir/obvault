@@ -419,12 +419,8 @@
 - PSN 3 has been ACK'd before PSN 2
 - Since 1,2,3 are on same EV, they must be on the wire in the same order
 - 3 is ACK'd before 2 means 2 must have been dropped
-- 
 
 For topic #thesis/ultraethernet
-
-
-
 - wrap IP packet in ethernet packet
 - Wrap UET packet in IP packet
 - Create figure showing where UET fits in the full frame

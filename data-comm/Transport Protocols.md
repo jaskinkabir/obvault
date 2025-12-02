@@ -1,3 +1,6 @@
+Continued by [[TCP]]
+Continued by [[UDP]]
+Continued by [[TCP Congestion Control]]
 # Transport Protocol Overview
 - Provides **end-to-end** data transfer service
 - Can either be connection-oriented (TCP) or connectionless (UDP)
@@ -85,4 +88,14 @@
 6. Associate sequence number with FIN
 ![[Pasted image 20251028154206.png]]
 
+# Flow Control and Buffering
+# Multiplexing
+## Upward Multiplexing
+- Multiple transport connections (identified by port nums) multiplex on the same network connection (Discord and Minecraft use same IP address on host PC)
+## Downward Multiplexing
+- Split a single transport connection among multiple network connections
+	- User needs more bandwidth than one virtual circuit can provide, open multiple network connections and distribute raffic among them on a round-robin basis
+	- With k network connections 
+
 For class #data-comm
+
