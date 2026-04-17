@@ -1,4 +1,4 @@
-[[Embedded Startup Process]]
+e[[Embedded Startup Process]]
 # Bootloaders in General Computing
 - On a typical PC, the power button first begins execution of firmware stored in non-volatile memory
 	- Historically the BIOS 

@@ -1,0 +1,12 @@
+filters:
+  and:
+    - file.ext == "md"
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - file.tags
+    sort:
+      - property: file.tags
+        direction: DESC

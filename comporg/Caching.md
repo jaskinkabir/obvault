@@ -1,5 +1,8 @@
 Continues [[The Memory Hierarchy]]
 Continued by [[Cache Performance]]
+Continued by [[Cache Organization]]
+Continued by [[Cache Replacement]]
+Continued by [[Cache Coherence]]
 # Direct Mapped Cache
 - Map the large address space of the data memory to the much smaller address space of the cache through a direct mapping where each memory location points to just one cache location
 	- $\text{Block Address = }\text{(Mem Address)}\ \% \ \text{(\# of Blocks in Cache)}$
@@ -111,12 +114,28 @@ Continued by [[Cache Performance]]
 4. Write the cache entry
 5. Restart instruction fetch
 	1. This time, the instruction will be found in cache
+## Types of Cache Misses
+- Cold miss:
+	- Address X has never been accessed before
+	- Can sometimes be solved through block size, but in cases of non–spatial locality there's nothing you can do
+- Capacity miss:
+	- Address X was once in the cache, but was pushed out when a different block was fetched
+	- Solved by increasing cache size
+- Conflict Miss
+	- Address X has index A, but tag B
+	- Address X was once in the cache, but a different block with index A but tag C was accessed, which pushed address X out
+	- Address X, was pushed out even though the cache was not full
+	- Solved by set associativity
+- Coherence
+	- Address X was in the cache but was invalidated by another processor's store
+	- 
 # Handling Writes
 ## Write-Through
 - Suppose a memory write instruction is executed
 - It writes this data into the data cache but not the system memory
 - In this case, the cache and memory are inconsistent
 - The simplest way to solve this is called **Write-Through**, in which memory write instructions write to both the system memory and the cache
+- ![[Pasted image 20260204200142.png]]
 ## Write Buffering
 - Memory writes are very slow, oftentimes on the order of hundreds of CPU clock cycles
 - A simple way to handle this is to write all changes in the cache to the memory (write-through)
@@ -130,4 +149,72 @@ Continued by [[Cache Performance]]
 	- If the write buffer is full when the CPU needs to store data, a stall must be initiated to wait for a new slot to be freed
 ## Write-Back
 - In a **Write-Back** scheme, whenever a write occurs, the new value is written only to the block in the cache. The modified block is written to the lower level memory whenever it is replaced upon a cache miss
-For class #comporg$$
+- ![[Pasted image 20260204200154.png]]
+## Write Allocation
+- If you write memory, should you allocate a cache line for that data?
+	- You may not need to access it again
+	- Need to decide whether allocation in the cache is necessary
+# Calculating Average Memory Access Time AMAT
+- $$A(L_{x},\, M_{x})=L_{x}+M_{x}\times A(L_{x+1},\, M_{x+1})$$
+	- $A$ Average Memory Access Time
+	- $L_{x}$ Latency of layer $x$ of hierarchy
+	- $M_{x}$ Miss rate of layer $x$ of hierarchy
+	- Eventually you get to RAM, which has a miss rate of 0
+- For 2 level cache
+	- $L_{1}$ Latency is 2, miss rate is 0.1
+	- $L_{2}$ Latency is 10, miss rate is 0.5
+	- RAM Latency is 80
+	- $A=2+0.1*(10+0.5(80))=7$
+- $2 + .1 * 10 + .5 * 80$
+# Cache Replacement
+- If a new block must be brought into the cache, indexed to a full set, which block should be pushed out
+- Random
+	- Easy to implement, suboptimal
+	- Least Recently Used (LRU): Good option, but expensive to track state
+		- Requires $n \times n$ bits
+	- Random among non-MRU: OK, easy to implement
+- Pseudo-LRU: Good compromise, common approach 
+	- Tracks $n-1$ bits of state
+
+# Inclusion
+- A cache is inclusive if it contains all lines that are cached at a lower level
+	- L3 includes L2 which includes L1
+-  Caches are exclusive if no level has data that is in another level
+	- Exclusive caches save space
+- NINE is neither. No rules on which levels can contain what data
+- ![[Pasted image 20260204204318.png]]
+- Example case of eviction of X in L1 ![[Pasted image 20260204204737.png]]
+	- Inclusive
+		- L2 doesn't need to be notified of the eviction
+	- Exclusive
+		- If X is evicted from L1 it can be placed in L2
+			- If X is in L1 it must not be in L2 yet
+		- This causes a cache miss in L2, so X must be placed in L2
+	- NINE
+		- Eviction of X doesn't trigger anything in L2
+- Case of eviction of Y from L2 ![[Pasted image 20260204205009.png]]
+	- Inclusive
+		- If L2 doesn't contain Y, L1 can't contain Y anymore either
+		- L1 must evict Y
+	- NINE
+		- Eviction of Y doesn't cause anything in L1
+		- No relation between caches
+## Pros and Cons
+### Inclusive
+- For external requests (from other caches), don't have to check inner caches – Faster response
+- Reduced overall capacity
+### Exclusive
+- Maximizes overall capacity, no copies
+- Must allocate space when L1 evicts: Fill ratge = L1 miss rate
+- Even clean lines from L1 must be evicted to L2 on replacement
+### NINE
+- Lower fill rate, but same searching of inner caches
+# Blocking and Non-Blocking Caches
+- How many requests can be handled at a time?
+- Blocking caches can only service one request at a time
+- Non blocking
+	- In the event of a miss, the cache can service other requests as it waits for higher level memory
+- MSHR: Miss Status Handling Register
+	- Stores state of pending misses
+	- Size of register dictates how many pending misses can be serviced
+ For class #comporg$$

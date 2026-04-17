@@ -5,7 +5,7 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": false,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "tag:#Analytical-Foundations",
@@ -90,9 +90,23 @@
         "a": 1,
         "rgb": 6084188
       }
+    },
+    {
+      "query": "tag:#parallel-arch",
+      "color": {
+        "a": 1,
+        "rgb": 11162965
+      }
+    },
+    {
+      "query": "tag:#comporg  ",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
     }
   ],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": -1.9,
   "nodeSizeMultiplier": 0.7125,
@@ -102,6 +116,6 @@
   "repelStrength": 19.965034965035,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.07199155814742675,
+  "scale": 0.5995836648046283,
   "close": false
 }

@@ -8,48 +8,63 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c345822688998e21",
+            "id": "87b55b70a6a53b88",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Faculty Research.md",
+                "file": "Cache Protocol Optimizations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Faculty Research"
+              "title": "Cache Protocol Optimizations"
             }
           },
           {
-            "id": "dc8939bfe9de92a6",
+            "id": "c743d787cede261a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "data-comm/IPv4.md",
+                "file": "Scalable Cache Coherence.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IPv4"
+              "title": "Scalable Cache Coherence"
             }
           },
           {
-            "id": "ed6c08355eae2b0e",
+            "id": "7619c0e9a4382e64",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "embedded/CAN Bus.md",
+                "file": "Reducing Overhead.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CAN Bus"
+              "title": "Reducing Overhead"
+            }
+          },
+          {
+            "id": "beea8ee19ab8ff52",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Proposed Scheduler Architecture.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Proposed Scheduler Architecture"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -81,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "selective",
+                "query": "directory",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": false,
@@ -102,7 +117,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -151,12 +167,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "thesis/Ultra Ethernet.md",
+                "file": "Dependence.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Ultra Ethernet"
+              "title": "Outgoing links from Dependence"
             }
           },
           {
@@ -194,13 +210,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "embedded/projects/5101 Project 5.md",
+                "file": "Calls For Papers.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 5101 Project 5"
+              "title": "Outline of Calls For Papers"
             }
           },
           {
@@ -218,7 +234,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 232.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -236,44 +252,47 @@
       "sheet-plus:Create excel file": false
     }
   },
-  "active": "c345822688998e21",
+  "active": "7619c0e9a4382e64",
   "lastOpenFiles": [
-    "Personal/Names Index.md",
-    "Untitled.base",
-    "data-comm/UDP.md",
-    "data-comm/TCP.md",
-    "data-comm/TCP Congestion Control.md",
-    "embedded/Real Time OS.md",
-    "UDP.md",
-    "TCP Congestion Control.md",
-    "Untitled.md",
-    "Untitled 1.md",
-    "Real Time OS.md",
-    "Personal/Faculty Research.md",
-    "TCP.md",
-    "data-comm/labs/5187 Lab 3.md",
-    "Excalidraw/Pasted image 20251201194412.png",
-    "Excalidraw/timeseq.png",
-    "Excalidraw/Pasted image 20251201191703.png",
-    "Excalidraw/Pasted image 20251201185653.png",
-    "Excalidraw/Pasted image 20251201185619.png",
-    "Excalidraw/rtt-graph.png",
-    "Excalidraw/Pasted image 20251201175232.png",
-    "Excalidraw/Pasted image 20251201173838.png",
-    "Excalidraw/Pasted image 20251201173146.png",
-    "Excalidraw/Pasted image 20251201172522.png",
-    "embedded/Bootloaders.md",
-    "embedded/projects/5101 Project 5.md",
-    "data-comm/2homework/Datacomm2 HW4.md",
-    "data-comm/Transport Protocols.md",
-    "data-comm/labs/5187 Lab 2.md",
-    "data-comm/2homework/Datacomm2 HW3.md",
-    "data-comm/IPv4.md",
-    "data-comm/TCP-IP Protocol Architecture.md",
-    "data-comm/Internet Applications.md",
-    "embedded/CAN Bus.md",
+    "Excalidraw/Pasted image 20260416202053.png",
+    "Excalidraw/Pasted image 20260416200352.png",
+    "Excalidraw/Pasted image 20260416200157.png",
+    "Scalable Cache Coherence.md",
+    "Reducing Overhead.md",
+    "Cache Coherence.md",
+    "Memory Transaction Ordering.md",
+    "Memory Addressing.md",
+    "Excalidraw/Pasted image 20260416173957.png",
+    "Cache Protocol Optimizations.md",
+    "Split Transaction Bus.md",
+    "Proposed Scheduler Architecture.md",
+    "Snoopy Coherence Protocols.md",
+    "Chip Interconnection Networks.md",
     "thesis/ultraethernet/Ultra Ethernet.md",
-    "data-comm/2homework/Datacomm2 HW2.md",
+    "Calls For Papers.md",
+    "comporg/Cache Organization.md",
+    "Memory Technologies.md",
+    "Cache Replacement.md",
+    "Parallelism and Concurrency.md",
+    "OpenMP.md",
+    "Parallel Programming.md",
+    "Dependence.md",
+    "comporg/Caching.md",
+    "Personal/FreeIPA Setup.md",
+    "Untitled 2.md",
+    "thesis/ultraethernet/MPI.md",
+    "Excalidraw/Pasted image 20260224182016.png",
+    "Excalidraw/Pasted image 20260224181603.png",
+    "Excalidraw/Pasted image 20260224175022.png",
+    "Excalidraw/Pasted image 20260224174900.png",
+    "Excalidraw/Pasted image 20260224174350.png",
+    "Excalidraw/Pasted image 20260224174142.png",
+    "Excalidraw/Pasted image 20260224173634.png",
+    "Untitled 1.md",
+    "Untitled.md",
+    "Untitled.base",
+    "Base.base",
+    "Untitled 1.base",
     "thesis/ultraethernet",
     "Untitled 1",
     "Untitled",
@@ -281,8 +300,6 @@
     "sheets",
     "robotics",
     "research-tools",
-    "intro-ML",
-    "intro-DL",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]

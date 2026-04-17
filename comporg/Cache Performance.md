@@ -1,5 +1,5 @@
 Continues [[Caching]]
-Continued by [[Associative Cache Mapping]]
+Continued by [[Cache Organization]]
 
 # Measuring Cache Performance
 - CPU time can be split into the time spent executing instructions and the time spent waiting for memory accesses
