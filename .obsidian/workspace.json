@@ -11,42 +11,13 @@
             "id": "87b55b70a6a53b88",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cache Protocol Optimizations.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cache Protocol Optimizations"
-            }
-          },
-          {
-            "id": "7619c0e9a4382e64",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Memory Consistency.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Memory Consistency"
-            }
-          },
-          {
-            "id": "1d3cfcb97d1d8940",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -234,8 +205,26 @@
       "sheet-plus:Create excel file": false
     }
   },
-  "active": "1d3cfcb97d1d8940",
+  "active": "87b55b70a6a53b88",
   "lastOpenFiles": [
+    "comporg/Parallelism and Concurrency.md",
+    "embedded/CAN Extensions.md",
+    "parallel-arch/Split Transaction Bus.md",
+    "parallel-arch/System Partitioning and Virtualization.md",
+    "parallel-arch/Snoopy Coherence Protocols.md",
+    "parallel-arch/Scalable Cache Coherence.md",
+    "parallel-arch/Reducing Coherence Overhead.md",
+    "parallel-arch/OpenMP.md",
+    "parallel-arch/Memory Technologies.md",
+    "parallel-arch/Parallel Programming.md",
+    "parallel-arch/Memory Model and Coherence Definition.md",
+    "parallel-arch/Memory Consistency.md",
+    "parallel-arch/Directory Coherence Ordering and Correctness.md",
+    "parallel-arch/Dependence.md",
+    "parallel-arch/Chip Interconnection Networks.md",
+    "parallel-arch/Cache Protocol Optimizations.md",
+    "parallel-arch/Cache Coherence.md",
+    "parallel-arch",
     "Memory Model and Coherence Definition.md",
     "Embedded Startup Process.md",
     "Cache Replacement.md",
@@ -245,15 +234,6 @@
     "embedded/ADC.md",
     "System Partitioning and Virtualization.md",
     "Directory Coherence Ordering and Correctness.md",
-    "Proposed Scheduler Architecture.md",
-    "Chapter 2 Overview.md",
-    "Scalable Cache Coherence.md",
-    "comporg/Data Hazards Forwarding and Stalling.md",
-    "Split Transaction Bus.md",
-    "Chip Interconnection Networks.md",
-    "Snoopy Coherence Protocols.md",
-    "Reducing Coherence Overhead.md",
-    "Memory Transaction Ordering.md",
     "Excalidraw/Pasted image 20260501172536.png",
     "Excalidraw/Pasted image 20260501171948.png",
     "Excalidraw/Pasted image 20260430164251.png",
@@ -264,14 +244,6 @@
     "Excalidraw/Pasted image 20260428183724.png",
     "Excalidraw/Pasted image 20260428183433.png",
     "Excalidraw/Pasted image 20260428182709.png",
-    "Untitled 3.md",
-    "comporg/CPU Pipelining-Multicycle Execution.md",
-    "comporg/Control Hazards and Branch Prcoediction.md",
-    "Cache Coherence.md",
-    "Memory Addressing.md",
-    "Cache Protocol Optimizations.md",
-    "thesis/ultraethernet/Ultra Ethernet.md",
-    "Calls For Papers.md",
     "Untitled.base",
     "Base.base",
     "Untitled 1.base",
@@ -281,7 +253,6 @@
     "data-comm/labs",
     "sheets",
     "robotics",
-    "research-tools",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]
