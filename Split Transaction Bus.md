@@ -43,3 +43,5 @@ Continued by [[Chip Interconnection Networks]]
 - If not, a negative acknowledgement (NACK) forces the requester to try again later
 - Responses?
 	- By limiting the number of outstanding requests, we also limit the number of responses and guarantee their buffering resources
+
+For class #parallel-arch

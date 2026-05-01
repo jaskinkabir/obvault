@@ -1,7 +1,6 @@
 Continues [[Cache Coherence]]
 Continued by [[Cache Protocol Optimizations]]
 Continued by [[Scalable Cache Coherence]]
-Continued by [[Memory Transaction Ordering]]
 - ![[Pasted image 20260212170411.png]]
 - Cache sees requests from both processors and from other caches
 - Bus request must lookup the cache line to determine hit/miss

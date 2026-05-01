@@ -1,7 +1,7 @@
 NOT ON EXAM 1
 Continues [[Snoopy Coherence Protocols]]
 Continues [[Chip Interconnection Networks]]
-Continued by [[Reducing Overhead]]
+Continued by [[Reducing Coherence Overhead]]
 
 # Scalability
 ## Bus Does Not Scale

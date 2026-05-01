@@ -1,3 +1,5 @@
+Continues [[Scalable Cache Coherence]]
+Continued by [[Directory Coherence Ordering and Correctness]]
 # Reducing Bus Latency
 ![[Pasted image 20260416200157.png]]
 - A BusRd is a 4 hop transaction
@@ -24,4 +26,26 @@
 - Remove one pointer and invalidate that block
 	- Non Broadcast option (NB)
 - Set a flag that forces the directory to broadcast invalidations to all caches
-- 
+	- Broadcast option
+- Coarse Bit Vector
+	- Each bit in the vector corresponds to a cluster of processors
+	- Send inval to all processors in cluster if bit is set
+- Hybrid
+	- Limited pointer
+	- Convert to full/coarse vector when exceeding sharing limit
+- Software
+	- Overflow pointers to memory
+- Linked list
+	- One pointer in directory, each cache block also has a pointer to next sharer
+	- ![[Pasted image 20260421123059.png]]
+	- Too expensive/complicated to implement
+- ![[Pasted image 20260421122544.png]]
+-  ![[Pasted image 20260421122646.png]]
+- While the broadcast option sends more invalidations, the overall latency overhead is not significant because having more than 3 sharers is rare
+- The Non broadcast option however forces a lot of bus requests while the processors take turns sharing the cache line
+# Sparse Directory
+- Size directory accoding to number of cached blocks
+- Requires lookup of block address
+- Associativity helps avoid conflicts
+- If directory entry needs to be replaced, invalidate cache block
+For class #parallel-arch

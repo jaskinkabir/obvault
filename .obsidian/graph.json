@@ -104,6 +104,55 @@
         "a": 1,
         "rgb": 5431473
       }
+    },
+    {
+      "query": "tag:#embedded  ",
+      "color": {
+        "a": 1,
+        "rgb": 5419488
+      }
+    },
+    {
+      "query": "tag:#intro-ML  ",
+      "color": {
+        "a": 1,
+        "rgb": 5395168
+      }
+    },
+    {
+      "query": "tag:#intro-DL  ",
+      "color": {
+        "a": 1,
+        "rgb": 5395168
+      }
+    },
+    {
+      "query": "tag:#optimization-ml  ",
+      "color": {
+        "a": 1,
+        "rgb": 5395121
+      }
+    },
+    {
+      "query": "tag:#reconfig  ",
+      "color": {
+        "a": 1,
+        "rgb": 8570925
+      }
+    },
+    {
+      "query": "tag:#IoT-ML  ",
+      "color": {
+        "a": 1,
+        "rgb": 5395026
+      }
+    },
+    {
+      "query": "tag:",
+      "color": {
+        "a": 1,
+        "rgb": 5395026
+      }
     }
   ],
   "collapse-display": true,
@@ -113,9 +162,9 @@
   "lineSizeMultiplier": 1,
   "collapse-forces": false,
   "centerStrength": 0.684965034965035,
-  "repelStrength": 19.965034965035,
+  "repelStrength": 14.8671328671329,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.5995836648046283,
+  "scale": 0.2185381835815442,
   "close": false
 }

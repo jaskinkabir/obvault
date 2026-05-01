@@ -1,3 +1,0 @@
-Continues [[Snoopy Coherence Protocols]]
-
-# 
