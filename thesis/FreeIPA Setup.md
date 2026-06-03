@@ -15,6 +15,10 @@ Stop:
 sudo podman stop freeipa-server-container
 ```
 - `-ti` means create a TTY and use an interactive terminal
+# IPA Authentication
+- Before doing anything in the FreeIPA container, you must authenticate
+- Use the command `kinit admin`
+- The password is `micro`
 
 # Creating a New Account
 ## Within FreeIPA Container
@@ -40,7 +44,7 @@ ipa user-add USERNAME --first=FIRST –-last=LAST --shell=/bin/bash
 ## Setup FreeIPA
 
 ```
-ipa-client-install --mkhomedir --enable-dns-updates --no-ntp -U --domain=rcs.uncc.edu --server=scruffy.rcs.uncc.edu --realm=RCS.UNCC.EDU -p admin -w "reconfig"
+ipa-client-install --mkhomedir --enable-dns-updates --no-ntp -U --domain=rcs.uncc.edu --server=scruffy.rcs.uncc.edu --realm=RCS.UNCC.EDU -p admin -w "mciro"
 ```
 
 `ipa-client-automount –server=scruffy.rcs.uncc.edu --location=default -U`
