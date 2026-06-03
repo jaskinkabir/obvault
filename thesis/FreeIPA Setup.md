@@ -38,7 +38,6 @@ ipa user-add USERNAME --first=FIRST –-last=LAST --shell=/bin/bash
 ## Setup machine
 - Ensure DNS server is scruffy: `172.16.0.2`
 - Ensure hostname is fully qualified `(host).rcs.uncc.edu`
-- Create local root user account with home directory in `/users`
 ## Install software
 `apt install freeipa-client nfs-common autofs -y`
 ## Setup FreeIPA
