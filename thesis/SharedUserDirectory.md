@@ -31,10 +31,10 @@
 ## Mount 
 - If you want to try the NFS way this is how to do it
 - Normal mount command:
-- `rclone mount SCRUFFY:/users /users --vfs-cache-mode writes`
+- `rclone mount SCRUFFY:/users/USERNAME /users/USERNAME --vfs-cache-mode writes`
 - This mount command is optimized for speed, if you want to try using vivado directly over sftp. Haven't tried it yet but it probably sucks
 ```
-rclone mount SCRUFFY:/users LOCAL/PATH \
+rclone mount SCRUFFY:/users/USERNAME /users/USERNAME/ \
   --vfs-cache-mode full \
   --vfs-cache-max-age 24h \
   --vfs-cache-max-size 50G \
@@ -45,3 +45,17 @@ rclone mount SCRUFFY:/users LOCAL/PATH \
 ```
 - Big cache size of 50G for large Vivado projects
 
+```
+rclone mount scruffy-rcs:/users/jkabir /users/jkabir \
+  --vfs-cache-mode full \
+  --vfs-cache-max-age 24h \
+  --vfs-cache-max-size 50G \
+  --no-modtime \
+  --cache-dir /home/jaskin/rclone_cache \
+  --vfs-read-chunk-size 64M \
+  --vfs-read-chunk-size-limit 2G \ &
+```
+
+
+## Unmount
+`fusermount3 -u /users/USERNAME`
