@@ -8,13 +8,87 @@
         "type": "tabs",
         "children": [
           {
-            "id": "87b55b70a6a53b88",
+            "id": "058ae8464dba31ff",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "thesis/FreeIPA Setup.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "FreeIPA Setup"
+            }
+          },
+          {
+            "id": "67194687806568a4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cerebras Wafer Scale Engine.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cerebras Wafer Scale Engine"
+            }
+          },
+          {
+            "id": "c5da019d187ee1de",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "comporg/Parallelism and Concurrency.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Parallelism and Concurrency"
+            }
+          },
+          {
+            "id": "9d5dfbb66e86f0bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "parallel-arch/Snoopy Coherence Protocols.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Snoopy Coherence Protocols"
+            }
+          },
+          {
+            "id": "9a7aaa133689a5eb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Relaxed Memory Consistency Models.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Relaxed Memory Consistency Models"
+            }
+          },
+          {
+            "id": "4a801590dfee8e6c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "parallel-arch/Sequential Consistency.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Sequential Consistency"
             }
           }
         ]
@@ -49,7 +123,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "routing",
+                "query": "#",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": false,
@@ -70,12 +144,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 329.5041847229004
+    "width": 333.5041847229004
   },
   "right": {
     "id": "d0f01cd80b72091c",
@@ -163,13 +236,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Calls For Papers.md",
+                "file": "thesis/FreeIPA Setup.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Calls For Papers"
+              "title": "Outline of FreeIPA Setup"
             }
           },
           {
@@ -187,8 +260,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 232.5,
-    "collapsed": true
+    "width": 232.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,47 +277,47 @@
       "sheet-plus:Create excel file": false
     }
   },
-  "active": "87b55b70a6a53b88",
+  "active": "058ae8464dba31ff",
   "lastOpenFiles": [
-    "comporg/Parallelism and Concurrency.md",
-    "embedded/CAN Extensions.md",
-    "parallel-arch/Split Transaction Bus.md",
-    "parallel-arch/System Partitioning and Virtualization.md",
-    "parallel-arch/Snoopy Coherence Protocols.md",
-    "parallel-arch/Scalable Cache Coherence.md",
-    "parallel-arch/Reducing Coherence Overhead.md",
-    "parallel-arch/OpenMP.md",
-    "parallel-arch/Memory Technologies.md",
-    "parallel-arch/Parallel Programming.md",
-    "parallel-arch/Memory Model and Coherence Definition.md",
-    "parallel-arch/Memory Consistency.md",
-    "parallel-arch/Directory Coherence Ordering and Correctness.md",
-    "parallel-arch/Dependence.md",
-    "parallel-arch/Chip Interconnection Networks.md",
-    "parallel-arch/Cache Protocol Optimizations.md",
-    "parallel-arch/Cache Coherence.md",
-    "parallel-arch",
-    "Memory Model and Coherence Definition.md",
+    "thesis/Thesis Notes.md",
+    "thesis/FreeIPA Setup.md",
+    "thesis/Proposed Scheduler Architecture.md",
+    "Transactional Memory.md",
+    "NOC Routing.md",
+    "Memory Addressing.md",
+    "Memory Transaction Ordering.md",
     "Embedded Startup Process.md",
-    "Cache Replacement.md",
-    "IoT-ML/Data Augmentation.md",
-    "Memory Consistency.md",
-    "data-comm/Digital Data, Analog Signals.md",
-    "embedded/ADC.md",
-    "System Partitioning and Virtualization.md",
-    "Directory Coherence Ordering and Correctness.md",
-    "Excalidraw/Pasted image 20260501172536.png",
-    "Excalidraw/Pasted image 20260501171948.png",
-    "Excalidraw/Pasted image 20260430164251.png",
-    "Excalidraw/Pasted image 20260428194618.png",
-    "Excalidraw/Pasted image 20260428193409.png",
-    "Excalidraw/Pasted image 20260428193345.png",
-    "Excalidraw/Pasted image 20260428192331.png",
-    "Excalidraw/Pasted image 20260428183724.png",
-    "Excalidraw/Pasted image 20260428183433.png",
-    "Excalidraw/Pasted image 20260428182709.png",
-    "Untitled.base",
+    "Analytical-Foundations/ANF Project 1 Report.md",
+    "parallel-arch/SIMT (GPU) Architecture.md",
+    "parallel-arch/Relaxed Memory Consistency Models.md",
+    "parallel-arch/Memory Synchronization.md",
+    "parallel-arch/Cerebras Wafer Scale Engine.md",
+    "parallel-arch/Memory Model Comparison.md",
     "Base.base",
+    "ARIES Peipei Paper.md",
+    "Untitled.md",
+    "Untitled 1.md",
+    "Untitled 2.md",
+    "Calls For Papers.md",
+    "Cerebras Wafer Scale Engine.md",
+    "Chapter 2 Overview.md",
+    "Untitled 3.md",
+    "Untitled 4.md",
+    "Untitled 5.md",
+    "README.md",
+    "thesis/Green-White Architecture.md",
+    "Excalidraw/Pasted image 20260505181317.png",
+    "Excalidraw/Pasted image 20260504204651.png",
+    "Excalidraw/Pasted image 20260504203836.png",
+    "Excalidraw/Pasted image 20260504203752.png",
+    "Excalidraw/Pasted image 20260504202023.png",
+    "Excalidraw/Pasted image 20260504201525.png",
+    "Excalidraw/Pasted image 20260504201400.png",
+    "Excalidraw/Pasted image 20260504195519.png",
+    "Excalidraw/Pasted image 20260504195155.png",
+    "Excalidraw/Pasted image 20260504194712.png",
+    "parallel-arch",
+    "Untitled.base",
     "Untitled 1.base",
     "thesis/ultraethernet",
     "Untitled 1",

@@ -1,4 +1,5 @@
 Continued by [[Memory Technologies]]
+Continued by [[SIMT (GPU) Architecture]]
 # Amdahl's Law
 - Speedup due to parallelization is limited by the serial tasks$$S_{p}=\frac{1}{s+\frac{1-s}{P}}$$
 	- $s$ Proportion of task that must be done in serial

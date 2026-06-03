@@ -1,12 +1,8 @@
-# PYNQ for cards like V80
-- Porting PYNQ to the V80 doesn't make sense
-- Linux OS running on ps of V80 running within host OS? 
-- Earlier versions of PYNQ for Alveo had the jupyter notebook and overlay logic running on the host CPU, and the PYNQ library was an abstraction to the Alveo's PL.
-- Seems for alveo cards, the new approach is the XRT
-- XRT supposedly has python bindings but they were removed in 2022.2
-	- https://xilinx.github.io/XRT/2022.1/html/pyxrt.html
-	- https://xilinx.github.io/XRT/2022.2/html/pyxrt.html
-		- This page is empty
-- Does this still work? What's going on here?
-
+# Smart DMA
+## Buffering
+- Need to pass over all program headers to figure out where the start address is, and if the program will fit in the bram
+- We must do one pass of DMAs to get the header info
+- After that we can either:
+	- 1. Buffer all program headers (128 bits per header), then loop through the buffer to copy the data (uses more space)
+	- 2. Do another pass of DMAs to get the addresses back (takes more time, uses more DDR bandwidth)
 for topic #thesis

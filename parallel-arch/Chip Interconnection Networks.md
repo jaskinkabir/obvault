@@ -1,5 +1,6 @@
 Continues [[Split Transaction Bus]]
 Continued by [[Scalable Cache Coherence]]
+Continued by [[NOC Routing]]
 Related to [[Circuit Vs. Packet Switching]]
 Related to [[Data Link Flow Control]]
 
@@ -53,6 +54,7 @@ Related to [[Data Link Flow Control]]
 	- How is data buffered?
 ## Circuit vs. Packet Switching
 ### Circuit Switching
+![[Pasted image 20260503204404.png]]
 - Connection reserved
 - Entire message sent over connection
 	- Can send multiple packets
@@ -66,10 +68,20 @@ Related to [[Data Link Flow Control]]
 	- Store and forward
 	- Wormhole/cut-through
 	- See bottom of [[Local Area Networks (LANs)]] for difference
-#### Wormhole Buffering
+#### Store-and-Forward
+![[Pasted image 20260503204743.png]]
+- Each router waits for a whole packet to be received, then sends it to the next hop
+#### Cut-Through
+![[Pasted image 20260503205957.png]]
+- The router begins forwarding as soon as it receives the header flit, but it reserves buffer space at the packet level
+- If the output is blocked, the entire packet is buffered until the contention is relieved
+#### Wormhole
+![[Pasted image 20260503210037.png]]
 - Pipeline individual flits of a packet across the link before the entire packet is received for retransmission
 - Wormhole because head of worm enters the link and moves separately from the tail of the worm
-# Latency
+- The buffer space is only allocated at the flit level
+
+## Latency
 - Assuming no other packets in the network, latency is determined by number of routers along path (hops) and
 - **Serialization Latency:** Number of cycles required to transmit packet across a link
 - $$T=H \times T_{r} + \frac{L}{B}$$
@@ -90,7 +102,15 @@ Related to [[Data Link Flow Control]]
 	- $T_{L}$ Link delay
 	- $L$ Length of packet
 	- $B$ Bandwidth of link
-# Topology
+## Switching Comparison
+
+| Approach          | Description                                                                                      | Cost/benefits                                                                                                                                        |
+| ----------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Circuit           | Resources reserved along route, released when message is complete                                | No buffering or routing delay for data. Round trip delay for setup message. Restricts number of in-flight messages                                   |
+| Store-and-forward | Packet = routing + data. Resources consumed and released dynamically                             | Only one link occupied at a time. Packet is the flow-control unit. Packet-sized buffers. Latency is a product of distance times packet serialization |
+| Cut-through       | Packet header proceeds as soon as routing decision is made. Full packet buffered when blocked    | Pipelined across multiple links. Latency is sum of distance and packet serialization. Need at least one packet of buffering                          |
+| Wormhole          | Same as cut-through, but packet blocked on a flit-by-flit basis. Packet may block multiple links | Low latency, low buffering requirements. <u>Deadlock</u> is possible when holding multiple links                                                     |
+# Network Topologies
 ![[Pasted image 20260224150528.png]]
 - Torus means connecting edges together, like a donut
 ## Topology Metrics
@@ -117,6 +137,7 @@ Related to [[Data Link Flow Control]]
 	- $N$ Number of nodes
 	- $n$ Number of dimensions
 	- $k$ Nodes per dimension
+	- Commects nodes using $n$-bit, radix-$k$ addresses
 - A ring is an N-ary 1-cube
 	- Also called a 1D torus
 	- There is one dimension to travel in: ccw or cw
@@ -165,5 +186,5 @@ n\left( \frac{k}{4}-\frac{1}{4k} \right) & k\text{ is odd}
 		- Number of switches grows as $N^2$
 		- Long wire problem
 	- Butterfly
-		- 
+
 For class #parallel-arch 

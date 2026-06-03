@@ -90,7 +90,9 @@
     "write",
     "ReadX",
     "ReplyD",
-    "hyperviso"
+    "hyperviso",
+    "FlushX",
+    "CUDA"
   ],
   "autoConvertHtml": true
 }

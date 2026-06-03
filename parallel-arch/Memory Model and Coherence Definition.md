@@ -1,5 +1,5 @@
 Continues [[Directory Coherence Ordering and Correctness]]
-Continued by [[Memory Consistency]]
+Continued by [[Sequential Consistency]]
 # Mem Model Definition
 - Governs legal interleaving of mem accesses in shmem multiprocessors
 - Determines order in which accesses by one thread can be observed by other threads
