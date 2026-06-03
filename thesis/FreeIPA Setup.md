@@ -1,7 +1,19 @@
 # Todo
-## Router Config
-- Set Scruffy as the DNS server
-- Make the router give out fqdns (\*.rcs.uncc.edu)
+## DNS Stuff
+1. Install Kea
+	1. Natively on Ubuntu host or
+	2. Podman container with `–network host` to listen to broadcasts
+2. Generate TSIG key
+3. Add key to `/etc/named.conf`
+4. Tell IPA to accept dynamic updates with the key
+5. Restart dns service
+6. Configure kea dhcp.conf
+	1. Send updates true, enable updates true
+	2. Qualifying suffix `rcs.uncc.edu`
+7. Kea should also have the qualifying suffix rcs.uncc.edu
+8. Edit kea-dhcp-ddns.conf
+	1. Add secret key
+	2. List dns domains
 
 # Podman commands
 ```
@@ -40,10 +52,10 @@ ipa user-add USERNAME --first=FIRST –-last=LAST --shell=/bin/bash
 - Ensure hostname is fully qualified `(host).rcs.uncc.edu`
 ## Install software
 `apt install freeipa-client nfs-common autofs -y`
-## Setup FreeIPA
+## Setup FreeIPA On New Client
 
 ```
-ipa-client-install --mkhomedir --enable-dns-updates --no-ntp -U --domain=rcs.uncc.edu --server=scruffy.rcs.uncc.edu --realm=RCS.UNCC.EDU -p admin -w "mciro"
+ipa-client-install --mkhomedir --no-ntp --no-dns-sshfp -U --domain=rcs.uncc.edu --server=scruffy.rcs.uncc.edu --realm=RCS.UNCC.EDU -p admin -w "mciro"
 ```
 
 `ipa-client-automount –server=scruffy.rcs.uncc.edu --location=default -U`
