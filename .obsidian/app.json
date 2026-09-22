@@ -92,7 +92,9 @@
     "ReplyD",
     "hyperviso",
     "FlushX",
-    "CUDA"
+    "CUDA",
+    "campmates",
+    "bound"
   ],
   "autoConvertHtml": true
 }
