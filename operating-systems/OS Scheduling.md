@@ -1,6 +1,6 @@
 Continues [[Threads]]
 Continues [[Processes]]
-Continued by [[Data Consistency]]
+Continued by [[Lock Implementations]]
 # Scheduling Criteria/Metrics
 - Metrics the OS can use to inform scheduling decisions
 	- OS must choose which thread to run next

@@ -186,6 +186,24 @@ void unlock(lock_t * l) {
 ```
 - Does not work because of park() unpark() synchronization
 ### Set Park/ About To Park
+#### Lost Wakeup Problem
+- Notice that the guard must be released before calling `park()`, because any thread that the waiter yields to must be able to acquire the guard
+- This creates a problem.
+- Imagine scenario
+	- Thread A tries to acquire lock held by Thread B
+	- It blocks and calls `park()`
+	- Context Switch Occurs right before TA executes `park()`
+	- Thread B releases the lock and calls `unpark(A)`
+	- Thread A hasn't called `park()` yet; TB's `unpark()` does nothing
+	- Context switch: Thread A resumes and calls `park()`
+	- Thread A sleeps forever. The wakeup signal has been lost
+#### The About to Park Flag
+- Before calling `park()` Thread A calls `set_park()` and sets its `about_to_park` flag
+- Thread A puts itself into the lock's queue and releases the guard
+- Thread B context switches in and tries to unpark A
+- It sees that the `about_to_park` flag is set, so rather than moving TA into the ready list it just clears the flag
+- Thread A wakes up and executes `park()`
+- `park()` sees the flag has been cleared and does nothing
 ```c
 typedef struct {
 	bool flag;
@@ -194,18 +212,35 @@ typedef struct {
 } lockvar_t;
 
 void lock(lockvar_t * l) {
-	...
-	enqueue(...);
-	setpark();
+	while (c&s(l->guard, 0, 1));
+	if (l->flag == 0) {
+		l->flag = 1; // acquired
+		lock->guard = 0;
+		return;
+	}
+	enque(l->queue, get_tid());
+	set_park();
 	l->guard = 0;
-	park(); // Puts thread to sleep iff atp is set
+	park();
 }
-void unpark(lockvar_t * l) {
-	l->about_to_park = 0;
+void unlock(lockvar_t * l) {
+	while (c&s(l->guard, 0, 1));
+	if (queue_empty(l->queue)) {
+		l->flag = 0;	
+	}
+	else {
+		int tid = dequeue(l->queue);
+		if (proctab[tid].state = PR_READY) {
+			proctab[tid].about_to_park = 0;
+		}
+		else {
+			unpark(tid);
+		}
+	}
+	l->guard = 0;
 }
 ```
 - The about_to_park flag should be process-specific and stored in the PCB
-- How does this work? Gotta read and fill out this part of this note file
 ### Spinning?
 - We still have a spin lock within our new lock
 	- On the guard `while (c&s(l->guard, 0, 1));` 
@@ -213,4 +248,29 @@ void unpark(lockvar_t * l) {
 - This has a bounded, small amount of time
 - In the Spin Lock, the waiting threads spin for the entire duration of the critical section
 - This time is unbounded and could be very long
+### Solves:
+#### Busy Wait
+- **Busy wait** is almost completely solved
+- Shorter, bounded spin on acquiring the guard
+- In a spin lock, waiting threads must spin for the entire duration of the critical section
+- In the park/unpark lock the waiting thread only spins for the duration of the lock() function
+#### Starvation
+- Starvation is solved
+- A thread cannot unlock and lock in the same time slice
+	- T1 calls unlock(), which dequeues waiting T2 and doesn't reset the lock flag
+	- Then T1 calls lock() in the same time slice, but sees the flag=1 and parks itself
+	- Then T2 starts executing as it has acquired the lock
+##### Barging
+- Serving the lock queue in strict FIFO order is required
+- Scenario
+	- Thread A blocks, waiting for lock
+	- While Thread B releases the lock, Thread C is spawned
+	- Thread C acquires lock before A
+- Park/unpark lock solves this
+	- Thread B directly hands off the lock to A because it never resets the lock flag
+	- No matter how many threads are spawned, only A is in the guarded section and able to acquire the lock
+- **Deadlock:**
+	- Deadlock is almost solved because a high priority thread who waits on a low priority thread's lock will go into the wait state and stop being scheduled
+	- There is still deadlock risk on the guard's spin lock
+		- We can solve this by adding a small `sleep()` call while spinning on the guard
 #operating-systems 
